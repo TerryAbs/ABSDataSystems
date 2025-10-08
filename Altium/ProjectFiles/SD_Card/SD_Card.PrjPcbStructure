@@ -1,0 +1,3 @@
+Record=TopLevelDocument|FileName=PowerSupply.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=PowerSupply.SchDoc|FileName=SD_Card.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=PowerSupply.SchDoc|FileName=SD_Card_Led_Monitor.SchDoc|SheetNumber=3

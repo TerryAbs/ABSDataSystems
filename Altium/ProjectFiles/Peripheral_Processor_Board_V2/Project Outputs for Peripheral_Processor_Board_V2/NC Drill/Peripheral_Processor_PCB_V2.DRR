@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Peripheral_Processor_PCB_V2.PcbDoc   09/14/2025  2:43:20 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Peripheral_Processor_PCB_V2.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      28mil (0.711mm)                                           Round             214       PTH        50.61inch (1285.45mm)
+T2      35mil (0.9mm)                                             Round             9         PTH        11.10inch (281.87mm)
+T3      40mil (1.016mm)                                           Round             64        PTH        9.20inch (233.68mm)
+T4      47mil (1.2mm)                                             Round             5         PTH        0.95inch (24.20mm)
+T5      170mil (4.318mm)                                          Round             4         PTH        16.72inch (424.80mm)
+T6      35mil (0.9mm)                                             Round             2         NPTH       0.17inch (4.40mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              298
+
+Total Processing Time (hh:mm:ss) : 00:00:00

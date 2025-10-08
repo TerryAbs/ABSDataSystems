@@ -1,0 +1,33 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [FDTI_USB_PCB.PcbDoc]
+   Generated File[FDTI_USB_PCB.GTO]
+   Generated File[FDTI_USB_PCB.GTP]
+   Generated File[FDTI_USB_PCB.GTS]
+   Generated File[FDTI_USB_PCB.GTL]
+   Generated File[FDTI_USB_PCB.GP1]
+   Generated File[FDTI_USB_PCB.GP2]
+   Generated File[FDTI_USB_PCB.GBL]
+   Generated File[FDTI_USB_PCB.GBS]
+   Generated File[FDTI_USB_PCB.GBP]
+   Generated File[FDTI_USB_PCB.GBO]
+   Generated File[FDTI_USB_PCB.GM1]
+   Generated File[FDTI_USB_PCB.GM13]
+   Generated File[FDTI_USB_PCB.GM15]
+   Generated File[FDTI_USB_PCB.GM20]
+   Generated File[FDTI_USB_PCB.GKO]
+   Generated File[FDTI_USB_PCB.GPT]
+   Generated File[FDTI_USB_PCB.GPB]
+   Generated File[FDTI_USB_PCB.1]
+   Generated File[FDTI_USB_PCB.GML]
+   Generated File[FDTI_USB_PCB.2]
+   Generated File[FDTI_USB_PCB.3]
+   Generated File[FDTI_USB_PCB.RUL]
+   Generated File[FDTI_USB_PCB.EXTREP]
+   Generated File[FDTI_USB_PCB.REP]
+
+
+Files Generated   : 24
+Documents Printed : 0
+
+Finished Output Generation At 8:15:26 AM On 09/15/2025

@@ -1,0 +1,19 @@
+[DesignatorManager]
+
+[SheetNumberManager]
+SheetNumberOrder=Display Order
+SheetNumberMethod=Increasing
+DocumentName0=AVR_Programmer.SchDoc
+UniqueIDPath0=
+SheetNumber0=1
+DocumentName1=LED_Monitor.SchDoc
+UniqueIDPath1=
+SheetNumber1=2
+DocumentName2=PowerSupply.SchDoc
+UniqueIDPath2=
+SheetNumber2=3
+DocumentName3=USB_to_Serial.SchDoc
+UniqueIDPath3=
+SheetNumber3=4
+
+

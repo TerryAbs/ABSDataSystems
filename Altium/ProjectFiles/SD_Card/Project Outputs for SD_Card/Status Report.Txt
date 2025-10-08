@@ -1,0 +1,35 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [SD_Card_PCB.PcbDoc]
+   Generated File[SD_Card_PCB.GTO]
+   Generated File[SD_Card_PCB.GTP]
+   Generated File[SD_Card_PCB.GTS]
+   Generated File[SD_Card_PCB.GTL]
+   Generated File[SD_Card_PCB.GP1]
+   Generated File[SD_Card_PCB.GP2]
+   Generated File[SD_Card_PCB.GBL]
+   Generated File[SD_Card_PCB.GBS]
+   Generated File[SD_Card_PCB.GBP]
+   Generated File[SD_Card_PCB.GBO]
+   Generated File[SD_Card_PCB.GM1]
+   Generated File[SD_Card_PCB.GM2]
+   Generated File[SD_Card_PCB.GM3]
+   Generated File[SD_Card_PCB.GM13]
+   Generated File[SD_Card_PCB.GM15]
+   Generated File[SD_Card_PCB.GM20]
+   Generated File[SD_Card_PCB.GKO]
+   Generated File[SD_Card_PCB.GPT]
+   Generated File[SD_Card_PCB.GPB]
+   Generated File[SD_Card_PCB.GML]
+   Generated File[SD_Card_PCB.1]
+   Generated File[SD_Card_PCB.2]
+   Generated File[SD_Card_PCB.3]
+   Generated File[SD_Card_PCB.RUL]
+   Generated File[SD_Card_PCB.EXTREP]
+   Generated File[SD_Card_PCB.REP]
+
+
+Files Generated   : 26
+Documents Printed : 0
+
+Finished Output Generation At 7:26:30 AM On 05/29/2025

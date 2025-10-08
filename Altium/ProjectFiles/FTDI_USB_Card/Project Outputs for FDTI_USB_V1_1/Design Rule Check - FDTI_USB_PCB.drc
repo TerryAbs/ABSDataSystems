@@ -1,0 +1,62 @@
+Protel Design System Design Rule Check
+PCB File : D:\ABS_MutipleProcessorComputer\FTDI_USB_Card\FDTI_USB_V1_1\FDTI_USB_PCB.PcbDoc
+Date     : 05/17/2025
+Time     : 11:56:43 AM
+
+WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
+   Polygon named: NONET_L04_P000 On Bottom Layer
+   Polygon named: NONET_L01_P001 On Top Layer
+
+Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+   Violation between Modified Polygon: Polygon Shelved  (NONET_L01_P001) on Top Layer 
+   Violation between Modified Polygon: Polygon Shelved  (NONET_L04_P000) on Bottom Layer 
+Rule Violations :2
+
+Processing Rule : Width Constraint (Min=5mil) (Max=10mil) (Preferred=10mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=200mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=5mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=5mil) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (3.811mil < 5mil) Between Pad J1-1(5271.574mil,3300.394mil) on Top Layer And Pad J1-2(5271.574mil,3331.89mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.811mil < 5mil) Between Pad J1-2(5271.574mil,3331.89mil) on Top Layer And Pad J1-3(5271.574mil,3363.386mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.811mil < 5mil) Between Pad J1-3(5271.574mil,3363.386mil) on Top Layer And Pad J1-4(5271.574mil,3394.882mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.811mil < 5mil) Between Pad J1-4(5271.574mil,3394.882mil) on Top Layer And Pad J1-5(5271.574mil,3426.378mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (1.865mil < 5mil) Between Pad J1-7(5488.11mil,3538.582mil) on Top Layer And Via (5408.896mil,3598.582mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [1.865mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.756mil < 5mil) Between Pad R25-1(1723.504mil,1800mil) on Top Layer And Via (1674mil,1780mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.756mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (3.027mil < 5mil) Between Pad R40-2(2020mil,1281.496mil) on Top Layer And Via (1970mil,1245mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [3.027mil]
+   Violation between Minimum Solder Mask Sliver Constraint: (2.142mil < 5mil) Between Via (1897mil,1420mil) from Top Layer to Bottom Layer And Via (1938mil,1464mil) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [2.142mil] / [Bottom Solder] Mask Sliver [2.142mil]
+Rule Violations :8
+
+Processing Rule : Silk To Solder Mask (Clearance=3.5mil) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=4mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 10
+Waived Violations : 0
+Time Elapsed        : 00:00:02

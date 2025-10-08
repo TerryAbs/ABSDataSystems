@@ -1,0 +1,33 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [Keyboard_Mouse_PCB.PcbDoc]
+   Generated File[Keyboard_Mouse_PCB.GTO]
+   Generated File[Keyboard_Mouse_PCB.GTP]
+   Generated File[Keyboard_Mouse_PCB.GTS]
+   Generated File[Keyboard_Mouse_PCB.GTL]
+   Generated File[Keyboard_Mouse_PCB.GP1]
+   Generated File[Keyboard_Mouse_PCB.GP2]
+   Generated File[Keyboard_Mouse_PCB.GBL]
+   Generated File[Keyboard_Mouse_PCB.GBS]
+   Generated File[Keyboard_Mouse_PCB.GBP]
+   Generated File[Keyboard_Mouse_PCB.GBO]
+   Generated File[Keyboard_Mouse_PCB.GM1]
+   Generated File[Keyboard_Mouse_PCB.GM13]
+   Generated File[Keyboard_Mouse_PCB.GM15]
+   Generated File[Keyboard_Mouse_PCB.GM20]
+   Generated File[Keyboard_Mouse_PCB.GKO]
+   Generated File[Keyboard_Mouse_PCB.GPT]
+   Generated File[Keyboard_Mouse_PCB.GPB]
+   Generated File[Keyboard_Mouse_PCB.1]
+   Generated File[Keyboard_Mouse_PCB.GML]
+   Generated File[Keyboard_Mouse_PCB.2]
+   Generated File[Keyboard_Mouse_PCB.3]
+   Generated File[Keyboard_Mouse_PCB.RUL]
+   Generated File[Keyboard_Mouse_PCB.EXTREP]
+   Generated File[Keyboard_Mouse_PCB.REP]
+
+
+Files Generated   : 24
+Documents Printed : 0
+
+Finished Output Generation At 7:30:12 AM On 05/29/2025

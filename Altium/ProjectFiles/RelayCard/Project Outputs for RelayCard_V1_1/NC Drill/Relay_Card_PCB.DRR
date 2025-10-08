@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Relay_Card_PCB.PcbDoc   09/15/2025  8:20:21 AM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Relay_Card_PCB.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      28mil (0.711mm)                                           Round             120       PTH        41.63inch (1057.35mm)
+T2      32mil (0.8mm)                                             Round             16        PTH        1.70inch (43.18mm)
+T3      35mil (0.9mm)                                             Round             24        PTH        8.31inch (210.98mm)
+T4      39mil (1mm)                                               Round             24        PTH        13.56inch (344.44mm)
+T5      47mil (1.2mm)                                             Round             24        PTH        6.45inch (163.83mm)
+T6      51mil (1.3mm)                                             Round             16        PTH        13.20inch (335.40mm)
+T7      170mil (4.318mm)                                          Round             4         PTH        16.72inch (424.80mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              228
+
+Total Processing Time (hh:mm:ss) : 00:00:00

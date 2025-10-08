@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [DAC_PCB.PcbDoc]
+   Generated File[DAC_PCB.TXT]
+   Generated File[DAC_PCB.LDP]
+   Generated File[DAC_PCB.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 7:42:13 AM On 05/29/2025

@@ -1,0 +1,8 @@
+Record=TopLevelDocument|FileName=CPU_Board.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=CPU_Board.SchDoc|FileName=LED_Monitor.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=CPU_Board.SchDoc|FileName=LED_Monitor_2.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=CPU_Board.SchDoc|FileName=Peripherial_Bus.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=CPU_Board.SchDoc|FileName=PowerSupply.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=CPU_Board.SchDoc|FileName=Programmer_Interface.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=CPU_Board.SchDoc|FileName=TestPoints.SchDoc|SheetNumber=7
+Record=NoMainPathDocument|SourceDocument=CPU_Board.SchDoc|FileName=Z80_Interface.SchDoc|SheetNumber=8

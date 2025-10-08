@@ -1,0 +1,35 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [ADC_PCB.PcbDoc]
+   Generated File[ADC_PCB.GTO]
+   Generated File[ADC_PCB.GTP]
+   Generated File[ADC_PCB.GTS]
+   Generated File[ADC_PCB.GTL]
+   Generated File[ADC_PCB.GP1]
+   Generated File[ADC_PCB.GP2]
+   Generated File[ADC_PCB.GBL]
+   Generated File[ADC_PCB.GBS]
+   Generated File[ADC_PCB.GBP]
+   Generated File[ADC_PCB.GBO]
+   Generated File[ADC_PCB.GM1]
+   Generated File[ADC_PCB.GM2]
+   Generated File[ADC_PCB.GM3]
+   Generated File[ADC_PCB.GM13]
+   Generated File[ADC_PCB.GM15]
+   Generated File[ADC_PCB.GM20]
+   Generated File[ADC_PCB.GKO]
+   Generated File[ADC_PCB.GPT]
+   Generated File[ADC_PCB.GPB]
+   Generated File[ADC_PCB.1]
+   Generated File[ADC_PCB.2]
+   Generated File[ADC_PCB.GML]
+   Generated File[ADC_PCB.3]
+   Generated File[ADC_PCB.RUL]
+   Generated File[ADC_PCB.EXTREP]
+   Generated File[ADC_PCB.REP]
+
+
+Files Generated   : 26
+Documents Printed : 0
+
+Finished Output Generation At 7:42:33 AM On 05/29/2025

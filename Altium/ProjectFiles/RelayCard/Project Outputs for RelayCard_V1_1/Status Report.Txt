@@ -1,0 +1,33 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [Relay_Card_PCB.PcbDoc]
+   Generated File[Relay_Card_PCB.GTO]
+   Generated File[Relay_Card_PCB.GTP]
+   Generated File[Relay_Card_PCB.GTS]
+   Generated File[Relay_Card_PCB.GTL]
+   Generated File[Relay_Card_PCB.GP1]
+   Generated File[Relay_Card_PCB.GP2]
+   Generated File[Relay_Card_PCB.GBL]
+   Generated File[Relay_Card_PCB.GBS]
+   Generated File[Relay_Card_PCB.GBP]
+   Generated File[Relay_Card_PCB.GBO]
+   Generated File[Relay_Card_PCB.GM1]
+   Generated File[Relay_Card_PCB.GM13]
+   Generated File[Relay_Card_PCB.GM15]
+   Generated File[Relay_Card_PCB.GM20]
+   Generated File[Relay_Card_PCB.GKO]
+   Generated File[Relay_Card_PCB.GPT]
+   Generated File[Relay_Card_PCB.GPB]
+   Generated File[Relay_Card_PCB.GML]
+   Generated File[Relay_Card_PCB.3]
+   Generated File[Relay_Card_PCB.2]
+   Generated File[Relay_Card_PCB.1]
+   Generated File[Relay_Card_PCB.RUL]
+   Generated File[Relay_Card_PCB.EXTREP]
+   Generated File[Relay_Card_PCB.REP]
+
+
+Files Generated   : 24
+Documents Printed : 0
+
+Finished Output Generation At 8:20:24 AM On 09/15/2025

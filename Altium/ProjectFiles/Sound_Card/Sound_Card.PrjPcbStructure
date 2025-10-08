@@ -1,0 +1,4 @@
+Record=TopLevelDocument|FileName=Ampifiler.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=Ampifiler.SchDoc|FileName=Sound_Card.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=Ampifiler.SchDoc|FileName=Sound_Card_LED_Monitor.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=Ampifiler.SchDoc|FileName=Sound_Ram_Buffer.SchDoc|SheetNumber=3

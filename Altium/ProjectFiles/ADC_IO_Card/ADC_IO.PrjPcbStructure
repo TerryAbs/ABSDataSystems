@@ -1,0 +1,7 @@
+Record=TopLevelDocument|FileName=ADC_Calibration.SchDoc|SheetNumber=6
+Record=NoMainPathDocument|SourceDocument=ADC_Calibration.SchDoc|FileName=ADC_Channels.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=ADC_Calibration.SchDoc|FileName=ADC_Configuration.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=ADC_Calibration.SchDoc|FileName=ADC_CPU.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=ADC_Calibration.SchDoc|FileName=ADC_Input.SchDoc|SheetNumber=7
+Record=NoMainPathDocument|SourceDocument=ADC_Calibration.SchDoc|FileName=ADC_LED_Monitor.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=ADC_Calibration.SchDoc|FileName=ADC_Unity_Gain.SchDoc|SheetNumber=5

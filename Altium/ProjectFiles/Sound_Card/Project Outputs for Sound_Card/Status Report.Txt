@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Sound_Card_PCB.PcbDoc]
+   Generated File[Sound_Card_PCB.TXT]
+   Generated File[Sound_Card_PCB.LDP]
+   Generated File[Sound_Card_PCB.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 7:26:14 AM On 05/29/2025

@@ -1,0 +1,3 @@
+Record=TopLevelDocument|FileName=Digital_Input.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=Digital_Input.SchDoc|FileName=Digital_Input_CPU.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=Digital_Input.SchDoc|FileName=Digital_Input_LED_Monitor.SchDoc|SheetNumber=3
