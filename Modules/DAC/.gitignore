@@ -1,0 +1,78 @@
+#############################
+# Microchip Studio / Atmel Studio
+#############################
+
+# Build output folders
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Object / intermediate files
+*.o
+*.obj
+*.d
+*.pch
+
+# Output images / binaries
+*.elf
+*.hex
+*.lss
+*.map
+*.eep
+*.bin
+
+# Microchip/Atmel specific
+*.atsuo          # Atmel Studio user options
+*.dep            # Dependency files
+*.ctf
+*.components
+*.aws
+*.user
+*.userprefs
+
+#############################
+# Visual Studio engine (Microchip Studio is VS-based)
+#############################
+
+.vs/
+*.sdf
+*.suo
+*.opensdf
+*.cache
+ipch/
+
+#############################
+# MPLAB XC / other compiler artifacts (safe to ignore)
+#############################
+
+*.p1
+*.pre
+*.lst
+
+#############################
+# General IDE clutter
+#############################
+
+*.log
+*.tmp
+*.bak
+*~
+*.orig
+*.swp
+*.swo
+
+#############################
+# OS / tooling
+#############################
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Git
+.gitignore~
