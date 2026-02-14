@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/AVR-Dx_DFP/2.7.321/include",
+                "C:/Program Files/Microchip/xc8/v2.36/avr/include",
+                "C:/Program Files/Microchip/xc8/v2.36/avr/avr/include",
+                "C:/Program Files (x86)/Atmel/Studio/7.0/toolchain/avr8/avr8-gnu-toolchain/avr/include"
+            ],
+            "defines": [
+                "__AVR_AVR64DD32__",
+                "F_CPU=4000000UL"
+            ],
+            "compilerPath": "C:/Program Files/Microchip/xc8/v2.36/bin/xc8-cc.exe",
+            "cStandard": "c11",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

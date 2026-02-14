@@ -1,0 +1,68 @@
+[
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x assembler-with-cpp -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -c -Wa,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--gdwarf-2,-g -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_assembleWithPreprocess.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\protected_io.S.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\protected_io.S",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/protected_io.S",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_assembleWithPreprocess.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/protected_io.S.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\main.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\main.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/main.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/main.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\adc\\src\\adc0.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\adc\\src\\adc0.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/adc/src/adc0.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/adc/src/adc0.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\dac\\src\\dac0.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\dac\\src\\dac0.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/dac/src/dac0.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/dac/src/dac0.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\clock.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\clock.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/clock.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/clock.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\config_bits.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\config_bits.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/config_bits.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/config_bits.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\interrupt.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\interrupt.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/interrupt.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/interrupt.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\pins.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\pins.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/pins.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/pins.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\system.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\system\\src\\system.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/system.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/system.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\uart\\src\\usart1.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\uart\\src\\usart1.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/uart/src/usart1.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/uart/src/usart1.c.o"
+},
+{
+  "directory": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default",
+  "command": "C:\\Users\\terry\\.mplab\\app-finder\\apps\\avr-gcc\\v7.3.0\\avr8-gnu-toolchain-win32_x86_64\\bin\\avr-gcc.exe -DDEBUG -D__AVR64DD32__ -Ddefault=default -IC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/include -x c -g -gdwarf-2 -mmcu=avr64dd32 -BC:/Users/terry/.mchp_packs/Microchip/AVR-Dx_DFP/2.7.321/gcc/dev/avr64dd32 -x c -c -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -o CMakeFiles\\VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir\\C_\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\vref\\src\\vref.c.o -c C:\\Temp\\VS_ADC_DAC_Usart_1\\VS_MCC_Config\\mcc\\mcc_generated_files\\vref\\src\\vref.c",
+  "file": "C:/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/vref/src/vref.c",
+  "output": "C:/Temp/VS_ADC_DAC_Usart_1/_build/VS_ADC_DAC_Usart_1/default/CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/vref/src/vref.c.o"
+}
+]

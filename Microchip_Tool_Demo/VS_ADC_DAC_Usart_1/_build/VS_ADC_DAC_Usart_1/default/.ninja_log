@@ -1,0 +1,25 @@
+# ninja log v7
+6	243	7927867799497062	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/main.c.o	e9acc188a865922c
+89	467	7927867101128611	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_assembleWithPreprocess.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/protected_io.S.o	eb66325f30aa0e21
+100	683	7927867101228348	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/adc/src/adc0.c.o	7a4d9906b40beed3
+455	1183	7927867104791836	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/dac/src/dac0.c.o	222052b0be7d52bd
+468	1435	7927867104908526	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/clock.c.o	e44cba7b5dcb2807
+683	1641	7927867107062196	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/config_bits.c.o	9a266a0b3309a4b9
+1185	2080	7927867112083302	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/interrupt.c.o	a5019d742c6a6de0
+1435	2304	7927867114590900	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/pins.c.o	cb28642a9feb819f
+1641	2551	7927867116651011	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/system.c.o	f01b3eae577f99e4
+2080	2874	7927867121031026	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/uart/src/usart1.c.o	893e8f18b060c88f
+2304	3097	7927867123277866	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/vref/src/vref.c.o	3d3df7c3a4a1cad6
+244	762	7927867801872404	C:/Temp/VS_ADC_DAC_Usart_1/out/VS_ADC_DAC_Usart_1/default.elf	54aa3d4524df6acb
+212	803	7927868190317258	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_assembleWithPreprocess.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/protected_io.S.o	eb66325f30aa0e21
+230	977	7927868190486465	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/main.c.o	e9acc188a865922c
+240	1296	7927868190586446	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/adc/src/adc0.c.o	7a4d9906b40beed3
+804	2035	7927868196227016	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/dac/src/dac0.c.o	222052b0be7d52bd
+978	2068	7927868197967104	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/clock.c.o	e44cba7b5dcb2807
+1296	2198	7927868201196097	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/config_bits.c.o	9a266a0b3309a4b9
+2198	3425	7927868210175830	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/system.c.o	f01b3eae577f99e4
+2035	3508	7927868208535955	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/interrupt.c.o	a5019d742c6a6de0
+2068	3526	7927868208876948	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/system/src/pins.c.o	cb28642a9feb819f
+3426	4303	7927868222456448	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/uart/src/usart1.c.o	893e8f18b060c88f
+3508	4575	7927868223276564	CMakeFiles/VS_ADC_DAC_Usart_1_default_default_AVR_GCC_compile.dir/C_/Temp/VS_ADC_DAC_Usart_1/VS_MCC_Config/mcc/mcc_generated_files/vref/src/vref.c.o	3d3df7c3a4a1cad6
+4575	5471	7927868233946217	C:/Temp/VS_ADC_DAC_Usart_1/out/VS_ADC_DAC_Usart_1/default.elf	54aa3d4524df6acb

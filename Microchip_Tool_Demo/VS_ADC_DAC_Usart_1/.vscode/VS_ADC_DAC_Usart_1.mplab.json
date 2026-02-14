@@ -1,0 +1,82 @@
+{
+    "version": "1.8",
+    "configurations": [
+        {
+            "name": "default",
+            "id": "conf1",
+            "device": "AVR64DD32",
+            "imagePath": "./out/VS_ADC_DAC_Usart_1/default.elf",
+            "tool": "Atmel-ICE",
+            "packs": [
+                {
+                    "name": "AVR-Dx_DFP",
+                    "vendor": "Microchip",
+                    "version": "2.7.321"
+                }
+            ],
+            "fileSet": "default",
+            "toolchain": "default-AVR-GCC"
+        }
+    ],
+    "propertyGroups": [
+        {
+            "name": "default-AVR-GCC",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:avr-gcc@7.3.0",
+            "properties": {
+                "compiler.isolate-each-function": true,
+                "compiler.optimization-level": "-O1",
+                "compiler.place-data-into-section": true,
+                "linker.heap-size": "0",
+                "linker.remove-unused-sections": true,
+                "compiler++.isolate-each-function": true,
+                "compiler++.optimization-level": "-O1"
+            }
+        }
+    ],
+    "fileSets": [
+        {
+            "name": "default",
+            "files": [
+                {
+                    "include": "**/*",
+                    "exclude": "**/(_build|out|cmake|.vscode)/**/*"
+                },
+                "VS_MCC_Config/mcc/mcc_generated_files/system/clock.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/src/clock.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/interrupt.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/src/interrupt.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/vref/src/vref.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/vref/vref.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/src/config_bits.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/utils/interrupt_avr8.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/config_bits.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/src/protected_io.S",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/utils/atomic.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/src/system.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/utils/compiler.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/utils/utils_assert.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/protected_io.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/ccp.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/utils/assembler/gas.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/utils/assembler.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/system.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/utils/utils.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/utils/assembler/iar.h",
+                "VS_MCC_Config/mcc/main.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/port.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/src/pins.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/system/pins.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/dac/src/dac0.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/dac/dac0.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/uart/uart_types.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/uart/src/usart1.c",
+                "VS_MCC_Config/mcc/mcc_generated_files/uart/usart1.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/uart/uart_drv_interface.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/adc/adc_types.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/adc/adc0.h",
+                "VS_MCC_Config/mcc/mcc_generated_files/adc/src/adc0.c"
+            ]
+        }
+    ]
+}
