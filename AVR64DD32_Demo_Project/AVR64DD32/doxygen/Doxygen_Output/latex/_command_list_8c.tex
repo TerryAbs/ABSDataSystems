@@ -1,0 +1,34 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Command\+List/\+\+Command\+List.c File Reference}
+\hypertarget{_command_list_8c}{}\label{_command_list_8c}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CommandList/CommandList.c@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CommandList/CommandList.c}}
+{\ttfamily \+\#include "{}Command\+List.\+h"{}}\newline
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+{\ttfamily \+\#include "{}Common/\+\+Data\+Structures.\+h"{}}\newline
+{\ttfamily \+\#include "{}Common\+Strings/\+\+Common\+Strings.\+h"{}}\newline
+{\ttfamily \+\#include "{}Themes/\+\+Themes.\+h"{}}\newline
+{\ttfamily \+\#include "{}Delay/\+\+Delay.\+h"{}}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$ctype.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_command_list_8c_ae017d5e827ccc3ad4c3b494e5802cce1}\label{_command_list_8c_ae017d5e827ccc3ad4c3b494e5802cce1} 
+\+\#define {\bfseries PROGMEMBUFFERSIZE}~20
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_command_list_8c_aa5f6410ae5b5deb261c8b86b825d464a}\label{_command_list_8c_aa5f6410ae5b5deb261c8b86b825d464a} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries Read\+From\+PROGMEM} (PGM\+\_\+P msg)
+\item 
+\Hypertarget{_command_list_8c_a1763b997fabc337493ed4e647e41c601}\label{_command_list_8c_a1763b997fabc337493ed4e647e41c601} 
+void {\bfseries Set\+Command\+Mode} (enum COMMANDMODE mode)
+\item 
+\Hypertarget{_command_list_8c_a7ed9dca202b8dd29aa6bc547dccf451a}\label{_command_list_8c_a7ed9dca202b8dd29aa6bc547dccf451a} 
+void {\bfseries Process\+Command\+From\+Menus} (char \texorpdfstring{$\ast$}{*}buf)
+\item 
+\Hypertarget{_command_list_8c_aac45c1e193f68ffbcd3ece48388f8566}\label{_command_list_8c_aac45c1e193f68ffbcd3ece48388f8566} 
+void {\bfseries Process\+Command\+From\+Value\+Entered} (char \texorpdfstring{$\ast$}{*}buf)
+\item 
+\Hypertarget{_command_list_8c_a18be5bba260d799d14aa810dba399671}\label{_command_list_8c_a18be5bba260d799d14aa810dba399671} 
+void {\bfseries Command\+\_\+\+Process\+\_\+\+Monitor} (void)
+\end{DoxyCompactItemize}

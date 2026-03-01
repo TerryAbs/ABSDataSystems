@@ -1,0 +1,26 @@
+\doxysection{LED\+\_\+\+Bar.\+h}
+\hypertarget{_l_e_d___bar_8h_source}{}\label{_l_e_d___bar_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/LED\_BAR/LED\_Bar.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/LED\_BAR/LED\_Bar.h}}
+\doxymbox{\hyperlink{_l_e_d___bar_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ PORT\_A\_0\ \ \ \ 0x01}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ PORT\_A\_1\ \ \ \ 0x02}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ PORT\_A\_2\ \ \ \ 0x04}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PORT\_A\_3\ \ \ \ 0x08\ \ \ \ }}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ PORT\_A\_4\ \ \ \ 0x10}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ PORT\_A\_5\ \ \ \ 0x20}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ PORT\_A\_6\ \ \ \ 0x40}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ PORT\_A\_7\ \ \ \ 0x80}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LED\_MASK\ (PORT\_A\_7\ |\ PORT\_A\_6\ |\ PORT\_A\_5\ |\ PORT\_A\_4\ |\ PORT\_A\_3\ |\ PORT\_A\_2\ |\ PORT\_A\_1\ |\ PORT\_A\_0)\ \ \ \ \ }\textcolor{comment}{//\ LEDs\ on\ PORTA[7:0]}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ Max\_BarSize\ 8}}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ LED\_Bar\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ LED\_Bar\_Display(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ LED\_Bar\_SetRange(\textcolor{keywordtype}{float}\ value);}
+
+\end{DoxyCode}

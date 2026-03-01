@@ -1,0 +1,50 @@
+\doxysection{Timers.\+h}
+\hypertarget{_timers_8h_source}{}\label{_timers_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Timers/Timers.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Timers/Timers.h}}
+\doxymbox{\hyperlink{_timers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ TimersSystemSize\ 1}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ PF4\_TimerOutputPin\ 0x10}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{enum}\ DUTYCYCLELIST\{}
+\DoxyCodeLine{00043\ \ \ \ \ DUTYCYCLELIST\_10\ \ =\ 10,}
+\DoxyCodeLine{00044\ \ \ \ \ DUTYCYCLELIST\_20\ \ =\ 20,}
+\DoxyCodeLine{00045\ \ \ \ \ DUTYCYCLELIST\_30\ \ =\ 30,}
+\DoxyCodeLine{00046\ \ \ \ \ DUTYCYCLELIST\_40\ \ =\ 40,}
+\DoxyCodeLine{00047\ \ \ \ \ DUTYCYCLELIST\_50\ \ =\ 50,}
+\DoxyCodeLine{00048\ \ \ \ \ DUTYCYCLELIST\_60\ \ =\ 60,}
+\DoxyCodeLine{00049\ \ \ \ \ DUTYCYCLELIST\_70\ \ =\ 70,}
+\DoxyCodeLine{00050\ \ \ \ \ DUTYCYCLELIST\_80\ \ =\ 80,}
+\DoxyCodeLine{00051\ \ \ \ \ DUTYCYCLELIST\_90\ =\ 90}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_timers_configuration}{TimersConfiguration}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00059\ \ \ \ \ uint8\_t\ clksel;}
+\DoxyCodeLine{00060\ \ \ \ \ uint8\_t\ waveform;}
+\DoxyCodeLine{00061\ \ \ \ \ uint16\_t\ period;}
+\DoxyCodeLine{00062\ \ \ \ \ uint16\_t\ compare;}
+\DoxyCodeLine{00063\ \ \ \ \ uint8\_t\ dutyCycle;}
+\DoxyCodeLine{00064\ \}\ \doxymbox{\hyperlink{struct_timers_configuration}{TimersConfiguration}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ Timers\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ Timers\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ Timers\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ *GetPtrToTimersData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ Timers\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ Timers\_Load\_Config(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ Timers\_ReInitialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ Program\_Timer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ GetTimersPeriod(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ GetTimersCompare(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00077\ uint16\_t\ ComputeDutyCycle(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

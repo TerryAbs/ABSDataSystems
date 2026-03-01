@@ -1,0 +1,81 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Common\+Strings/\+\+Common\+Strings.h File Reference}
+\hypertarget{_common_strings_8h}{}\label{_common_strings_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CommonStrings/CommonStrings.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CommonStrings/CommonStrings.h}}
+
+
+Common string constants for AVR64\+DD32 project.  
+
+
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include $<$avr/\+pgmspace.\+h$>$}\newline
+{\ttfamily \+\#include "{}Common\+Msgs\+\_\+list.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{_common_strings_8h_a0a313b770d5cc8d26cc2651e657cf6d3}{make\+Strings\+With\+Size}}(name,  text)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common string constants for AVR64\+DD32 project. 
+
+Provides centralized storage of frequently used strings in PROGMEM. Reduces code duplication and saves RAM by storing strings in flash. Includes labels, prompts, error messages, and format strings.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{String Categories}
+
+\begin{DoxyItemize}
+\item Display labels (INSTANT, AVERAGE, DIFFERENTIAL, etc.)
+\item User prompts ("{}\+Enter value:\+"{}, "{}\+Select option:\+"{}, etc.)
+\item Error messages ("{}\+Invalid input"{}, "{}\+Out of range"{}, etc.)
+\item Success messages ("{}\+Configuration saved"{}, "{}\+Operation complete"{})
+\item Unit strings ("{}\+V"{}, "{}\+Hz"{}, "{}m\+A"{}, etc.)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Usage Pattern}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ In\ header:}}
+\DoxyCodeLine{\textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ msg\_INSTANT[]\ PROGMEM;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ In\ source:}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ msg\_INSTANT[]\ PROGMEM\ =\ \textcolor{stringliteral}{"{}INSTANT"{}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ In\ code:}}
+\DoxyCodeLine{printf\_P(PSTR(\textcolor{stringliteral}{"{}ADC\ \%S"{}}),\ msg\_INSTANT);}
+
+\end{DoxyCode}
+
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+All strings stored in PROGMEM (flash) to save RAM 
+
+Access via printf\+\_\+\+P() with S format specifier 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_common_msgs__list_8h}{Common\+Msgs\+\_\+list.\+h} for complete string list 
+\end{DoxySeeAlso}
+
+
+\label{doc-define-members}
+\Hypertarget{_common_strings_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_common_strings_8h_a0a313b770d5cc8d26cc2651e657cf6d3}\index{CommonStrings.h@{CommonStrings.h}!makeStringsWithSize@{makeStringsWithSize}}
+\index{makeStringsWithSize@{makeStringsWithSize}!CommonStrings.h@{CommonStrings.h}}
+\doxysubsubsection{\texorpdfstring{makeStringsWithSize}{makeStringsWithSize}}
+{\footnotesize\ttfamily \label{_common_strings_8h_a0a313b770d5cc8d26cc2651e657cf6d3} 
+\+\#define make\+Strings\+With\+Size(\begin{DoxyParamCaption}\item[{}]{name}{, }\item[{}]{text}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ name[]\ PROGMEM;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\textcolor{keyword}{enum}\ \{\ name\#\#\_LEN\ =\ (uint8\_t)(\textcolor{keyword}{sizeof}(text)\ -\/\ 1)\ \};}
+
+\end{DoxyCode}

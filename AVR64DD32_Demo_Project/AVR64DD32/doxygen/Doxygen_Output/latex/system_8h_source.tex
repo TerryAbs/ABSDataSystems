@@ -1,0 +1,48 @@
+\doxysection{system.\+h}
+\hypertarget{system_8h_source}{}\label{system_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/system.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/system.h}}
+\doxymbox{\hyperlink{system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifndef\ SYSTEM\_INCLUDED}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SYSTEM\_INCLUDED}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{ccp_8h}{ccp.h}}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{port_8h}{port.h}}"{}}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ mcu\_init(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{/*\ On\ AVR\ devices\ all\ peripherals\ are\ enable\ from\ power\ on\ reset,\ this}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ \ \ \ \ *\ disables\ all\ peripherals\ to\ save\ power.\ Driver\ shall\ enable}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ \ *\ peripheral\ if\ used\ */}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{/*\ Set\ all\ pins\ to\ low\ power\ mode\ */}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTA\ +\ 0x10\ +\ i)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTC\ +\ 0x10\ +\ i)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTD\ +\ 0x10\ +\ i)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTF\ +\ 0x10\ +\ i)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SYSTEM\_INCLUDED\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

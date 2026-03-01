@@ -1,0 +1,131 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Events/\+\+Events.h File Reference}
+\hypertarget{_events_8h}{}\label{_events_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Events/Events.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Events/Events.h}}
+
+
+Event System driver for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_events_configuration}{Events\+Configuration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_events_8h_a4d13b734720cecd326b08b43c675d9b5}\label{_events_8h_a4d13b734720cecd326b08b43c675d9b5} 
+\+\#define {\bfseries Events\+System\+Size}~1
+\item 
+\Hypertarget{_events_8h_a031d2aa235daed29b9abec9a8841d4ac}\label{_events_8h_a031d2aa235daed29b9abec9a8841d4ac} 
+\+\#define {\bfseries EVOUT\+\_\+\+Pin}~0x80
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_events_8h_a8e9451b26df5f1350e93b42ed4ded754}\label{_events_8h_a8e9451b26df5f1350e93b42ed4ded754} 
+typedef struct Events\+Configuration {\bfseries Events\+Configuration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_events_8h_a9f5a84f1cc4200458606ac800ddc460a}\label{_events_8h_a9f5a84f1cc4200458606ac800ddc460a} 
+enum {\bfseries EVENTMODES} \{ {\bfseries EVENTMODES\+\_\+\+ADC}
+, {\bfseries EVENTMODES\+\_\+\+CCL}
+, {\bfseries EVENTMODES\+\_\+\+RTC}
+, {\bfseries EVENTMODES\+\_\+\+ZCD}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_events_8h_ab6887047c5ca1083f250caa3d4c16f8b}\label{_events_8h_ab6887047c5ca1083f250caa3d4c16f8b} 
+void {\bfseries Events\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_events_8h_ac0ce840ec26f6082a45b13f9627233f4}\label{_events_8h_ac0ce840ec26f6082a45b13f9627233f4} 
+void {\bfseries Events\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_events_8h_a6d64199c33354f63922598980d310483}\label{_events_8h_a6d64199c33354f63922598980d310483} 
+void {\bfseries Events\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_events_8h_ade8a1dcdcca0277828ccfc4122866860}\label{_events_8h_ade8a1dcdcca0277828ccfc4122866860} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+Events\+Data} (void)
+\item 
+\Hypertarget{_events_8h_a63ce3e2463f1c62276da2bcd63703b0a}\label{_events_8h_a63ce3e2463f1c62276da2bcd63703b0a} 
+void {\bfseries Events\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_events_8h_afc2f4b82ac011d1cca57964b53ed8792}\label{_events_8h_afc2f4b82ac011d1cca57964b53ed8792} 
+void {\bfseries Events\+\_\+\+Load\+\_\+\+Config} (void)
+\item 
+\Hypertarget{_events_8h_a8d4b644375c5992fe8eaa4d429fffee4}\label{_events_8h_a8d4b644375c5992fe8eaa4d429fffee4} 
+void {\bfseries Events\+\_\+\+Re\+Initialize} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Event System driver for AVR64\+DD32. 
+
+Implements the Event System (EVSYS) for hardware-\/based peripheral interconnection without CPU intervention. Allows direct routing of events between peripherals (timers, ADC, CCL, ports, etc.).
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Event System Capabilities}
+
+\begin{DoxyItemize}
+\item 10 event channels (0-\/9)
+\item Synchronous and asynchronous events
+\item Direct peripheral-\/to-\/peripheral connection
+\item Software event generation
+\item Port pin event inputs
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Common Event Routing Examples}
+
+\begin{DoxyItemize}
+\item Timer overflow ? ADC start conversion
+\item Port pin change ? CCL input
+\item RTC overflow ? Event output pin
+\item CCL output ? Timer capture input
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Event Generators (Examples)}
+
+\begin{DoxyItemize}
+\item Timer/\+\+Counter overflow or compare match
+\item ADC conversion complete
+\item RTC compare or overflow
+\item Port pins (EVOUT)
+\item CCL LUT outputs
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Event Users (Examples)}
+
+\begin{DoxyItemize}
+\item ADC start conversion
+\item Timer capture/\+count
+\item CCL inputs
+\item EVOUT pins
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Events propagate in hardware -\/ no CPU overhead 
+
+Asynchronous events work even when CPU is in sleep mode 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Ensure event generators and users are on compatible channels 
+
+Some events are synchronous -\/ verify timing requirements
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+AVR64\+DD32 datasheet section 16 (Event System) 
+
+\doxylink{_menu___e_v_e_n_t_s_8h_source}{Menu\+\_\+\+EVENTS.\+h} for configuration interface 
+\end{DoxySeeAlso}

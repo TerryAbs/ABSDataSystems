@@ -1,0 +1,62 @@
+\doxysection{CCL.\+h}
+\hypertarget{_c_c_l_8h_source}{}\label{_c_c_l_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CCL/CCL.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CCL/CCL.h}}
+\doxymbox{\hyperlink{_c_c_l_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ PF0\ \ \ \ \ 0x01}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ PF1\ \ \ \ \ 0x02}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ PF2\ \ \ \ \ 0x04}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ PF3\ \ \ \ \ 0x08}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ PD1\ \ \ \ \ 0x02}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ PD2\ \ \ \ \ 0x04}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ PD3\ \ \ \ \ 0x08}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ Pin\ definitions}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ PF0\_INPUT\_A\_PIN\ \ \ \ \ PF0}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ PF1\_INPUT\_B\_PIN\ \ \ \ \ PF1}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ PF2\_INPUT\_C\_PIN\ \ \ \ \ PF2}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ PF3\_LUT3\_OUT\_PIN\ \ \ \ PF3}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ PD1\_OUTPUT\_A\_PIN\ \ \ \ \ PD1}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ PD2\_OUTPUT\_B\_PIN\ \ \ \ \ PD2}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ PD3\_OUTPUT\_C\_PIN\ \ \ \ \ PD3}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ CCLSystemSize\ 1}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{enum}\ CCL\_INPUTSOURCE\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ CCL\_INPUTS\_A,}
+\DoxyCodeLine{00079\ \ \ \ \ CCL\_INPUTS\_A\_B,}
+\DoxyCodeLine{00080\ \ \ \ \ CCL\_INPUTS\_A\_B\_C,}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_c_c_l_configuration}{CCLConfiguration}}}
+\DoxyCodeLine{00083\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00086\ \ \ \ \ uint8\_t\ steps;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{enum}\ CCL\_INPUTSOURCE\ inputSource;}
+\DoxyCodeLine{00088\ \ \ \ \ uint8\_t\ pattern;}
+\DoxyCodeLine{00089\ \}\ \doxymbox{\hyperlink{struct_c_c_l_configuration}{CCLConfiguration}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ CCL\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ CCL\_DriveTestData(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ CCL\_ReInitialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ CCL\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ CCL\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ *GetPtrToCCLData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ CCL\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ CCL\_Load\_Config(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ GetCCLSteps(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ SetCCLSteps(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ GetCCLPattern(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ SetCCLPattern(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{bool}\ GetCCLEnabledState(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

@@ -1,0 +1,80 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Command\+List/\+\+Command\+List.h File Reference}
+\hypertarget{_command_list_8h}{}\label{_command_list_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CommandList/CommandList.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CommandList/CommandList.h}}
+
+
+Command parser and dispatcher for AVR64\+DD32 system.  
+
+
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_command_list_8h_a64028bcc243b24591826f13c60d5b39a}\label{_command_list_8h_a64028bcc243b24591826f13c60d5b39a} 
+enum {\bfseries COMMANDMODE} \{ {\bfseries COMMANDMODE\+\_\+\+MENU}
+, {\bfseries COMMANDMODE\+\_\+\+VALUE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_command_list_8h_aac45c1e193f68ffbcd3ece48388f8566}\label{_command_list_8h_aac45c1e193f68ffbcd3ece48388f8566} 
+void {\bfseries Process\+Command\+From\+Value\+Entered} (char \texorpdfstring{$\ast$}{*}buf)
+\item 
+\Hypertarget{_command_list_8h_a1763b997fabc337493ed4e647e41c601}\label{_command_list_8h_a1763b997fabc337493ed4e647e41c601} 
+void {\bfseries Set\+Command\+Mode} (enum COMMANDMODE mode)
+\item 
+\Hypertarget{_command_list_8h_a7ed9dca202b8dd29aa6bc547dccf451a}\label{_command_list_8h_a7ed9dca202b8dd29aa6bc547dccf451a} 
+void {\bfseries Process\+Command\+From\+Menus} (char \texorpdfstring{$\ast$}{*}buf)
+\item 
+\Hypertarget{_command_list_8h_a18be5bba260d799d14aa810dba399671}\label{_command_list_8h_a18be5bba260d799d14aa810dba399671} 
+void {\bfseries Command\+\_\+\+Process\+\_\+\+Monitor} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command parser and dispatcher for AVR64\+DD32 system. 
+
+Implements command table lookup and execution. Maps text commands to function callbacks. Supports command history and help system.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Command Structure}
+Each command contains:\+
+\begin{DoxyItemize}
+\item Command string (e.\+g., "{}adc"{}, "{}dac"{})
+\item Description (help text)
+\item Function pointer (callback on match)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Command Processing}
+
+\begin{DoxyEnumerate}
+\item Receive command string
+\item Search command table
+\item Execute callback if found
+\item Display error if not found
+\end{DoxyEnumerate}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Built-\/in Commands}
+
+\begin{DoxyItemize}
+\item help:\+ Display command list
+\item clear:\+ Clear screen
+\item version:\+ Show firmware version
+\item reset:\+ Software reset
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Commands stored in PROGMEM 
+
+Case-\/insensitive matching 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_menu___processor_8h}{Menu\+\_\+\+Processor.\+h} for menu integration 
+\end{DoxySeeAlso}

@@ -1,0 +1,48 @@
+\doxysection{AVR Code utility functions }
+\hypertarget{group__doc__driver__utils}{}\label{group__doc__driver__utils}\index{AVR Code utility functions@{AVR Code utility functions}}
+\doxysubsubsection*{Topics}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__doc__driver__utils__mcu__init}{MCU Init}}
+\item 
+\doxymbox{\hyperlink{group__doc__driver__utils__atomic}{Atomic memory access and critical sections}}
+\item 
+\doxymbox{\hyperlink{group__doc__driver__utils__compiler}{Compiler abstraction}}
+\item 
+\doxymbox{\hyperlink{group__doc__driver__utils__interrupts}{ISR abstraction}}
+\item 
+\doxymbox{\hyperlink{group__doc__driver__utils__assert}{Functionality for assert.}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{group__doc__driver__utils_ga25f003de16c08a4888b69f619d70f427}{ARRAY\+\_\+\+SIZE}}(a)
+\begin{DoxyCompactList}\small\item\em Retrieve array size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Compiler abstraction layer and code utilities for AVR. This module provides various abstraction layers and utilities to make code compatible between different compilers. 
+
+\label{doc-define-members}
+\Hypertarget{group__doc__driver__utils_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__doc__driver__utils_ga25f003de16c08a4888b69f619d70f427}\index{AVR Code utility functions@{AVR Code utility functions}!ARRAY\_SIZE@{ARRAY\_SIZE}}
+\index{ARRAY\_SIZE@{ARRAY\_SIZE}!AVR Code utility functions@{AVR Code utility functions}}
+\doxysubsubsection{\texorpdfstring{ARRAY\_SIZE}{ARRAY\_SIZE}}
+{\footnotesize\ttfamily \label{group__doc__driver__utils_ga25f003de16c08a4888b69f619d70f427} 
+\+\#define ARRAY\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{a}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(\textcolor{keyword}{sizeof}(a)\ /\ \textcolor{keyword}{sizeof}((a)[0]))}
+
+\end{DoxyCode}
+
+
+Retrieve array size. 
+
+\input{group__doc__driver__utils__mcu__init}
+\input{group__doc__driver__utils__atomic}
+\input{group__doc__driver__utils__compiler}
+\input{group__doc__driver__utils__interrupts}
+\input{group__doc__driver__utils__assert}

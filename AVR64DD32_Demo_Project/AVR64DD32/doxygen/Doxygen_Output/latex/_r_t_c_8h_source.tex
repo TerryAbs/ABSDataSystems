@@ -1,0 +1,44 @@
+\doxysection{RTC.\+h}
+\hypertarget{_r_t_c_8h_source}{}\label{_r_t_c_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/RTC/RTC.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/RTC/RTC.h}}
+\doxymbox{\hyperlink{_r_t_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ RTCSystemSize\ 1}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ RTCDisplayBuffer\ 32}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ RTC\ time\ structure}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structrtc__time__t}{rtc\_time\_t}}\{}
+\DoxyCodeLine{00046\ \ \ \ \ uint8\_t\ second;}
+\DoxyCodeLine{00047\ \ \ \ \ uint8\_t\ minute;}
+\DoxyCodeLine{00048\ \ \ \ \ uint8\_t\ hour;}
+\DoxyCodeLine{00049\ \ \ \ \ uint8\_t\ day;}
+\DoxyCodeLine{00050\ \ \ \ \ uint8\_t\ month;}
+\DoxyCodeLine{00051\ \ \ \ \ uint16\_t\ year;}
+\DoxyCodeLine{00052\ \}\ \doxymbox{\hyperlink{structrtc__time__t}{rtc\_time\_t}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_r_t_c_configuration}{RTCConfiguration}}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00058\ \}\ \doxymbox{\hyperlink{struct_r_t_c_configuration}{RTCConfiguration}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ RTC\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ RTC\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ RTC\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ *GetPtrToRTCData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ RTC\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ RTC\_Load\_Config(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ RTC\_Set\_Time(uint8\_t\ hour,\ uint8\_t\ minute,\ uint8\_t\ second);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ RTC\_Set\_Date(uint16\_t\ year,\ uint8\_t\ month,\ uint8\_t\ day);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ RTC\_Increment\_Time(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{bool}\ Is\_Leap\_Year(uint16\_t\ year);}
+\DoxyCodeLine{00070\ uint8\_t\ Days\_In\_Month(uint8\_t\ month,\ uint16\_t\ year);}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ FormatTime(\textcolor{keywordtype}{char}\ *buffer,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structrtc__time__t}{rtc\_time\_t}}\ *time);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{bool}\ GetRTCEnabledState(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

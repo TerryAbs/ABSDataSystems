@@ -1,0 +1,83 @@
+\doxysection{USART.\+h}
+\hypertarget{_u_s_a_r_t_8h_source}{}\label{_u_s_a_r_t_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/USART/USART.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/USART/USART.h}}
+\doxymbox{\hyperlink{_u_s_a_r_t_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ USARTSystemSize\ 1}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ PA2\_USART0\_TX\ 0x04}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ PA3\_USART0\_RX\ 0x08}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ USART0\_BAUD\_RATE(BAUD\_RATE)\ ((float)(24000000\ *\ 64\ /\ (16\ *\ (float)BAUD\_RATE))\ +\ 0.5)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ USART\_0\_BufferSize\ 100}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{enum}\ BAUDRATES\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ BAUDRATES\_300,}
+\DoxyCodeLine{00049\ \ \ \ \ BAUDRATES\_600,}
+\DoxyCodeLine{00050\ \ \ \ \ BAUDRATES\_1200,}
+\DoxyCodeLine{00051\ \ \ \ \ BAUDRATES\_2400,}
+\DoxyCodeLine{00052\ \ \ \ \ BAUDRATES\_4800,}
+\DoxyCodeLine{00053\ \ \ \ \ BAUDRATES\_9600,}
+\DoxyCodeLine{00054\ \ \ \ \ BAUDRATES\_14400,}
+\DoxyCodeLine{00055\ \ \ \ \ BAUDRATES\_19200,}
+\DoxyCodeLine{00056\ \ \ \ \ BAUDRATES\_28800,}
+\DoxyCodeLine{00057\ \ \ \ \ BAUDRATES\_38400,}
+\DoxyCodeLine{00058\ \ \ \ \ BAUDRATES\_57600,}
+\DoxyCodeLine{00059\ \ \ \ \ BAUDRATES\_115200,}
+\DoxyCodeLine{00060\ \ \ \ \ BAUDRATES\_230400,}
+\DoxyCodeLine{00061\ \ \ \ \ BAUDRATES\_460800,}
+\DoxyCodeLine{00062\ \ \ \ \ BAUDRATES\_921600,\ \ \ }
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_baud_rate_conversion}{BaudRateConversion}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{enum}\ BAUDRATES\ baudrate;}
+\DoxyCodeLine{00068\ \ \ \ \ uint32\_t\ value;}
+\DoxyCodeLine{00069\ \}\doxymbox{\hyperlink{struct_baud_rate_conversion}{BaudRateConversion}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_u_s_a_r_t_configuration}{USARTConfiguration}}}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00075\ \ \ \ \ uint8\_t\ baud\_rate;}
+\DoxyCodeLine{00076\ \ \ \ \ uint8\_t\ parity;\ \ \ \ \ \ \textcolor{comment}{//\ 0=None,\ 1=Even,\ 2=Odd}}
+\DoxyCodeLine{00077\ \ \ \ \ uint8\_t\ stop\_bits;\ \ \ \textcolor{comment}{//\ 1\ or\ 2}}
+\DoxyCodeLine{00078\ \ \ \ \ uint8\_t\ data\_bits;\ \ \ \textcolor{comment}{//\ 5,\ 6,\ 7,\ 8,\ or\ 9}}
+\DoxyCodeLine{00079\ \}\ \doxymbox{\hyperlink{struct_u_s_a_r_t_configuration}{USARTConfiguration}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ USART\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ USART\_ReInitialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ USART\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ USART\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ *GetPtrToUSARTData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ USART\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ USART\_Load\_Config(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{char}\ *DecodeBaudRate(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{char}\ *DecodeParity(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{char}\ *DecodeStopbits(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{char}\ *DecodeDataBits(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_a1d9075101a5057660e79d0cff3525d81}{USART\_0\_enable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_a9c3529a15c93d78c50fd178578eb24af}{USART\_0\_enable\_rx}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_aac06a36c311042c92763bb21357dd8b9}{USART\_0\_enable\_tx}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_a824fee6f2e4270bdfad29e5db140ba89}{USART\_0\_disable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00098\ uint8\_t\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_a8b03ea75412969ddf0cdcb97ac7505f5}{USART\_0\_get\_data}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_a809c27763fe080caac2c78022e9c5437}{USART\_0\_is\_tx\_ready}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_a8194a6de09849f72af72c892028e269e}{USART\_0\_is\_rx\_ready}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_a2aa64b125f72ca69729eba3c1f588378}{USART\_0\_is\_tx\_busy}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00102\ uint8\_t\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_a41f355e96c497bf6a0d71ae080c7087f}{USART\_0\_read}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_u_s_a_r_t_8h_ac62803942950806dd1663834efd2448d}{USART\_0\_write}}(\textcolor{keyword}{const}\ uint8\_t\ data);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{void}\ USART\_0\_ClearBuffer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{bool}\ USART\_0\_Print(\textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ This\ forces\ the\ completions\ of\ the\ previous\ write\ so\ this\ }}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ Message\ is\ alway\ accepted.}}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ USART\_0\_Print\_Immediate(\textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ USART\_0\_AppendCharToBuffer(\textcolor{keywordtype}{char}\ msg);}
+
+\end{DoxyCode}

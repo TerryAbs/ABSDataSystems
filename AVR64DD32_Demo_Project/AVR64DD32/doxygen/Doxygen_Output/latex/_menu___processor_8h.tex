@@ -1,0 +1,84 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Menu\+\_\+\+Report\+\_\+\+Processor/\+\+Menu\+\_\+\+Processor/\+\+Menu\+\_\+\+Processor.h File Reference}
+\hypertarget{_menu___processor_8h}{}\label{_menu___processor_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Menu\_Processor/Menu\_Processor.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Menu\_Processor/Menu\_Processor.h}}
+
+
+Menu processing engine for AVR64\+DD32 demonstration system.  
+
+
+{\ttfamily \+\#include "{}Menu\+\_\+\+Report\+\_\+\+Processor/\+\+Terminal\+\_\+\+Commands/\+\+Terminal\+\_\+\+Commands.\+h"{}}\newline
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+{\ttfamily \+\#include "{}Common/\+\+Data\+Structures.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_menu___processor_8h_a6735b5bbb4007694b15a5c435522a40d}\label{_menu___processor_8h_a6735b5bbb4007694b15a5c435522a40d} 
+void {\bfseries Menu\+\_\+\+Processor\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_menu___processor_8h_acf3bd9c8f74ec8797c6e9aeb5c2ac039}\label{_menu___processor_8h_acf3bd9c8f74ec8797c6e9aeb5c2ac039} 
+void {\bfseries Menu\+System\+\_\+\+Processor\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_menu___processor_8h_a3a502976c9ebe45002dcee5dfd7dd4aa}\label{_menu___processor_8h_a3a502976c9ebe45002dcee5dfd7dd4aa} 
+bool {\bfseries Menu\+\_\+\+Processor\+\_\+\+Status} (void)
+\item 
+\Hypertarget{_menu___processor_8h_a43e61c29d1848e301c2ee840af99c00d}\label{_menu___processor_8h_a43e61c29d1848e301c2ee840af99c00d} 
+void {\bfseries Menu\+\_\+\+Display\+Menu} (void)
+\item 
+\Hypertarget{_menu___processor_8h_a03fba40a7b9b6b74d1c7ef75a45988be}\label{_menu___processor_8h_a03fba40a7b9b6b74d1c7ef75a45988be} 
+void {\bfseries Set\+Active\+Menu} (\doxymbox{\hyperlink{struct_menu_system}{Menu\+System}} \texorpdfstring{$\ast$}{*}menu)
+\item 
+\Hypertarget{_menu___processor_8h_a6e7c83b7843c89152b026563a54e83ca}\label{_menu___processor_8h_a6e7c83b7843c89152b026563a54e83ca} 
+const struct \doxymbox{\hyperlink{struct_menu_system}{Menu\+System}} \texorpdfstring{$\ast$}{*} {\bfseries Get\+Active\+Menu} (void)
+\item 
+\Hypertarget{_menu___processor_8h_a63de91563d213228f855d89e33aeb4f5}\label{_menu___processor_8h_a63de91563d213228f855d89e33aeb4f5} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Data\+Ptr\+For\+Menu\+Item} (const char \texorpdfstring{$\ast$}{*}msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Menu processing engine for AVR64\+DD32 demonstration system. 
+
+Implements table-\/driven menu system with state machine control. Handles menu rendering, user input, data entry, and navigation. Supports multiple menu types:\+ lists, dropdowns, and data entry.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Menu System Architecture}
+
+\begin{DoxyEnumerate}
+\item Header rendering:\+ Draws menu title and instructions
+\item Body rendering:\+ Displays menu options with command shortcuts
+\item Data entry:\+ Shows current configuration values
+\item Input processing:\+ Handles user commands and navigation
+\end{DoxyEnumerate}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Menu Types}
+
+\begin{DoxyItemize}
+\item MENU:\+ Command-\/driven list menu
+\item DROPDOWN:\+ Selection from predefined options
+\item DATAENTRY:\+ Direct value entry with validation
+\item DISPLAYDATA:\+ Read-\/only information display
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{State Machine}
+IDLE ? START ? HEADER ? BODY ? DATAENTRY ? DISPLAYPROMPT
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Menus defined as const structures in PROGMEM 
+
+Function pointers enable menu action callbacks 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Menu buffer size limits maximum menu complexity
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_data_structures_8h}{Data\+Structures.\+h} for \doxylink{struct_menu_system}{Menu\+System} structure 
+
+\doxylink{_terminal___commands_8h}{Terminal\+\_\+\+Commands.\+h} for VT102 control 
+\end{DoxySeeAlso}

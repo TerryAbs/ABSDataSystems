@@ -1,0 +1,70 @@
+\doxysection{Function\+Signature Class Reference}
+\hypertarget{classcheck__function__signatures_1_1_function_signature}{}\label{classcheck__function__signatures_1_1_function_signature}\index{FunctionSignature@{FunctionSignature}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_ab4c414551484827583f7a9e7dc2b7fb9}\label{classcheck__function__signatures_1_1_function_signature_ab4c414551484827583f7a9e7dc2b7fb9} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, str return\+\_\+type, str name, str params, int line\+\_\+num, str full\+\_\+line)
+\item 
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_a61a1f3a6a4df93d491cd753f617782a2}\label{classcheck__function__signatures_1_1_function_signature_a61a1f3a6a4df93d491cd753f617782a2} 
+{\bfseries \+\_\+\+\_\+repr\+\_\+\+\_\+} (self)
+\item 
+bool \doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature_af8a3aad3c3d484006b75a8af454c5db6}{has\+\_\+void\+\_\+params}} (self)
+\item 
+bool \doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature_a37773aed1eeb7f32b66181f716984f8b}{has\+\_\+empty\+\_\+params}} (self)
+\item 
+bool \doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature_acb54f9c69dd2f79e28068578044fcc00}{is\+\_\+no\+\_\+param\+\_\+function}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_a8158a2d869c53eb8f38c869b380a1209}\label{classcheck__function__signatures_1_1_function_signature_a8158a2d869c53eb8f38c869b380a1209} 
+{\bfseries return\+\_\+type} = return\+\_\+type.\+strip()
+\item 
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_ab74e6bf80237ddc4109968cedc58c151}\label{classcheck__function__signatures_1_1_function_signature_ab74e6bf80237ddc4109968cedc58c151} 
+{\bfseries name} = name.\+strip()
+\item 
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_a70e26b66f11c77ea9bce446105f64ce0}\label{classcheck__function__signatures_1_1_function_signature_a70e26b66f11c77ea9bce446105f64ce0} 
+str {\bfseries params} = params.\+strip()
+\item 
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_acf3c664dd80a77823f8833ecb9a50590}\label{classcheck__function__signatures_1_1_function_signature_acf3c664dd80a77823f8833ecb9a50590} 
+{\bfseries line\+\_\+num} = line\+\_\+num
+\item 
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_ab91ffa5d81ce0094dc456561dd7f47bd}\label{classcheck__function__signatures_1_1_function_signature_ab91ffa5d81ce0094dc456561dd7f47bd} 
+{\bfseries full\+\_\+line} = full\+\_\+line.\+strip()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Represents a function signature.\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcheck__function__signatures_1_1_function_signature_a37773aed1eeb7f32b66181f716984f8b}\index{FunctionSignature@{FunctionSignature}!has\_empty\_params@{has\_empty\_params}}
+\index{has\_empty\_params@{has\_empty\_params}!FunctionSignature@{FunctionSignature}}
+\doxysubsubsection{\texorpdfstring{has\_empty\_params()}{has\_empty\_params()}}
+{\footnotesize\ttfamily \label{classcheck__function__signatures_1_1_function_signature_a37773aed1eeb7f32b66181f716984f8b} 
+ bool has\+\_\+empty\+\_\+params (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if function uses () for no parameters.\end{DoxyVerb}
+ \Hypertarget{classcheck__function__signatures_1_1_function_signature_af8a3aad3c3d484006b75a8af454c5db6}\index{FunctionSignature@{FunctionSignature}!has\_void\_params@{has\_void\_params}}
+\index{has\_void\_params@{has\_void\_params}!FunctionSignature@{FunctionSignature}}
+\doxysubsubsection{\texorpdfstring{has\_void\_params()}{has\_void\_params()}}
+{\footnotesize\ttfamily \label{classcheck__function__signatures_1_1_function_signature_af8a3aad3c3d484006b75a8af454c5db6} 
+ bool has\+\_\+void\+\_\+params (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if function uses (void) for no parameters.\end{DoxyVerb}
+ \Hypertarget{classcheck__function__signatures_1_1_function_signature_acb54f9c69dd2f79e28068578044fcc00}\index{FunctionSignature@{FunctionSignature}!is\_no\_param\_function@{is\_no\_param\_function}}
+\index{is\_no\_param\_function@{is\_no\_param\_function}!FunctionSignature@{FunctionSignature}}
+\doxysubsubsection{\texorpdfstring{is\_no\_param\_function()}{is\_no\_param\_function()}}
+{\footnotesize\ttfamily \label{classcheck__function__signatures_1_1_function_signature_acb54f9c69dd2f79e28068578044fcc00} 
+ bool is\+\_\+no\+\_\+param\+\_\+function (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if this is a no-parameter function.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+check\+\_\+function\+\_\+signatures.\+py\end{DoxyCompactItemize}

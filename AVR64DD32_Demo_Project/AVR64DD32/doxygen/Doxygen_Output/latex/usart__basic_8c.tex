@@ -1,0 +1,58 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+USART/\+usart\+\_\+basic.c File Reference}
+\hypertarget{usart__basic_8c}{}\label{usart__basic_8c}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/USART/usart\_basic.c@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/USART/usart\_basic.c}}
+
+
+USART basic driver.  
+
+
+{\ttfamily \+\#include $<$compiler.\+h$>$}\newline
+{\ttfamily \+\#include $<$clock\+\_\+config.\+h$>$}\newline
+{\ttfamily \+\#include "{}./\+usart\+\_\+basic.\+h"{}}\newline
+{\ttfamily \+\#include $<$atomic.\+h$>$}\newline
+{\ttfamily \+\#include $<$atmel\+\_\+start\+\_\+pins.\+h$>$}\newline
+{\ttfamily \+\#include $<$port.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define {\bfseries PORTMUX\+\_\+\+USART1\+\_\+0\+\_\+bm}~(1$<$$<$3)  /\+\texorpdfstring{$\ast$}{*} USART1 Signals bit 0 mask. \texorpdfstring{$\ast$}{*}/\+
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries USART\+\_\+1\+\_\+\+Initialize} (void)
+\item 
+uint8\+\_\+t \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga37dda4ef981fe9d271f288e0e57a9ee4}{USART\+\_\+1\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize USART interface If module is configured to disabled state, the clock to the USART is disabled if this is supported by the device\textquotesingle{}s clock system. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga4f0f7fa7e8d1a4f5f60a1f52ad720d9f}{USART\+\_\+1\+\_\+enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable RX and TX in USART\+\_\+1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga9d4c89df83de34d79a79d64e3eff1853}{USART\+\_\+1\+\_\+enable\+\_\+rx}} (void)
+\begin{DoxyCompactList}\small\item\em Enable RX in USART\+\_\+1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_gad15f32c9a29bf309c653eb39a1044a7c}{USART\+\_\+1\+\_\+enable\+\_\+tx}} (void)
+\begin{DoxyCompactList}\small\item\em Enable TX in USART\+\_\+1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_gac5679a28e17874930bfa49ae3bb78a17}{USART\+\_\+1\+\_\+disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable USART\+\_\+1. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga2bc29ee3e28969e730280c7859f33d3b}{USART\+\_\+1\+\_\+get\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Get received data from USART\+\_\+1. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga0ff2a70b6f0fdb1e4f53bafd9277c7c8}{USART\+\_\+1\+\_\+is\+\_\+tx\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the usart can accept data to be transmitted. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__usart__basic_gacbacf1856d59bc37b7c7588486cb0516}{USART\+\_\+1\+\_\+is\+\_\+rx\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the USART has received data. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__usart__basic_gad9268be5ab142c4e915657637fb49b96}{USART\+\_\+1\+\_\+is\+\_\+tx\+\_\+busy}} (void)
+\begin{DoxyCompactList}\small\item\em Check if USART\+\_\+1 data is transmitted. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga33f6becc7985999a041c00f341dd79e4}{USART\+\_\+1\+\_\+read}} (void)
+\begin{DoxyCompactList}\small\item\em Read one character from USART\+\_\+1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga63276e027c62bcc785c9abf002efca1a}{USART\+\_\+1\+\_\+write}} (const uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write one character to USART\+\_\+1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+USART basic driver. 
+
+(c) 2020 Microchip Technology Inc. and its subsidiaries.
+
+Subject to your compliance with these terms,you may use this software and any derivatives exclusively with Microchip products.\+It is your responsibility to comply with third party license terms applicable to your use of third party software (including open source software) that may accompany Microchip software.
+
+THIS SOFTWARE IS SUPPLIED BY MICROCHIP "{}\+AS IS"{}. NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-\/\+INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP\textquotesingle{}S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. 

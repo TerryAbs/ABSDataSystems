@@ -1,0 +1,244 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+utils/\+assembler/\+gas.h File Reference}
+\hypertarget{gas_8h}{}\label{gas_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/assembler/gas.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/assembler/gas.h}}
+
+
+Assembler abstraction layer:\+ GNU Assembler specifics.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a17f8b386ac2ef0f331bdaa4f5e21b71b}{REPEAT}}(count)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_aa53644ea7a4fec702079e066770eed6d}{END\+\_\+\+REPEAT}}()
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a3ab35e172e72f27c4210f5009fb35202}{FILL\+\_\+\+BYTES}}(count)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a3a8bd27aec4611e3c0d1168f092272a5}{SET\+\_\+\+LOC}}(offset)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a8e298c540513429b516bba4896bc2e6d}{L}}(name)
+\item 
+\Hypertarget{gas_8h_a4ec6c5fa246498ad62aa1fae32e0cc63}\label{gas_8h_a4ec6c5fa246498ad62aa1fae32e0cc63} 
+\+\#define {\bfseries EXTERN\+\_\+\+SYMBOL}(name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a8e8471b5cb4a0e8bc8cefb35cc8ebb3d}{TEXT\+\_\+\+SECTION}}(name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_add34e4da24622d99c3b28211c28cac68}{RODATA\+\_\+\+SECTION}}(name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a2d1becf75eb73256b236ed19b28f76bf}{DATA\+\_\+\+SECTION}}(name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a9c174ffe0958450a515a04007564fc19}{BSS\+\_\+\+SECTION}}(name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a4f62d0e155df806b451e332fd5a8e641}{FUNCTION}}(name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_ae2b2aca7cb222177274d51289b51228f}{PUBLIC\+\_\+\+FUNCTION}}(name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a21400c6e118a20b3b7881ae06fcc6391}{PUBLIC\+\_\+\+FUNCTION\+\_\+\+SEGMENT}}(name,  segment)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a81ab44c8186c742be6d8b16b9cb09b8b}{WEAK\+\_\+\+FUNCTION}}(name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a43ce83c479dda75a6edadaa377ed817d}{WEAK\+\_\+\+FUNCTION\+\_\+\+ALIAS}}(name,  strong\+\_\+name)
+\item 
+\+\#define \doxymbox{\hyperlink{gas_8h_a7a448fd290779d129685888f80cd76ff}{END\+\_\+\+FUNC}}(name)
+\item 
+\Hypertarget{gas_8h_a7795075d7ca3529a86ce8e60fc6f0adb}\label{gas_8h_a7795075d7ca3529a86ce8e60fc6f0adb} 
+\+\#define {\bfseries END\+\_\+\+FILE}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{gas_8h_adb47a30becc9e0b6421042ea82a11913}\label{gas_8h_adb47a30becc9e0b6421042ea82a11913} 
+macro {\bfseries ld\+\_\+addr}
+\item 
+\Hypertarget{gas_8h_a8d4df1080e164ccf5bc829f85459b1e4}\label{gas_8h_a8d4df1080e164ccf5bc829f85459b1e4} 
+macro {\bfseries reg}
+\item 
+\Hypertarget{gas_8h_a04fd985ac282d344a96c09f4a7a049f2}\label{gas_8h_a04fd985ac282d344a96c09f4a7a049f2} 
+macro sym lda w sym endm macro gas\+\_\+begin\+\_\+func {\bfseries name}
+\item 
+\Hypertarget{gas_8h_a1e7848fc01d8fbdad15ce85530e56971}\label{gas_8h_a1e7848fc01d8fbdad15ce85530e56971} 
+macro sym lda w sym endm macro gas\+\_\+begin\+\_\+func is\+\_\+public if is\+\_\+public global name endif section text {\bfseries ax}
+\item 
+\Hypertarget{gas_8h_afb10dcca6d2ad357b1e82987e16783d5}\label{gas_8h_afb10dcca6d2ad357b1e82987e16783d5} 
+macro sym lda w sym endm macro gas\+\_\+begin\+\_\+func is\+\_\+public if is\+\_\+public global name endif section text progbits type function {\bfseries is\+\_\+public}
+\item 
+\Hypertarget{gas_8h_ad8d19961c6c5914f33ba3fe8d31bf6e2}\label{gas_8h_ad8d19961c6c5914f33ba3fe8d31bf6e2} 
+macro sym lda w sym endm macro gas\+\_\+begin\+\_\+func is\+\_\+public if is\+\_\+public global name endif section text progbits type function segment if is\+\_\+public global name endif section {\bfseries segment}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Assembler abstraction layer:\+ GNU Assembler specifics. 
+
+Copyright (C) 2016 Atmel Corporation. All rights reserved.
+
+\textbackslash{}asf\+\_\+license\+\_\+start 
+
+\label{doc-define-members}
+\Hypertarget{gas_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gas_8h_a9c174ffe0958450a515a04007564fc19}\index{gas.h@{gas.h}!BSS\_SECTION@{BSS\_SECTION}}
+\index{BSS\_SECTION@{BSS\_SECTION}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{BSS\_SECTION}{BSS\_SECTION}}
+{\footnotesize\ttfamily \label{gas_8h_a9c174ffe0958450a515a04007564fc19} 
+\+\#define BSS\+\_\+\+SECTION(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.section\ name,\ \textcolor{stringliteral}{"{}aw"{}},\ @nobits}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a2d1becf75eb73256b236ed19b28f76bf}\index{gas.h@{gas.h}!DATA\_SECTION@{DATA\_SECTION}}
+\index{DATA\_SECTION@{DATA\_SECTION}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{DATA\_SECTION}{DATA\_SECTION}}
+{\footnotesize\ttfamily \label{gas_8h_a2d1becf75eb73256b236ed19b28f76bf} 
+\+\#define DATA\+\_\+\+SECTION(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.section\ name,\ \textcolor{stringliteral}{"{}aw"{}},\ @progbits}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a7a448fd290779d129685888f80cd76ff}\index{gas.h@{gas.h}!END\_FUNC@{END\_FUNC}}
+\index{END\_FUNC@{END\_FUNC}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{END\_FUNC}{END\_FUNC}}
+{\footnotesize\ttfamily \label{gas_8h_a7a448fd290779d129685888f80cd76ff} 
+\+\#define END\+\_\+\+FUNC(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.size\ \ \ name,\ .\ -\/\ name}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_aa53644ea7a4fec702079e066770eed6d}\index{gas.h@{gas.h}!END\_REPEAT@{END\_REPEAT}}
+\index{END\_REPEAT@{END\_REPEAT}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{END\_REPEAT}{END\_REPEAT}}
+{\footnotesize\ttfamily \label{gas_8h_aa53644ea7a4fec702079e066770eed6d} 
+\+\#define END\+\_\+\+REPEAT(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.endr}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a3ab35e172e72f27c4210f5009fb35202}\index{gas.h@{gas.h}!FILL\_BYTES@{FILL\_BYTES}}
+\index{FILL\_BYTES@{FILL\_BYTES}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{FILL\_BYTES}{FILL\_BYTES}}
+{\footnotesize\ttfamily \label{gas_8h_a3ab35e172e72f27c4210f5009fb35202} 
+\+\#define FILL\+\_\+\+BYTES(\begin{DoxyParamCaption}\item[{}]{count}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.fill\ \ \ count}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a4f62d0e155df806b451e332fd5a8e641}\index{gas.h@{gas.h}!FUNCTION@{FUNCTION}}
+\index{FUNCTION@{FUNCTION}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{FUNCTION}{FUNCTION}}
+{\footnotesize\ttfamily \label{gas_8h_a4f62d0e155df806b451e332fd5a8e641} 
+\+\#define FUNCTION(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gas\_begin\_func\ name\ 0}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a8e298c540513429b516bba4896bc2e6d}\index{gas.h@{gas.h}!L@{L}}
+\index{L@{L}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{L}{L}}
+{\footnotesize\ttfamily \label{gas_8h_a8e298c540513429b516bba4896bc2e6d} 
+\+\#define L(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.L\#\#name}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_ae2b2aca7cb222177274d51289b51228f}\index{gas.h@{gas.h}!PUBLIC\_FUNCTION@{PUBLIC\_FUNCTION}}
+\index{PUBLIC\_FUNCTION@{PUBLIC\_FUNCTION}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{PUBLIC\_FUNCTION}{PUBLIC\_FUNCTION}}
+{\footnotesize\ttfamily \label{gas_8h_ae2b2aca7cb222177274d51289b51228f} 
+\+\#define PUBLIC\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gas\_begin\_func\ name\ 1}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a21400c6e118a20b3b7881ae06fcc6391}\index{gas.h@{gas.h}!PUBLIC\_FUNCTION\_SEGMENT@{PUBLIC\_FUNCTION\_SEGMENT}}
+\index{PUBLIC\_FUNCTION\_SEGMENT@{PUBLIC\_FUNCTION\_SEGMENT}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{PUBLIC\_FUNCTION\_SEGMENT}{PUBLIC\_FUNCTION\_SEGMENT}}
+{\footnotesize\ttfamily \label{gas_8h_a21400c6e118a20b3b7881ae06fcc6391} 
+\+\#define PUBLIC\+\_\+\+FUNCTION\+\_\+\+SEGMENT(\begin{DoxyParamCaption}\item[{}]{name}{, }\item[{}]{segment}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gas\_begin\_func\_segm\ name\ 1\ segment}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a17f8b386ac2ef0f331bdaa4f5e21b71b}\index{gas.h@{gas.h}!REPEAT@{REPEAT}}
+\index{REPEAT@{REPEAT}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{REPEAT}{REPEAT}}
+{\footnotesize\ttfamily \label{gas_8h_a17f8b386ac2ef0f331bdaa4f5e21b71b} 
+\+\#define REPEAT(\begin{DoxyParamCaption}\item[{}]{count}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.rept\ \ \ count}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_add34e4da24622d99c3b28211c28cac68}\index{gas.h@{gas.h}!RODATA\_SECTION@{RODATA\_SECTION}}
+\index{RODATA\_SECTION@{RODATA\_SECTION}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{RODATA\_SECTION}{RODATA\_SECTION}}
+{\footnotesize\ttfamily \label{gas_8h_add34e4da24622d99c3b28211c28cac68} 
+\+\#define RODATA\+\_\+\+SECTION(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.section\ name,\ \textcolor{stringliteral}{"{}a"{}},\ @progbits}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a3a8bd27aec4611e3c0d1168f092272a5}\index{gas.h@{gas.h}!SET\_LOC@{SET\_LOC}}
+\index{SET\_LOC@{SET\_LOC}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{SET\_LOC}{SET\_LOC}}
+{\footnotesize\ttfamily \label{gas_8h_a3a8bd27aec4611e3c0d1168f092272a5} 
+\+\#define SET\+\_\+\+LOC(\begin{DoxyParamCaption}\item[{}]{offset}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.org\ \ \ \ offset}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a8e8471b5cb4a0e8bc8cefb35cc8ebb3d}\index{gas.h@{gas.h}!TEXT\_SECTION@{TEXT\_SECTION}}
+\index{TEXT\_SECTION@{TEXT\_SECTION}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{TEXT\_SECTION}{TEXT\_SECTION}}
+{\footnotesize\ttfamily \label{gas_8h_a8e8471b5cb4a0e8bc8cefb35cc8ebb3d} 
+\+\#define TEXT\+\_\+\+SECTION(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.section\ name,\ \textcolor{stringliteral}{"{}ax"{}},\ @progbits}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a81ab44c8186c742be6d8b16b9cb09b8b}\index{gas.h@{gas.h}!WEAK\_FUNCTION@{WEAK\_FUNCTION}}
+\index{WEAK\_FUNCTION@{WEAK\_FUNCTION}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{WEAK\_FUNCTION}{WEAK\_FUNCTION}}
+{\footnotesize\ttfamily \label{gas_8h_a81ab44c8186c742be6d8b16b9cb09b8b} 
+\+\#define WEAK\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gas\_weak\_function\ name}
+
+\end{DoxyCode}
+\Hypertarget{gas_8h_a43ce83c479dda75a6edadaa377ed817d}\index{gas.h@{gas.h}!WEAK\_FUNCTION\_ALIAS@{WEAK\_FUNCTION\_ALIAS}}
+\index{WEAK\_FUNCTION\_ALIAS@{WEAK\_FUNCTION\_ALIAS}!gas.h@{gas.h}}
+\doxysubsubsection{\texorpdfstring{WEAK\_FUNCTION\_ALIAS}{WEAK\_FUNCTION\_ALIAS}}
+{\footnotesize\ttfamily \label{gas_8h_a43ce83c479dda75a6edadaa377ed817d} 
+\+\#define WEAK\+\_\+\+FUNCTION\+\_\+\+ALIAS(\begin{DoxyParamCaption}\item[{}]{name}{, }\item[{}]{strong\+\_\+name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gas\_weak\_function\_alias\ name\ strong\_name}
+
+\end{DoxyCode}

@@ -1,0 +1,184 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+TWI\+\_\+\+I2\+C/\+\+TWI\+\_\+\+I2C.h File Reference}
+\hypertarget{_t_w_i___i2_c_8h}{}\label{_t_w_i___i2_c_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/TWI\_I2C/TWI\_I2C.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/TWI\_I2C/TWI\_I2C.h}}
+
+
+Two-\/\+Wire Interface (I2C) driver for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include $<$avr/\+io.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_t_w_i___i2_c_configuration}{TWI\+\_\+\+I2\+CConfiguration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a625f1c6702b4770c30a67ac3dd69e687}\label{_t_w_i___i2_c_8h_a625f1c6702b4770c30a67ac3dd69e687} 
+\+\#define {\bfseries PA0\+\_\+\+TWI\+\_\+\+I2\+C\+\_\+\+SDA}~0x01
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_adb4c453129b53621ed09b950517d1c4a}\label{_t_w_i___i2_c_8h_adb4c453129b53621ed09b950517d1c4a} 
+\+\#define {\bfseries PA1\+\_\+\+TWI\+\_\+\+I2\+C\+\_\+\+SCL}~0x02
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a5daa4b780b82b5e8678d8c7095336b62}\label{_t_w_i___i2_c_8h_a5daa4b780b82b5e8678d8c7095336b62} 
+\+\#define {\bfseries MODE0}~0x00
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a443b1268c43b309560d57e34d50b5b3b}\label{_t_w_i___i2_c_8h_a443b1268c43b309560d57e34d50b5b3b} 
+\+\#define {\bfseries MODE1}~0x10
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_ab2d8aca64e351712eae6f03e3f9d64ad}\label{_t_w_i___i2_c_8h_ab2d8aca64e351712eae6f03e3f9d64ad} 
+\+\#define {\bfseries MODE2}~0x20
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_aefdb1e345181f5aa4a2105cf0e2ec3da}\label{_t_w_i___i2_c_8h_aefdb1e345181f5aa4a2105cf0e2ec3da} 
+\+\#define {\bfseries MODE3}~0x30
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a28394472b1a6645905c7e137c6afd3c9}\label{_t_w_i___i2_c_8h_a28394472b1a6645905c7e137c6afd3c9} 
+\+\#define {\bfseries CHNL0}~0
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a64a30154eb90230aef2303ea77437f1d}\label{_t_w_i___i2_c_8h_a64a30154eb90230aef2303ea77437f1d} 
+\+\#define {\bfseries CHNL1}~1
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_aafc6c98b5133f75d8096ddd61cc8a42e}\label{_t_w_i___i2_c_8h_aafc6c98b5133f75d8096ddd61cc8a42e} 
+\+\#define {\bfseries CHNL2}~2
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_aeb59f65e6171f21e915fa75c84ab67fa}\label{_t_w_i___i2_c_8h_aeb59f65e6171f21e915fa75c84ab67fa} 
+\+\#define {\bfseries CHNL3}~3
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_ab6a1a72ca0b4ab3ffd42e4b7b0c8920f}\label{_t_w_i___i2_c_8h_ab6a1a72ca0b4ab3ffd42e4b7b0c8920f} 
+\+\#define {\bfseries ENABLEBIT}~0x40
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a271c9ad108c646396a94fef02da6d688}\label{_t_w_i___i2_c_8h_a271c9ad108c646396a94fef02da6d688} 
+\+\#define {\bfseries ADO\+\_\+\+CHANNEL}~MODE0 \texorpdfstring{$\vert$}{|} CHNL0 \texorpdfstring{$\vert$}{|}ENABLEBIT
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_ad459b044b1594d7721a303fcc7b334f4}\label{_t_w_i___i2_c_8h_ad459b044b1594d7721a303fcc7b334f4} 
+\+\#define {\bfseries PCF8591\+Add}~(0x90 $>$$>$ 1)
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_ac812377d8cb1f2dbe2c11b1e563f5006}\label{_t_w_i___i2_c_8h_ac812377d8cb1f2dbe2c11b1e563f5006} 
+\+\#define {\bfseries PCF8591\+B\+\_\+\+ADDR}~PCF8591\+Add
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a7941e1b48589003d6ba71766aa8eb16c}\label{_t_w_i___i2_c_8h_a7941e1b48589003d6ba71766aa8eb16c} 
+\+\#define {\bfseries TWI\+\_\+\+BAUD\+\_\+100K}~0x73
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_aa633538012ff28cdf4a8bb31b3838d62}\label{_t_w_i___i2_c_8h_aa633538012ff28cdf4a8bb31b3838d62} 
+\+\#define {\bfseries PCF8591\+B\+\_\+\+Range}~255
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_af4854e82fbfcce2059ca71e69218d40a}\label{_t_w_i___i2_c_8h_af4854e82fbfcce2059ca71e69218d40a} 
+\+\#define {\bfseries PCF8591\+B\+\_\+\+Ref\+\_\+\+Voltage}~3.\+3
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a5a62eef60f53ab547d014f4b5595ed43}\label{_t_w_i___i2_c_8h_a5a62eef60f53ab547d014f4b5595ed43} 
+\+\#define {\bfseries PCF8591\+B\+\_\+\+Volt\+Per\+Tick}~PCF8591\+B\+\_\+\+Ref\+\_\+\+Voltage /\+ PCF8591\+B\+\_\+\+Range
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a8ba0b47a7414897dc6920fad537bc021}\label{_t_w_i___i2_c_8h_a8ba0b47a7414897dc6920fad537bc021} 
+\+\#define {\bfseries TWI\+\_\+\+I2\+CSystem\+Size}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_aff8f0f1c2b86ad70076fcbd7e6a44ef0}\label{_t_w_i___i2_c_8h_aff8f0f1c2b86ad70076fcbd7e6a44ef0} 
+typedef struct TWI\+\_\+\+I2\+CConfiguration {\bfseries TWI\+\_\+\+I2\+CConfiguration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a0b3267b0eab435f04bf5c8dd2eb23ad7}\label{_t_w_i___i2_c_8h_a0b3267b0eab435f04bf5c8dd2eb23ad7} 
+enum {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+WRITESTATES} \{ {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+WRITESTATES\+\_\+\+WAITFORREADY}
+, {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+WRITESTATES\+\_\+\+SENDDATA}
+, {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+WRITESTATES\+\_\+\+WAITFORDATA}
+ \}
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_ae333157b6869f87e7ebd26d30fa00e91}\label{_t_w_i___i2_c_8h_ae333157b6869f87e7ebd26d30fa00e91} 
+enum {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+MONITORSTATES} \{ \newline
+{\bfseries TWI\+\_\+\+I2\+C\+\_\+\+MONITORSTATES\+\_\+\+IDLE}
+, {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+MONITORSTATES\+\_\+\+SETADDRESS}
+, {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+MONITORSTATES\+\_\+\+WAITFORADDRESS}
+, {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+MONITORSTATES\+\_\+\+SENDCOMMAND}
+, \newline
+{\bfseries TWI\+\_\+\+I2\+C\+\_\+\+MONITORSTATES\+\_\+\+SENDREADBACKCOMMAND}
+, {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+MONITORSTATES\+\_\+\+WAITFORREADSTATUS}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_ad36fd02ad8f71c779c813128d8181b95}\label{_t_w_i___i2_c_8h_ad36fd02ad8f71c779c813128d8181b95} 
+void {\bfseries TWI\+\_\+\+Stop} (void)
+\begin{DoxyCompactList}\small\item\em Send STOP condition. \end{DoxyCompactList}\item 
+\Hypertarget{_t_w_i___i2_c_8h_a98184deb42af7c7408fa9aca1e5ef195}\label{_t_w_i___i2_c_8h_a98184deb42af7c7408fa9aca1e5ef195} 
+void {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a0ae847a61168ac665b21a9a2b1268543}\label{_t_w_i___i2_c_8h_a0ae847a61168ac665b21a9a2b1268543} 
+void {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+Re\+Initialize} (void)
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a2850245947ba2cd1aba3422a7b96353e}\label{_t_w_i___i2_c_8h_a2850245947ba2cd1aba3422a7b96353e} 
+void {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a661bebba44244be22355bdca4c8b244d}\label{_t_w_i___i2_c_8h_a661bebba44244be22355bdca4c8b244d} 
+void {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+Write\+Monitor} (void)
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_ae4dd8d3e3739a05a0985f9a7a7bc9d0e}\label{_t_w_i___i2_c_8h_ae4dd8d3e3739a05a0985f9a7a7bc9d0e} 
+void {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a36153ceca0e9ad743d6e2457e8a5cd0a}\label{_t_w_i___i2_c_8h_a36153ceca0e9ad743d6e2457e8a5cd0a} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+TWI\+\_\+\+I2\+CData} (void)
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a6e7639fad6a9202c82ac891b85c02bc1}\label{_t_w_i___i2_c_8h_a6e7639fad6a9202c82ac891b85c02bc1} 
+void {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_t_w_i___i2_c_8h_a59e978cb385ece9ec68f1343b37b215c}\label{_t_w_i___i2_c_8h_a59e978cb385ece9ec68f1343b37b215c} 
+void {\bfseries TWI\+\_\+\+I2\+C\+\_\+\+Load\+\_\+\+Config} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Two-\/\+Wire Interface (I2C) driver for AVR64\+DD32. 
+
+Implements I2C master mode communication with support for EEPROM (24LC512) and FRAM (FM24\+C512C) devices. Provides read, write, and addressing functions with automatic ACK/\+\+NACK handling.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Pin Configuration}
+
+\begin{DoxyItemize}
+\item PA0:\+ SDA (Serial Data) -\/ requires pull-\/up resistor
+\item PA1:\+ SCL (Serial Clock) -\/ requires pull-\/up resistor
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Supported Devices}
+
+\begin{DoxyItemize}
+\item Microchip 24LC512 EEPROM (512Kbit, 0x50-\/0x57)
+\item Cypress FM24\+C512C FRAM (512Kbit, 0x50-\/0x57)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Features}
+
+\begin{DoxyItemize}
+\item 7-\/bit addressing
+\item Configurable bus speed (100k\+Hz/\+400k\+Hz)
+\item Page write support
+\item Random read access
+\item Bus recovery
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+External pull-\/up resistors required (2.\+2k? -\/ 4.\+7k? typical) 
+
+EEPROM requires write delay (\texorpdfstring{$\sim$}{\string~}5ms), FRAM does not 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+No clock stretching support -\/ ensure slave device compliance 
+
+Bus arbitration not implemented for multi-\/master scenarios
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_menu___t_w_i___i2_c_8h_source}{Menu\+\_\+\+TWI\+\_\+\+I2\+C.\+h} for user interface 
+\end{DoxySeeAlso}

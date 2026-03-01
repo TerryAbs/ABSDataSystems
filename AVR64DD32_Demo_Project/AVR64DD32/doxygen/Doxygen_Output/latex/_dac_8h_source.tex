@@ -1,0 +1,95 @@
+\doxysection{Dac.\+h}
+\hypertarget{_dac_8h_source}{}\label{_dac_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/DAC/Dac.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/DAC/Dac.h}}
+\doxymbox{\hyperlink{_dac_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ DACSystemSize\ 1}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ PD6\_DAC\_Pin\ 0x40\ }}
+\DoxyCodeLine{00037\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ \ \ \ here\ are\ my\ notes\ for\ the\ menus}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ \ }}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ \ \ \ 1.\ Enable/Disable}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ \ \ \ \ 2.\ Reference\ voltages\ source}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ \ \ \ \ }}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ \ \ \ \ 3.\ Set\ a\ dac\ value.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ \ \ \ 4.\ Triangle\ wave\ }}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ \ \ \ \ \ \ peak}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ \ \ \ \ \ \ \ offset}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ \ \ \ \ \ \ \ Steps}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ \ \ 5.\ Sawtooth}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ \ \ \ \ \ \ peak}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ \ \ \ \ \ offset}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ \ \ \ \ \ \ \ Steps}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ 6.\ sine\ wave}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ \ \ \ \ peak}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ offset}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ steps.}}
+\DoxyCodeLine{00056\ \textcolor{comment}{*/}\ \ \ \ \ \ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{enum}\ DAC\_DISPLAY\_MODES\{}
+\DoxyCodeLine{00060\ \ \ \ \ DAC\_DISPLAY\_MODES\_VALUE,}
+\DoxyCodeLine{00061\ \ \ \ \ DAC\_DISPLAY\_MODES\_SINEWAVE,}
+\DoxyCodeLine{00062\ \ \ \ \ DAC\_DISPLAY\_MODES\_SAWTOOTH,}
+\DoxyCodeLine{00063\ \ \ \ \ DAC\_DISPLAY\_MODES\_TRIANGLE}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_d_a_c_configuration}{DACConfiguration}}}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00070\ \ \ \ \ uint8\_t\ refRange;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{enum}\ DAC\_DISPLAY\_MODES\ mode;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{float}\ peak;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{float}\ Offset;}
+\DoxyCodeLine{00074\ \ \ \ \ uint16\_t\ steps;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \}\ \doxymbox{\hyperlink{struct_d_a_c_configuration}{DACConfiguration}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ DAC\ Resolution}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ DAC\_Resolution\ 10\ \ \ }\textcolor{comment}{//\ Bits}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ DAC\_MaxResolution\ 1023.0}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ MAX\_DISPLAYSAMPLES\ 500}}
+\DoxyCodeLine{00083\ \ \ \ \ }
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ DAC\_FloatWrite(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ DAC\_Uint16\_tWrite(uint16\_t\ value);}
+\DoxyCodeLine{00086\ uint16\_t\ VoltsToDAC(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{float}\ DACToVolts(uint16\_t\ value);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ DAC\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ DAC\_ReInitialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ DAC\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{char}\ *DACModeDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ *GetPtrToDACData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ DAC\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ DAC\_Load\_Config(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{float}\ GetMaxStepSize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{float}\ GetMaxPeak(\textcolor{keywordtype}{float}\ defaultValue);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ GetDACPeakValue(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ SetDACPeakValue(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ GetDACOffsetValue(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ SetDACOffsetValue(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ GetDACStepValue(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{void}\ SetDACStepValue(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{enum}\ DACSTATEMACHINE\{}
+\DoxyCodeLine{00108\ \ \ \ \ DACSTATEMACHINE\_INITIALIZE,}
+\DoxyCodeLine{00109\ \ \ \ \ DACSTATEMACHINE\_DISPLAYVALUE,}
+\DoxyCodeLine{00110\ \ \ \ \ DACSTATEMACHINE\_COMPUTENXEXTVALUE,}
+\DoxyCodeLine{00111\ \ \ \ \ DACSTATEMACHINE\_COMPLETE}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ DAC\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ DACValue\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ DAC\_Triangle\_Wave\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{void}\ DAC\_SawTooth\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ DAC\_SineWave\_Monitor(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

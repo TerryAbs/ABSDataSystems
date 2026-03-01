@@ -1,0 +1,122 @@
+\chapter{AVR64\+DD32 }
+\hypertarget{index}{}\label{index}\index{AVR64DD32@{AVR64DD32}}
+\hypertarget{index_doc_driver_mainpage_intro}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{index_doc_driver_mainpage_intro}
+AVR Code is a software library containing drivers, middleware and applications for AVR microcontrollers. START, a web-\/based GUI, is used to generate C-\/code according to the user\textquotesingle{}s needs.
+
+In START, the user selects the device for which to generate code. Thereafter, the user selects the driver and middleware components that he wants to include in the project. As an example, the user may choose the device Tiny817, and add the USART and SPI driver. The user can use START to configure the detailed behaviour of the drivers, and configure the device\textquotesingle{}s clock system and I/\+O pins. Finally, the user exports the project as an atzip-\/file, which can be opened in Studio or IAR Embedded Workbench. The project contains:\+
+\begin{DoxyItemize}
+\item C and assembly files that can be compiled using the GCC or IAR compilers.
+\item A directory with doxygen-\/files documenting the drivers included in the project. The doxygen-\/files can be built into a HTML-\/document by executing the command {\itshape doxygen doxyfile.\+doxygen} on a computer where doxygen is installed. The file {\itshape doxyfile.\+doxygen} is found in the {\itshape doxygen/\+generator} directory in the atzip-\/file.
+\item Example code documenting the usage of the configured drivers
+\end{DoxyItemize}\hypertarget{index_doc_driver_mainpage_driver_overview}{}\doxysection{\texorpdfstring{Driver Overview}{Driver Overview}}\label{index_doc_driver_mainpage_driver_overview}
+After the user has selected a device to configure, he will be able to add and configure drivers and middleware available for that device. In START, drivers are grouped by functionality, such as SPI, USART or Timer. After adding desired functionality, such as SPI, the user can configure the SPI function. This includes selecting:\+
+
+
+\begin{DoxyItemize}
+\item which hardware instance to use for implementing the functionality
+\item which driver to use for implementing the functionality
+\end{DoxyItemize}
+
+The devices may have several SPI hardware modules, or may implement SPI functions through other hardware modules, such as USART.
+
+The combination of hardware and driver is given by the notation
+
+Drivers:\+{\itshape Hardware}:\+{\itshape Driver\+\_\+name}
+
+where {\itshape Hardware} identifies the hardware the driver uses, and {\itshape Driver\+\_\+name} is the name of the driver. An example:\+ {\itshape Drivers:\+\+TCB:\+Timeout} is the {\itshape Timeout} driver running on an instance of timer TCB.\hypertarget{index_doc_driver_mainpage_configuring}{}\doxysection{\texorpdfstring{Configuring Drivers and Middleware}{Configuring Drivers and Middleware}}\label{index_doc_driver_mainpage_configuring}
+In general, functionality such as SPI is supported through multiple drivers. Providing multiple drivers allows the user to select the flavor best suited to his application:\+ He may choose a simple but small SPI driver if this suits his application, or a more complex but larger SPI driver if advanced SPI functionality is needed.
+
+In general, each peripheral has at least the following drivers:\+
+\begin{DoxyItemize}
+\item Init:\+ Performs device initialization only, based on the configuration the user selected in START. No API functions other than init() is provided
+\item Basic :\+ Basic functionality, provides an init-\/function and other functions allowing the user to use basic functionality of the peripheral. The Basic drivers are intended to cover functionality commonly found on all hardware implementations, and are therefore very portable across different devices. Typical examples of basic functions for an USART is to send and receive bytes, either in polled or interrupt driven mode.
+\end{DoxyItemize}\hypertarget{index_doc_driver_mainpage_usage}{}\doxysection{\texorpdfstring{Using the generated code}{Using the generated code}}\label{index_doc_driver_mainpage_usage}
+A project exported from START contains the drivers that the user configured, along with a \doxylink{main_8c}{main.\+c}-\/file that only initializes the drivers and peripherals. The user will usually have to add code to main() in \doxylink{main_8c}{main.\+c} in order for the code to do something useful.
+
+The example code in the examples directory can be used as a starting point in order to learn how to use the drivers and their API. The examples are in the form of functions that can be called directly from main().
+
+The generated drivers may use interrupt requests to communicate with hardware. The user code must normally enable global interrupts (using ENABLE\+\_\+\+INTERRUPTS()) in order for these interrupts to be serviced. The drivers usually do not enable global interrupts as part of their initialization.\hypertarget{index_doc_driver_mainpage_documentation}{}\doxysection{\texorpdfstring{Documentation of Drivers and Middleware}{Documentation of Drivers and Middleware}}\label{index_doc_driver_mainpage_documentation}
+Drivers and middlewares are documented using Doxygen. Doxygen comments are embedded into the exported C-\/code. In addition, exported projects have a {\itshape doxygen} folder containing doxygen files with additional documentation.
+
+The user must generate the doxygen documentation himself after exporting the project. This is done by going to the {\itshape doxygen/\+generator} directory and issuing the command {\itshape doxygen doxyfile.\+doxygen}. The doxygen application may need to be installed on your computer, the installer can be found on the internet.\hypertarget{index_doc_driver_mainpage_documentation_user}{}\doxysubsection{\texorpdfstring{Documenting user code}{Documenting user code}}\label{index_doc_driver_mainpage_documentation_user}
+The user can use doxygen to document his own code together with the code generated by START. The file {\itshape doxygen/\+generator/\+doxyfile.\+doxygen} can be modified to include the user\textquotesingle{}s own code in the generated documentation. Modify the tags {\itshape INPUT} and {\itshape FILE\+\_\+\+PATTERNS} in the doxyfile to do this. Refer to the doxygen manual for more information.\hypertarget{index_doc_driver_mainpage_output}{}\doxysection{\texorpdfstring{Generated Output}{Generated Output}}\label{index_doc_driver_mainpage_output}
+START exports projects as an $<$\+PROJECTNAME$>$.atzip file. This is a regular zip-\/file which can be unzipped using standard unzip-\/tools. The contents of the atzip-\/file is of course dependent on the configuration done in START. Assume a typical project configured with PWM, SPI, TIMEOUT, TIMER and USART drivers. Unzipping the atzip-\/file, or opening it in one of the supported IDEs will reveal the following directory structure:\+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MyProject/}
+\DoxyCodeLine{|-\/-\/\ atmel\_start.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Initializes\ MCU,\ drivers\ and\ middleware*}
+\DoxyCodeLine{|-\/-\/\ atmel\_start\_config.atstart\ \ *START-\/internal\ info\ on\ configuration\ of\ the\ project*}
+\DoxyCodeLine{|-\/-\/\ AtmelStart.env\_conf\ \ \ \ \ \ \ \ \ *START-\/internal\ info\ on\ configuration\ of\ the\ project*}
+\DoxyCodeLine{|-\/-\/\ AtmelStart.gpdsc\ \ \ \ \ \ \ \ \ \ \ \ *START-\/internal\ info\ on\ configuration\ of\ the\ project*}
+\DoxyCodeLine{|-\/-\/\ atmel\_start.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Initializes\ MCU,\ drivers\ and\ middleware*}
+\DoxyCodeLine{|-\/-\/\ config}
+\DoxyCodeLine{|\ \ \ \`{}-\/-\/\ clock\_config.h\ \ \ \ \ \ \ \ \ \ *Definitions\ regarding\ the\ configured\ clock\ system*}
+\DoxyCodeLine{|-\/-\/\ doxygen\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ generator}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ doxyfile.doxygen\ \ \ \ *Doxygen\ configuration\ information*}
+\DoxyCodeLine{|\ \ \ |\ \ \ \`{}-\/-\/\ DoxygenLayout.xml\ \ \ *Doxygen\ layout\ information*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ mainpage.dox\ \ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ pwm.dox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ pwm\_basic.dox\ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ spi\_basic.dox\ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ spi.dox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ system.dox\ \ \ \ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ timeout.dox\ \ \ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ timer.dox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ usart\_basic.dox\ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|\ \ \ \`{}-\/-\/\ usart.dox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Doxygen-\/documentation\ of\ the\ project*}
+\DoxyCodeLine{|-\/-\/\ driver\_isr.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Some\ drivers\ place\ their\ Interrupt\ Service\ Routines\ here*}
+\DoxyCodeLine{|-\/-\/\ examples\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Code\ examples\ demonstrating\ \textcolor{keyword}{using\ }the\ drivers*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ include}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ adc\_basic\_example.h\ *Example\ \textcolor{keyword}{using\ }basic\ ADC\ driver*}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ pwm\_basic\_example.h\ *Example\ \textcolor{keyword}{using\ }basic\ PWM\ driver*}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ spi\_basic\_example.h\ *Example\ \textcolor{keyword}{using\ }basic\ SPI\ driver*}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ timeout\_example.h\ \ \ *Example\ \textcolor{keyword}{using\ }timeout\ driver*}
+\DoxyCodeLine{|\ \ \ |\ \ \ \`{}-\/-\/\ usart\_basic\_example.h\ *Example\ \textcolor{keyword}{using\ }basic\ USART\ driver*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ src}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ adc\_basic\_example.c\ *Example\ \textcolor{keyword}{using\ }basic\ ADC\ driver*}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ pwm\_basic\_example.c\ *Example\ \textcolor{keyword}{using\ }basic\ PWM\ driver*}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ spi\_basic\_example.c\ *Example\ \textcolor{keyword}{using\ }basic\ SPI\ driver*}
+\DoxyCodeLine{|\ \ \ |\ \ \ |-\/-\/\ timeout\_example.c\ \ \ *Example\ \textcolor{keyword}{using\ }timeout\ driver*}
+\DoxyCodeLine{|\ \ \ |\ \ \ \`{}-\/-\/\ usart\_basic\_example.c\ *Example\ \textcolor{keyword}{using\ }basic\ USART\ driver*}
+\DoxyCodeLine{|-\/-\/\ include}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ atmel\_start\_pins.h\ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ I/O\ pins\ configured\ in\ START*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ bod.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ BOD*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ ccp.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ Configuration\ Change\ Protection*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ clkctrl.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ Clock\ Controller*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ cpuint.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ Interrupt\ Controller*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ driver\_init.h\ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ initialization\ of\ drivers\ and\ middleware*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ port.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ general\ use\ of\ I/O\ ports*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ pwm\_basic.h\ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ PWM\ driver*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ rstctrl.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ Reset\ Controller*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ slpctrl.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ Sleep\ Controller*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ spi\_basic.h\ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ basic\ SPI\ driver*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ system.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ general\ system\ control\ functions*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ timeout.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ Timeout\ driver*}
+\DoxyCodeLine{|\ \ \ \`{}-\/-\/\ usart\_basic.h\ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ basic\ USART\ driver*}
+\DoxyCodeLine{|-\/-\/\ main.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Main\ application.\ User\ adds\ his\ own\ code\ here*}
+\DoxyCodeLine{|-\/-\/\ src}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ bod.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ BOD*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ ccp.S\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ Configuration\ Change\ Protection*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ clkctrl.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ Clock\ Controller*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ cpuint.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ the\ Interrupt\ Controller*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ driver\_init.c\ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ initialization\ of\ drivers\ and\ middleware*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ pwm\_basic.c\ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ PWM\ driver*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ slpctrl.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ Sleep\ Controller*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ spi\_basic.c\ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ basic\ SPI\ driver*}
+\DoxyCodeLine{|\ \ \ |-\/-\/\ timeout.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ Timeout\ driver*}
+\DoxyCodeLine{|\ \ \ \`{}-\/-\/\ usart\_basic.c\ \ \ \ \ \ \ \ \ \ \ *API\ \textcolor{keywordflow}{for}\ basic\ USART\ driver*}
+\DoxyCodeLine{\`{}-\/-\/\ utils}
+\DoxyCodeLine{\ \ \ \ |-\/-\/\ assembler}
+\DoxyCodeLine{\ \ \ \ |\ \ \ |-\/-\/\ gas.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *GNU\ Assembler\ specifics*}
+\DoxyCodeLine{\ \ \ \ |\ \ \ \`{}-\/-\/\ iar.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *IAR\ Assembler\ specifics*}
+\DoxyCodeLine{\ \ \ \ |-\/-\/\ assembler.h\ \ \ \ \ \ \ \ \ \ \ \ \ *Assembler\ abstraction\ layer\ and\ utilities*}
+\DoxyCodeLine{\ \ \ \ |-\/-\/\ atomic.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Macros\ used\ \textcolor{keywordflow}{for}\ atomic\ memory\ access*}
+\DoxyCodeLine{\ \ \ \ |-\/-\/\ compiler.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ *Compiler\ abstraction\ layer\ and\ utilities*}
+\DoxyCodeLine{\ \ \ \ |-\/-\/\ interrupt\_avr8.h\ \ \ \ \ \ \ \ *Interrupt\ abstraction\ layer\ and\ utilities*}
+\DoxyCodeLine{\ \ \ \ |-\/-\/\ utils\_assert.h\ \ \ \ \ \ \ \ \ \ *Definitions\ \textcolor{keywordflow}{for}\ assert*}
+\DoxyCodeLine{\ \ \ \ \`{}-\/-\/\ utils.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *Various\ macros\ of\ general\ use*}
+
+\end{DoxyCode}
+ 

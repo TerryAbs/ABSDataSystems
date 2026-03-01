@@ -1,0 +1,113 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Common/\+\+Common.h File Reference}
+\hypertarget{_common_8h}{}\label{_common_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Common/Common.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Common/Common.h}}
+
+
+Common definitions and utility functions for AVR64\+DD32 project.  
+
+
+{\ttfamily \+\#include $<$atmel\+\_\+start.\+h$>$}\newline
+{\ttfamily \+\#include $<$avr/\+io.\+h$>$}\newline
+{\ttfamily \+\#include $<$util/\+delay.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$avr/\+pgmspace.\+h$>$}\newline
+{\ttfamily \+\#include "{}Command\+List/\+\+Command\+List.\+h"{}}\newline
+{\ttfamily \+\#include "{}USART/\+usart\+\_\+basic.\+h"{}}\newline
+{\ttfamily \+\#include "{}Serial\+Comm/\+\+Serial\+Comm\+\_\+\+Receive.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menu\+\_\+\+Report\+\_\+\+Processor/\+\+Terminal\+\_\+\+Commands/\+\+Terminal\+\_\+\+Commands.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+Main\+\_\+\+Menu/\+\+Main\+\_\+\+Menu.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_ref_voltage___range}{Ref\+Voltage\+\_\+\+Range}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_common_8h_ac6ca887b0feb542fcc313ac3e7fc15df}\label{_common_8h_ac6ca887b0feb542fcc313ac3e7fc15df} 
+typedef struct Ref\+Voltage\+\_\+\+Range {\bfseries Ref\+Voltage\+\_\+\+Range}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_common_8h_a845037cbc859c2226113ee9d921cd07f}\label{_common_8h_a845037cbc859c2226113ee9d921cd07f} 
+enum {\bfseries REFVOLTAGE} \{ \newline
+{\bfseries Range\+\_\+1024}
+, {\bfseries Range\+\_\+2048}
+, {\bfseries Range\+\_\+2500}
+, {\bfseries Range\+\_\+4096}
+, \newline
+{\bfseries Range\+\_\+\+VDD}
+, {\bfseries Range\+\_\+\+VREF}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_common_8h_af33cf2ba4e216b6e48ca40c79f6f5890}\label{_common_8h_af33cf2ba4e216b6e48ca40c79f6f5890} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Enable\+Disable\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_common_8h_aa0dd85b926c08b9a3a4edc29311fa810}\label{_common_8h_aa0dd85b926c08b9a3a4edc29311fa810} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Port\+Direction\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_common_8h_a1221dc1c9659aebc6561d4ccd63d2a8f}\label{_common_8h_a1221dc1c9659aebc6561d4ccd63d2a8f} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Port\+Inverted\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_common_8h_a576d8a9e198b131c5b6dda784f54c965}\label{_common_8h_a576d8a9e198b131c5b6dda784f54c965} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Port\+Resistor\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_common_8h_a0ca5ccb4deeb05e0f8fada03c258ed5d}\label{_common_8h_a0ca5ccb4deeb05e0f8fada03c258ed5d} 
+char \texorpdfstring{$\ast$}{*} {\bfseries High\+Low\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_common_8h_a03dde5fbf3ee7bb7f639e9fc6eb95176}\label{_common_8h_a03dde5fbf3ee7bb7f639e9fc6eb95176} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Port\+Input\+Level\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_common_8h_ad4a244ab5c91fa0739ac9b78c153b31d}\label{_common_8h_ad4a244ab5c91fa0739ac9b78c153b31d} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Ref\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_common_8h_ad024803527a49e24d93d5617d8e49e2a}\label{_common_8h_ad024803527a49e24d93d5617d8e49e2a} 
+struct \doxymbox{\hyperlink{struct_ref_voltage___range}{Ref\+Voltage\+\_\+\+Range}} {\bfseries Loop\+Up\+\_\+\+Ref\+Voltage} (enum REFVOLTAGE value)
+\item 
+\Hypertarget{_common_8h_ad40176631ab01ae2df0eeb9b3470db43}\label{_common_8h_ad40176631ab01ae2df0eeb9b3470db43} 
+float {\bfseries Look\+Up\+\_\+\+Ref\+Voltage\+By\+Setting} (uint8\+\_\+t value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common definitions and utility functions for AVR64\+DD32 project. 
+
+Provides project-\/wide includes, type definitions, and utility functions. Acts as central header for shared functionality across all modules.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created:\+ 11/\+27/\+2025 6:\+57:\+11 AM 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Includes}
+
+\begin{DoxyItemize}
+\item Standard AVR libraries (avr/\+io.\+h, util/\+delay.\+h)
+\item Standard C libraries (stdio.\+h, string.\+h, stdbool.\+h)
+\item PROGMEM support (avr/\+pgmspace.\+h)
+\item Project-\/specific headers
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Utility Functions}
+
+\begin{DoxyItemize}
+\item Decoder functions:\+ Convert enums to human-\/readable strings
+\item Reference voltage lookup tables
+\item Common data conversions
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Include this file in all module implementations 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_data_structures_8h}{Data\+Structures.\+h} for type definitions 
+\end{DoxySeeAlso}

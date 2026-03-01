@@ -1,0 +1,79 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Menus/\+\+Main\+\_\+\+Menu/\+\+Main\+\_\+\+Menu.h File Reference}
+\hypertarget{_main___menu_8h}{}\label{_main___menu_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menus/Main\_Menu/Main\_Menu.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menus/Main\_Menu/Main\_Menu.h}}
+
+
+Main menu interface for AVR64\+DD32 demonstration system.  
+
+
+{\ttfamily \+\#include "{}Menu\+\_\+\+Report\+\_\+\+Processor/\+/\+\+Menu\+\_\+\+Processor/\+\+Menu\+\_\+\+Processor.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+ADC/\+\+Menu\+\_\+\+ADC.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+CCL\+\_\+\+LUT/\+\+Menu\+\_\+\+CCL\+\_\+\+LUT.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+DAC/\+\+Menu\+\_\+\+DAC.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+Events/\+\+Menu\+\_\+\+Events.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+Ports/\+\+Menu\+\_\+\+Ports.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+RTC/\+\+Menu\+\_\+\+RTC.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+SPI/\+\+Menu\+\_\+\+SPI.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+Timers/\+\+Menu\+\_\+\+Timers.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+TWI\+\_\+\+I2\+C/\+\+Menu\+\_\+\+TWI\+\_\+\+I2\+C.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+USART/\+\+Menu\+\_\+\+USART.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+ZCD/\+\+Menu\+\_\+\+ZCD.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+Common\+Menus/\+\+Common\+Menus.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_main___menu_8h_a3de20c39589b5c87b8e64a23a81ae9c1}\label{_main___menu_8h_a3de20c39589b5c87b8e64a23a81ae9c1} 
+void {\bfseries Main\+Menu\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_main___menu_8h_a857494870e1571134524cf5263bfcbbb}\label{_main___menu_8h_a857494870e1571134524cf5263bfcbbb} 
+void {\bfseries Display\+Main\+Menu} (const char \texorpdfstring{$\ast$}{*}msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main menu interface for AVR64\+DD32 demonstration system. 
+
+Implements top-\/level menu navigation for accessing all peripheral configuration and demonstration menus. Uses table-\/driven menu system with VT102 terminal control.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Menu Structure}
+The main menu provides access to:\+
+\begin{DoxyItemize}
+\item ADC Configuration and Monitoring
+\item DAC Waveform Generation
+\item SPI Flash Memory Operations
+\item I2\+C/\+\+TWI Device Communication
+\item Timer/\+\+PWM Configuration
+\item Event System Routing
+\item CCL Logic Configuration
+\item Port I/\+O Configuration
+\item USART Communication Settings
+\item RTC Configuration
+\item ZCD Configuration
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Terminal Layout}
+
+\begin{DoxyItemize}
+\item Columns 1-\/80:\+ Menu area
+\item Columns 85-\/120:\+ Real-\/time data display
+\item Row 40:\+ Command prompt
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Menu system uses PROGMEM for string storage 
+
+VT102 escape codes for cursor positioning and colors 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_menu___processor_8h}{Menu\+\_\+\+Processor.\+h} for menu engine 
+
+\doxylink{_data_structures_8h}{Data\+Structures.\+h} for menu system types 
+\end{DoxySeeAlso}

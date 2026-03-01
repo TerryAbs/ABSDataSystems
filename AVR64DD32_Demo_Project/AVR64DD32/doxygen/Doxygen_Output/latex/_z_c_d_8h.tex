@@ -1,0 +1,127 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+ZCD/\+\+ZCD.h File Reference}
+\hypertarget{_z_c_d_8h}{}\label{_z_c_d_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/ZCD/ZCD.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/ZCD/ZCD.h}}
+
+
+Zero-\/\+Cross Detector driver for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_z_c_d_configuration}{ZCDConfiguration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_z_c_d_8h_a7d9a435c5fb5f8b916ebe283cfb6261f}\label{_z_c_d_8h_a7d9a435c5fb5f8b916ebe283cfb6261f} 
+\+\#define {\bfseries ZCDSystem\+Size}~1
+\item 
+\Hypertarget{_z_c_d_8h_aefaaeec25635e40c40019587c943598e}\label{_z_c_d_8h_aefaaeec25635e40c40019587c943598e} 
+\+\#define {\bfseries PC2\+\_\+\+ZCD\+\_\+\+Port\+Pin}~0x04
+\item 
+\Hypertarget{_z_c_d_8h_a32c3cae04aad77d1ca8ca6881c4739de}\label{_z_c_d_8h_a32c3cae04aad77d1ca8ca6881c4739de} 
+\+\#define {\bfseries PF5\+\_\+\+Simulation\+Pin}~0x20
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_z_c_d_8h_a05d53db0de45716693bb1e1fe858925d}\label{_z_c_d_8h_a05d53db0de45716693bb1e1fe858925d} 
+typedef struct ZCDConfiguration {\bfseries ZCDConfiguration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_z_c_d_8h_a4b8d52d229b25f4d631305377841a37d}\label{_z_c_d_8h_a4b8d52d229b25f4d631305377841a37d} 
+void {\bfseries ZCD\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_z_c_d_8h_ae87ba3451ce8ab9f40d9d3dff09c8626}\label{_z_c_d_8h_ae87ba3451ce8ab9f40d9d3dff09c8626} 
+void {\bfseries ZCD\+\_\+\+Re\+Initialize} (void)
+\item 
+\Hypertarget{_z_c_d_8h_ad3a9914aaffab3ffa1f8b3bbcdf1fb49}\label{_z_c_d_8h_ad3a9914aaffab3ffa1f8b3bbcdf1fb49} 
+void {\bfseries ZCD\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_z_c_d_8h_aa090506d062f733b57ff56520e6df6d6}\label{_z_c_d_8h_aa090506d062f733b57ff56520e6df6d6} 
+void {\bfseries ZCD\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_z_c_d_8h_a17511d77e51b5c816168b569b02f692d}\label{_z_c_d_8h_a17511d77e51b5c816168b569b02f692d} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+ZCDData} (void)
+\item 
+\Hypertarget{_z_c_d_8h_a4a5a8566bc86834c08fc3b3915d03af6}\label{_z_c_d_8h_a4a5a8566bc86834c08fc3b3915d03af6} 
+void {\bfseries ZCD\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_z_c_d_8h_a7dedeb34487c8bacfc78363077e089ec}\label{_z_c_d_8h_a7dedeb34487c8bacfc78363077e089ec} 
+void {\bfseries ZCD\+\_\+\+Load\+\_\+\+Config} (void)
+\item 
+\Hypertarget{_z_c_d_8h_a2addf457083cddcc4d737b0523f7a811}\label{_z_c_d_8h_a2addf457083cddcc4d737b0523f7a811} 
+void {\bfseries Get\+Loop\+Delay} (const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_z_c_d_8h_ae6df6f574ac8637110987dffe461431d}\label{_z_c_d_8h_ae6df6f574ac8637110987dffe461431d} 
+void {\bfseries Set\+Loop\+Delay} (float value)
+\item 
+\Hypertarget{_z_c_d_8h_a7126ef068a2483534f05c547f11c52ea}\label{_z_c_d_8h_a7126ef068a2483534f05c547f11c52ea} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Decode\+Interrupt\+Edge} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_z_c_d_8h_a2cd568883d841ba1a811cc2eeabb376a}\label{_z_c_d_8h_a2cd568883d841ba1a811cc2eeabb376a} 
+bool {\bfseries Get\+ZCDEnabled\+State} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Zero-\/\+Cross Detector driver for AVR64\+DD32. 
+
+Implements ZCD (Zero-\/\+Cross Detector) for detecting AC zero-\/crossing points. Useful for AC phase control, dimmer circuits, and AC frequency measurement. Can generate interrupts on positive or negative zero crossings.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Pin Configuration}
+
+\begin{DoxyItemize}
+\item PC2 (TP14):\+ ZCD Input (AC signal)
+\item PA7:\+ ZCD Output (optional)
+\item PF5 (TP5):\+ ZCD Simulator (test signal generator)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Features}
+
+\begin{DoxyItemize}
+\item Detects positive and negative zero crossings
+\item Interrupt generation on crossing events
+\item Output signal on zero crossing
+\item Software-\/enabled/\+disabled
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Typical Applications}
+
+\begin{DoxyItemize}
+\item AC dimmer control (TRIAC triggering)
+\item AC frequency measurement
+\item Power line synchronization
+\item AC phase control
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Test Circuit}
+Use PF5 to generate test waveform for ZCD input on PC2. Resistor divider may be needed to scale AC voltage to safe levels.
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Input voltage must be within safe operating range (see datasheet) 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Do NOT connect mains AC directly -\/ use isolation transformer 
+
+Ensure proper voltage scaling and isolation 
+
+ZCD has specific input voltage requirements (0-\/3.\+3V range)
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+AVR64\+DD32 datasheet section 32 (ZCD) 
+
+\doxylink{_menu___z_c_d_8h_source}{Menu\+\_\+\+ZCD.\+h} for configuration interface 
+\end{DoxySeeAlso}

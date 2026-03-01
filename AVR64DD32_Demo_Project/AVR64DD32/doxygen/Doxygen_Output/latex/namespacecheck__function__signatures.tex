@@ -1,0 +1,114 @@
+\doxysection{check\+\_\+function\+\_\+signatures Namespace Reference}
+\hypertarget{namespacecheck__function__signatures}{}\label{namespacecheck__function__signatures}\index{check\_function\_signatures@{check\_function\_signatures}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature}{Function\+Signature}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+List\+[\doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature}{Function\+Signature}}]\+ \doxymbox{\hyperlink{namespacecheck__function__signatures_a8e9a75afeb5672298cf4e4bf439dc764}{extract\+\_\+functions\+\_\+from\+\_\+file}} (Path filepath, bool is\+\_\+header=True)
+\item 
+Path \doxymbox{\hyperlink{namespacecheck__function__signatures_a860421c5c40b93a76811e5fd9e541550}{find\+\_\+matching\+\_\+c\+\_\+file}} (Path h\+\_\+file, Path project\+\_\+root)
+\item 
+List\+[Dict]\+ \doxymbox{\hyperlink{namespacecheck__function__signatures_a1cf790cebf33f5efd4e2a77dc19b92a4}{compare\+\_\+signatures}} (List\+[\doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature}{Function\+Signature}}]\+ h\+\_\+funcs, List\+[\doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature}{Function\+Signature}}]\+ c\+\_\+funcs, Path h\+\_\+file, Path c\+\_\+file)
+\item 
+str \doxymbox{\hyperlink{namespacecheck__function__signatures_ac4d2519b9ecd41d662525833e7b95e80}{format\+\_\+report}} (List\+[Dict]\+ mismatches, bool verbose=False)
+\item 
+\doxymbox{\hyperlink{namespacecheck__function__signatures_a35a3c1511f9e6a0909a48bd46f8f1b73}{generate\+\_\+fix\+\_\+script}} (List\+[Dict]\+ mismatches, Path output\+\_\+file)
+\item 
+\doxymbox{\hyperlink{namespacecheck__function__signatures_a51af30a60f9f02777c6396b8247e356f}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Function Signature Checker for AVR64DD32 Project
+
+This script compares function declarations in .h files with their definitions
+in .c files to ensure consistency in the (void) parameter style.
+
+Author: Code Review Assistant
+Date: January 26, 2026
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{namespacecheck__function__signatures_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacecheck__function__signatures_a1cf790cebf33f5efd4e2a77dc19b92a4}\index{check\_function\_signatures@{check\_function\_signatures}!compare\_signatures@{compare\_signatures}}
+\index{compare\_signatures@{compare\_signatures}!check\_function\_signatures@{check\_function\_signatures}}
+\doxysubsubsection{\texorpdfstring{compare\_signatures()}{compare\_signatures()}}
+{\footnotesize\ttfamily \label{namespacecheck__function__signatures_a1cf790cebf33f5efd4e2a77dc19b92a4} 
+ List\+[Dict]\+ compare\+\_\+signatures (\begin{DoxyParamCaption}\item[{List\+[\doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature}{Function\+Signature}}]\+}]{h\+\_\+funcs}{, }\item[{List\+[\doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature}{Function\+Signature}}]\+}]{c\+\_\+funcs}{, }\item[{Path}]{h\+\_\+file}{, }\item[{Path}]{c\+\_\+file}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compare function signatures between header and source files.
+
+Returns:
+    List of dictionaries describing mismatches
+\end{DoxyVerb}
+ \Hypertarget{namespacecheck__function__signatures_a8e9a75afeb5672298cf4e4bf439dc764}\index{check\_function\_signatures@{check\_function\_signatures}!extract\_functions\_from\_file@{extract\_functions\_from\_file}}
+\index{extract\_functions\_from\_file@{extract\_functions\_from\_file}!check\_function\_signatures@{check\_function\_signatures}}
+\doxysubsubsection{\texorpdfstring{extract\_functions\_from\_file()}{extract\_functions\_from\_file()}}
+{\footnotesize\ttfamily \label{namespacecheck__function__signatures_a8e9a75afeb5672298cf4e4bf439dc764} 
+ List\+[\doxymbox{\hyperlink{classcheck__function__signatures_1_1_function_signature}{Function\+Signature}}]\+ extract\+\_\+functions\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{Path}]{filepath}{, }\item[{bool }]{is\+\_\+header}{ = {\ttfamily True}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Extract function declarations/definitions from a file.
+
+Args:
+    filepath: Path to the .h or .c file
+    is_header: True if this is a header file, False for source file
+    
+Returns:
+    List of FunctionSignature objects
+\end{DoxyVerb}
+ \Hypertarget{namespacecheck__function__signatures_a860421c5c40b93a76811e5fd9e541550}\index{check\_function\_signatures@{check\_function\_signatures}!find\_matching\_c\_file@{find\_matching\_c\_file}}
+\index{find\_matching\_c\_file@{find\_matching\_c\_file}!check\_function\_signatures@{check\_function\_signatures}}
+\doxysubsubsection{\texorpdfstring{find\_matching\_c\_file()}{find\_matching\_c\_file()}}
+{\footnotesize\ttfamily \label{namespacecheck__function__signatures_a860421c5c40b93a76811e5fd9e541550} 
+ Path find\+\_\+matching\+\_\+c\+\_\+file (\begin{DoxyParamCaption}\item[{Path}]{h\+\_\+file}{, }\item[{Path}]{project\+\_\+root}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the corresponding .c file for a given .h file.
+
+Args:
+    h_file: Path to .h file
+    project_root: Root directory of the project
+    
+Returns:
+    Path to .c file or None if not found
+\end{DoxyVerb}
+ \Hypertarget{namespacecheck__function__signatures_ac4d2519b9ecd41d662525833e7b95e80}\index{check\_function\_signatures@{check\_function\_signatures}!format\_report@{format\_report}}
+\index{format\_report@{format\_report}!check\_function\_signatures@{check\_function\_signatures}}
+\doxysubsubsection{\texorpdfstring{format\_report()}{format\_report()}}
+{\footnotesize\ttfamily \label{namespacecheck__function__signatures_ac4d2519b9ecd41d662525833e7b95e80} 
+ str format\+\_\+report (\begin{DoxyParamCaption}\item[{List\+[Dict]\+}]{mismatches}{, }\item[{bool }]{verbose}{ = {\ttfamily False}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Format the mismatch report.
+
+Args:
+    mismatches: List of mismatch dictionaries
+    verbose: Include full file paths and line contents
+    
+Returns:
+    Formatted report string
+\end{DoxyVerb}
+ \Hypertarget{namespacecheck__function__signatures_a35a3c1511f9e6a0909a48bd46f8f1b73}\index{check\_function\_signatures@{check\_function\_signatures}!generate\_fix\_script@{generate\_fix\_script}}
+\index{generate\_fix\_script@{generate\_fix\_script}!check\_function\_signatures@{check\_function\_signatures}}
+\doxysubsubsection{\texorpdfstring{generate\_fix\_script()}{generate\_fix\_script()}}
+{\footnotesize\ttfamily \label{namespacecheck__function__signatures_a35a3c1511f9e6a0909a48bd46f8f1b73} 
+generate\+\_\+fix\+\_\+script (\begin{DoxyParamCaption}\item[{List\+[Dict]\+}]{mismatches}{, }\item[{Path}]{output\+\_\+file}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a Python script to automatically fix the mismatches.
+
+Args:
+    mismatches: List of mismatch dictionaries
+    output_file: Path where to save the fix script
+\end{DoxyVerb}
+ \Hypertarget{namespacecheck__function__signatures_a51af30a60f9f02777c6396b8247e356f}\index{check\_function\_signatures@{check\_function\_signatures}!main@{main}}
+\index{main@{main}!check\_function\_signatures@{check\_function\_signatures}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{namespacecheck__function__signatures_a51af30a60f9f02777c6396b8247e356f} 
+main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Main function.\end{DoxyVerb}
+ 

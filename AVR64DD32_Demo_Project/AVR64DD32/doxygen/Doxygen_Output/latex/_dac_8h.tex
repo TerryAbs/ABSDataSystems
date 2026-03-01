@@ -1,0 +1,175 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+DAC/\+\+Dac.h File Reference}
+\hypertarget{_dac_8h}{}\label{_dac_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/DAC/Dac.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/DAC/Dac.h}}
+
+
+Digital-\/to-\/\+Analog Converter driver interface for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_d_a_c_configuration}{DACConfiguration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_dac_8h_a0b9f96085d665cd9a1d699d1462a832a}\label{_dac_8h_a0b9f96085d665cd9a1d699d1462a832a} 
+\+\#define {\bfseries DACSystem\+Size}~1
+\item 
+\Hypertarget{_dac_8h_a46a1ab9683cdcdff36daeb4ab02731c0}\label{_dac_8h_a46a1ab9683cdcdff36daeb4ab02731c0} 
+\+\#define {\bfseries PD6\+\_\+\+DAC\+\_\+\+Pin}~0x40
+\item 
+\Hypertarget{_dac_8h_a921b88bfe727f3cb067b5d694f28fa65}\label{_dac_8h_a921b88bfe727f3cb067b5d694f28fa65} 
+\+\#define {\bfseries DAC\+\_\+\+Resolution}~10
+\item 
+\Hypertarget{_dac_8h_a44b699b5adbc0a36765ee6682a8fedb4}\label{_dac_8h_a44b699b5adbc0a36765ee6682a8fedb4} 
+\+\#define {\bfseries DAC\+\_\+\+Max\+Resolution}~1023.\+0
+\item 
+\Hypertarget{_dac_8h_ab8c6a126942b8f08cfa4551c465e41a5}\label{_dac_8h_ab8c6a126942b8f08cfa4551c465e41a5} 
+\+\#define {\bfseries MAX\+\_\+\+DISPLAYSAMPLES}~500
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_dac_8h_a73b186e925badaec56547a330561c788}\label{_dac_8h_a73b186e925badaec56547a330561c788} 
+typedef struct DACConfiguration {\bfseries DACConfiguration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_dac_8h_a3a46fc838c0137dd5edb70f0dc8d7da1}\label{_dac_8h_a3a46fc838c0137dd5edb70f0dc8d7da1} 
+enum {\bfseries DAC\+\_\+\+DISPLAY\+\_\+\+MODES} \{ {\bfseries DAC\+\_\+\+DISPLAY\+\_\+\+MODES\+\_\+\+VALUE}
+, {\bfseries DAC\+\_\+\+DISPLAY\+\_\+\+MODES\+\_\+\+SINEWAVE}
+, {\bfseries DAC\+\_\+\+DISPLAY\+\_\+\+MODES\+\_\+\+SAWTOOTH}
+, {\bfseries DAC\+\_\+\+DISPLAY\+\_\+\+MODES\+\_\+\+TRIANGLE}
+ \}
+\item 
+\Hypertarget{_dac_8h_ab104f7f4b78e61d3c7be8aafe16d062e}\label{_dac_8h_ab104f7f4b78e61d3c7be8aafe16d062e} 
+enum {\bfseries DACSTATEMACHINE} \{ {\bfseries DACSTATEMACHINE\+\_\+\+INITIALIZE}
+, {\bfseries DACSTATEMACHINE\+\_\+\+DISPLAYVALUE}
+, {\bfseries DACSTATEMACHINE\+\_\+\+COMPUTENXEXTVALUE}
+, {\bfseries DACSTATEMACHINE\+\_\+\+COMPLETE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_dac_8h_a3b66b383aa3a85944707256e982966aa}\label{_dac_8h_a3b66b383aa3a85944707256e982966aa} 
+void {\bfseries DAC\+\_\+\+Float\+Write} (float value)
+\item 
+\Hypertarget{_dac_8h_a33000d81e851181e2ea91c04f60d7848}\label{_dac_8h_a33000d81e851181e2ea91c04f60d7848} 
+void {\bfseries DAC\+\_\+\+Uint16\+\_\+t\+Write} (uint16\+\_\+t value)
+\item 
+\Hypertarget{_dac_8h_a8d3086298ee4a69b2e40ef0f295b4032}\label{_dac_8h_a8d3086298ee4a69b2e40ef0f295b4032} 
+uint16\+\_\+t {\bfseries Volts\+To\+DAC} (float value)
+\item 
+\Hypertarget{_dac_8h_acbee483095b60e49394cc582eef194a0}\label{_dac_8h_acbee483095b60e49394cc582eef194a0} 
+float {\bfseries DACTo\+Volts} (uint16\+\_\+t value)
+\item 
+\Hypertarget{_dac_8h_abe7bce520abbf9f9b047bde4f7acabc9}\label{_dac_8h_abe7bce520abbf9f9b047bde4f7acabc9} 
+void {\bfseries DAC\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_dac_8h_aa23af6c8a2156ff577dadd42e89e398d}\label{_dac_8h_aa23af6c8a2156ff577dadd42e89e398d} 
+void {\bfseries DAC\+\_\+\+Re\+Initialize} (void)
+\item 
+\Hypertarget{_dac_8h_a37f3088698e99f6a872cdc7822d8d17a}\label{_dac_8h_a37f3088698e99f6a872cdc7822d8d17a} 
+void {\bfseries DAC\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_dac_8h_ad44dc0fce125a103339a07fc190516e0}\label{_dac_8h_ad44dc0fce125a103339a07fc190516e0} 
+char \texorpdfstring{$\ast$}{*} {\bfseries DACMode\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_dac_8h_ab709a10ffda8ee913cde3597efeb7c25}\label{_dac_8h_ab709a10ffda8ee913cde3597efeb7c25} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+DACData} (void)
+\item 
+\Hypertarget{_dac_8h_a9f4d205f8a05d6bc57a0009236438e9e}\label{_dac_8h_a9f4d205f8a05d6bc57a0009236438e9e} 
+void {\bfseries DAC\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_dac_8h_a116ef1022124bf7521bed248622522c1}\label{_dac_8h_a116ef1022124bf7521bed248622522c1} 
+void {\bfseries DAC\+\_\+\+Load\+\_\+\+Config} (void)
+\item 
+\Hypertarget{_dac_8h_aae5abb6c90b197cbb82dd5fe36319411}\label{_dac_8h_aae5abb6c90b197cbb82dd5fe36319411} 
+float {\bfseries Get\+Max\+Step\+Size} (void)
+\item 
+\Hypertarget{_dac_8h_a19378b0585eb95636ed06f98f8ad69b5}\label{_dac_8h_a19378b0585eb95636ed06f98f8ad69b5} 
+float {\bfseries Get\+Max\+Peak} (float default\+Value)
+\item 
+\Hypertarget{_dac_8h_acdd1d11b95c8d0386692e6cadaa75137}\label{_dac_8h_acdd1d11b95c8d0386692e6cadaa75137} 
+void {\bfseries Get\+DACPeak\+Value} (const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_dac_8h_ae8686ede8b53f1b08b8ee399ae471949}\label{_dac_8h_ae8686ede8b53f1b08b8ee399ae471949} 
+void {\bfseries Set\+DACPeak\+Value} (float value)
+\item 
+\Hypertarget{_dac_8h_ad3100e59b06e9df9f8b0f11c37418d1a}\label{_dac_8h_ad3100e59b06e9df9f8b0f11c37418d1a} 
+void {\bfseries Get\+DACOffset\+Value} (const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_dac_8h_a672c768b3cd855d18abcf0594d506de8}\label{_dac_8h_a672c768b3cd855d18abcf0594d506de8} 
+void {\bfseries Set\+DACOffset\+Value} (float value)
+\item 
+\Hypertarget{_dac_8h_a74d00acd720c423944034fef9e3e727c}\label{_dac_8h_a74d00acd720c423944034fef9e3e727c} 
+void {\bfseries Get\+DACStep\+Value} (const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_dac_8h_a80600b8e340e9af6a1a9412260858eaf}\label{_dac_8h_a80600b8e340e9af6a1a9412260858eaf} 
+void {\bfseries Set\+DACStep\+Value} (float value)
+\item 
+\Hypertarget{_dac_8h_aba71be3b3afafaec6488528d74d46e82}\label{_dac_8h_aba71be3b3afafaec6488528d74d46e82} 
+void {\bfseries DAC\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_dac_8h_a9151eb55669414a2f922250bdc41b27a}\label{_dac_8h_a9151eb55669414a2f922250bdc41b27a} 
+void {\bfseries DACValue\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_dac_8h_ac8b910751e8acd2fec12b1fa9c234885}\label{_dac_8h_ac8b910751e8acd2fec12b1fa9c234885} 
+void {\bfseries DAC\+\_\+\+Triangle\+\_\+\+Wave\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_dac_8h_affd60625835af61e73a0688f9e1b4a89}\label{_dac_8h_affd60625835af61e73a0688f9e1b4a89} 
+void {\bfseries DAC\+\_\+\+Saw\+Tooth\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_dac_8h_af2ff63a7b5ce220b6d59124d009cadb9}\label{_dac_8h_af2ff63a7b5ce220b6d59124d009cadb9} 
+void {\bfseries DAC\+\_\+\+Sine\+Wave\+\_\+\+Monitor} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Digital-\/to-\/\+Analog Converter driver interface for AVR64\+DD32. 
+
+Provides configurable DAC output on PD6 with multiple waveform generation modes including DC, square wave, triangle, sine, and sawtooth. Supports both manual and automatic waveform generation.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Hardware}
+
+\begin{DoxyItemize}
+\item Output Pin:\+ PD6 (TP12 on FTDI demo board)
+\item Resolution:\+ 10-\/bit (1024 levels)
+\item Reference:\+ Internal 4.\+096V or VDD
+\item Output Range:\+ 0V to VREF
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Waveform Modes}
+
+\begin{DoxyItemize}
+\item DC:\+ Constant voltage output
+\item Square:\+ 50\% duty cycle, configurable frequency
+\item Triangle:\+ Linear rise and fall
+\item Sine:\+ Smooth sine wave via lookup table
+\item Sawtooth:\+ Linear rise, instant fall
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Run mode enables automatic waveform generation 
+
+Frequency depends on main loop execution rate 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Output drive capability limited -\/ use buffer for heavy loads
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_menu___d_a_c_8h_source}{Menu\+\_\+\+DAC.\+h} for user configuration interface 
+\end{DoxySeeAlso}

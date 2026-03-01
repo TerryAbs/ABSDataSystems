@@ -1,0 +1,193 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+CCL/\+\+CCL.h File Reference}
+\hypertarget{_c_c_l_8h}{}\label{_c_c_l_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CCL/CCL.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CCL/CCL.h}}
+
+
+Configurable Custom Logic driver for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_c_c_l_configuration}{CCLConfiguration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_c_c_l_8h_a6a790e005d7a9d0306cecc588a636e45}\label{_c_c_l_8h_a6a790e005d7a9d0306cecc588a636e45} 
+\+\#define {\bfseries PF0}~0x01
+\item 
+\Hypertarget{_c_c_l_8h_aa102a8d56d218f588b988db1b91fac4b}\label{_c_c_l_8h_aa102a8d56d218f588b988db1b91fac4b} 
+\+\#define {\bfseries PF1}~0x02
+\item 
+\Hypertarget{_c_c_l_8h_a227e5ada9112eaed4183962f81f0e519}\label{_c_c_l_8h_a227e5ada9112eaed4183962f81f0e519} 
+\+\#define {\bfseries PF2}~0x04
+\item 
+\Hypertarget{_c_c_l_8h_ab3c2851ff4fe9aa2aede61fbd851dff6}\label{_c_c_l_8h_ab3c2851ff4fe9aa2aede61fbd851dff6} 
+\+\#define {\bfseries PF3}~0x08
+\item 
+\Hypertarget{_c_c_l_8h_a71d0fb161aaa562abef3c05eca683e5f}\label{_c_c_l_8h_a71d0fb161aaa562abef3c05eca683e5f} 
+\+\#define {\bfseries PD1}~0x02
+\item 
+\Hypertarget{_c_c_l_8h_ad40e63596a3798cd745c2722b84a54ec}\label{_c_c_l_8h_ad40e63596a3798cd745c2722b84a54ec} 
+\+\#define {\bfseries PD2}~0x04
+\item 
+\Hypertarget{_c_c_l_8h_a49f905bdec77847ec7bf99045c67b4fc}\label{_c_c_l_8h_a49f905bdec77847ec7bf99045c67b4fc} 
+\+\#define {\bfseries PD3}~0x08
+\item 
+\Hypertarget{_c_c_l_8h_a153c64676cb9d6a8b71bc1d5964ffdfc}\label{_c_c_l_8h_a153c64676cb9d6a8b71bc1d5964ffdfc} 
+\+\#define {\bfseries PF0\+\_\+\+INPUT\+\_\+\+A\+\_\+\+PIN}~PF0
+\item 
+\Hypertarget{_c_c_l_8h_a51e92eccab03db8fbcd7ca93b43d827b}\label{_c_c_l_8h_a51e92eccab03db8fbcd7ca93b43d827b} 
+\+\#define {\bfseries PF1\+\_\+\+INPUT\+\_\+\+B\+\_\+\+PIN}~PF1
+\item 
+\Hypertarget{_c_c_l_8h_ac510ee5d89cfa28eb9cf4eb147327ac4}\label{_c_c_l_8h_ac510ee5d89cfa28eb9cf4eb147327ac4} 
+\+\#define {\bfseries PF2\+\_\+\+INPUT\+\_\+\+C\+\_\+\+PIN}~PF2
+\item 
+\Hypertarget{_c_c_l_8h_ab36100fae7d80b1666c317475d818e83}\label{_c_c_l_8h_ab36100fae7d80b1666c317475d818e83} 
+\+\#define {\bfseries PF3\+\_\+\+LUT3\+\_\+\+OUT\+\_\+\+PIN}~PF3
+\item 
+\Hypertarget{_c_c_l_8h_a3fb2ee98ce9111a439b4d9e446b56da9}\label{_c_c_l_8h_a3fb2ee98ce9111a439b4d9e446b56da9} 
+\+\#define {\bfseries PD1\+\_\+\+OUTPUT\+\_\+\+A\+\_\+\+PIN}~PD1
+\item 
+\Hypertarget{_c_c_l_8h_af28b078b5de7d9b3fe6e45a2a4ae28cf}\label{_c_c_l_8h_af28b078b5de7d9b3fe6e45a2a4ae28cf} 
+\+\#define {\bfseries PD2\+\_\+\+OUTPUT\+\_\+\+B\+\_\+\+PIN}~PD2
+\item 
+\Hypertarget{_c_c_l_8h_a157d88ffb892547869ec4c392f6a6372}\label{_c_c_l_8h_a157d88ffb892547869ec4c392f6a6372} 
+\+\#define {\bfseries PD3\+\_\+\+OUTPUT\+\_\+\+C\+\_\+\+PIN}~PD3
+\item 
+\Hypertarget{_c_c_l_8h_a06892e3f1b550ea0ffb74b5961b5d744}\label{_c_c_l_8h_a06892e3f1b550ea0ffb74b5961b5d744} 
+\+\#define {\bfseries CCLSystem\+Size}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_c_c_l_8h_a2eda633adf3089bcc20c8ff550869fe8}\label{_c_c_l_8h_a2eda633adf3089bcc20c8ff550869fe8} 
+typedef struct CCLConfiguration {\bfseries CCLConfiguration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_c_c_l_8h_a52bc6c8592bdd21cb7ff9d77ae007073}\label{_c_c_l_8h_a52bc6c8592bdd21cb7ff9d77ae007073} 
+enum {\bfseries CCL\+\_\+\+INPUTSOURCE} \{ {\bfseries CCL\+\_\+\+INPUTS\+\_\+A}
+, {\bfseries CCL\+\_\+\+INPUTS\+\_\+\+A\+\_\+B}
+, {\bfseries CCL\+\_\+\+INPUTS\+\_\+\+A\+\_\+\+B\+\_\+C}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_c_c_l_8h_ad5bd57d87d3627424853a0e7d1c37ecf}\label{_c_c_l_8h_ad5bd57d87d3627424853a0e7d1c37ecf} 
+void {\bfseries CCL\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_c_c_l_8h_a9596c6325a5900b23464755b5ab84af8}\label{_c_c_l_8h_a9596c6325a5900b23464755b5ab84af8} 
+void {\bfseries CCL\+\_\+\+Drive\+Test\+Data} (int value)
+\item 
+\Hypertarget{_c_c_l_8h_a8134cde6663242f3612973051e54d595}\label{_c_c_l_8h_a8134cde6663242f3612973051e54d595} 
+void {\bfseries CCL\+\_\+\+Re\+Initialize} (void)
+\item 
+\Hypertarget{_c_c_l_8h_a4db2acdaec30adb99b09a5ec38bc1ac4}\label{_c_c_l_8h_a4db2acdaec30adb99b09a5ec38bc1ac4} 
+void {\bfseries CCL\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_c_c_l_8h_af1f51ed9ad2982e87810a2dba197372e}\label{_c_c_l_8h_af1f51ed9ad2982e87810a2dba197372e} 
+void {\bfseries CCL\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_c_c_l_8h_ae90fb45597e4f00f6e2493621ad7eb04}\label{_c_c_l_8h_ae90fb45597e4f00f6e2493621ad7eb04} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+CCLData} (void)
+\item 
+\Hypertarget{_c_c_l_8h_ad716194d332d878b64cf49e9b3bbe6a8}\label{_c_c_l_8h_ad716194d332d878b64cf49e9b3bbe6a8} 
+void {\bfseries CCL\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_c_c_l_8h_a96b57082dffab15a659fe67b9a601dc6}\label{_c_c_l_8h_a96b57082dffab15a659fe67b9a601dc6} 
+void {\bfseries CCL\+\_\+\+Load\+\_\+\+Config} (void)
+\item 
+\Hypertarget{_c_c_l_8h_aa18bca8e205cdeafcee78bf6b150ecdb}\label{_c_c_l_8h_aa18bca8e205cdeafcee78bf6b150ecdb} 
+void {\bfseries Get\+CCLSteps} (const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_c_c_l_8h_a07f9730922c10065c7c95082079c052f}\label{_c_c_l_8h_a07f9730922c10065c7c95082079c052f} 
+void {\bfseries Set\+CCLSteps} (float value)
+\item 
+\Hypertarget{_c_c_l_8h_afa5c20835be2dbe772d7fcfb0510ef91}\label{_c_c_l_8h_afa5c20835be2dbe772d7fcfb0510ef91} 
+void {\bfseries Get\+CCLPattern} (const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_c_c_l_8h_a2b7b96f9c737bf12a950df5c9afac85a}\label{_c_c_l_8h_a2b7b96f9c737bf12a950df5c9afac85a} 
+void {\bfseries Set\+CCLPattern} (float value)
+\item 
+\Hypertarget{_c_c_l_8h_a3e37cb98f5268787f2495ef19c652553}\label{_c_c_l_8h_a3e37cb98f5268787f2495ef19c652553} 
+bool {\bfseries Get\+CCLEnabled\+State} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configurable Custom Logic driver for AVR64\+DD32. 
+
+Implements CCL (Configurable Custom Logic) for hardware-\/based boolean logic operations without CPU intervention. Four independent Look-\/\+Up Tables (LUTs) can implement any 3-\/input logic function.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{LUT Configuration}
+
+\begin{DoxyItemize}
+\item LUT0-\/\+LUT3:\+ Four independent 3-\/input truth tables
+\item Input sources:\+ GPIO pins, peripherals, or other LUTs
+\item Output:\+ GPIO pin or internal event
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Pin Configuration (Demo Board)}
+Inputs:\+
+\begin{DoxyItemize}
+\item PF0 (TP10):\+ LUT Input 0
+\item PF1 (TP9):\+ LUT Input 1
+\item PF2 (TP8):\+ LUT Input 2
+\end{DoxyItemize}
+\end{DoxyParagraph}
+Outputs:\+
+\begin{DoxyItemize}
+\item PF3 (TP7):\+ LUT Output
+\item PD1 (H2-\/5):\+ CCL Test 0
+\item PD2 (H2-\/7):\+ CCL Test 1
+\item PD3 (H2-\/9):\+ CCL Test 2
+\end{DoxyItemize}
+
+\begin{DoxyParagraph}{Example Logic Functions}
+
+\begin{DoxyItemize}
+\item AND, OR, XOR, NAND, NOR gates
+\item Multiplexers, decoders
+\item Edge detectors
+\item D flip-\/flops, RS latches
+\item Frequency dividers
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Features}
+
+\begin{DoxyItemize}
+\item 8-\/bit truth table for any 3-\/input logic function
+\item Synchronous or asynchronous operation
+\item Sequential logic via feedback
+\item Filter for input debouncing
+\item Edge detector
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Truth table format:\+ bit 0 = 000 inputs, bit 7 = 111 inputs 
+
+LUTs can be cascaded for complex functions 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Sequential mode requires careful timing analysis 
+
+Filter adds propagation delay -\/ verify timing
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+AVR64\+DD32 datasheet section 14 (CCL) 
+
+\doxylink{_menu___c_c_l___l_u_t_8h_source}{Menu\+\_\+\+CCL\+\_\+\+LUT.\+h} for configuration interface 
+\end{DoxySeeAlso}

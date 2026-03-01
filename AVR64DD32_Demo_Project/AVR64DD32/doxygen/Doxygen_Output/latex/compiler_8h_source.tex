@@ -1,0 +1,41 @@
+\doxysection{compiler.\+h}
+\hypertarget{compiler_8h_source}{}\label{compiler_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/compiler.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/compiler.h}}
+\doxymbox{\hyperlink{compiler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ UTILS\_COMPILER\_H}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ UTILS\_COMPILER\_H}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <avr/builtins.h>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#elif\ defined(\_\_ICCAVR\_\_)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ ENABLE\_BIT\_DEFINITIONS\ 1}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <ioavr.h>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <intrinsics.h>}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#ifndef\ CCP\_IOREG\_gc}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ CCP\_IOREG\_gc\ 0xD8\ }\textcolor{comment}{/*\ CPU\_CCP\_IOREG\_gc\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#ifndef\ CCP\_SPM\_gc}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ CCP\_SPM\_gc\ 0x9D\ }\textcolor{comment}{/*\ CPU\_CCP\_SPM\_gc\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#error\ Unsupported\ compiler.}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{interrupt__avr8_8h}{interrupt\_avr8.h}}>}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ UNUSED(v)\ (void)(v)}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ UTILS\_COMPILER\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

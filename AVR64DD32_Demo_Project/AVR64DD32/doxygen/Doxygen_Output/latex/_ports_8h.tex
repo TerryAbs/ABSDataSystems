@@ -1,0 +1,121 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Ports/\+\+Ports.h File Reference}
+\hypertarget{_ports_8h}{}\label{_ports_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Ports/Ports.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Ports/Ports.h}}
+
+
+GPIO Port driver for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_ports_configuration}{Ports\+Configuration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_ports_8h_ace36b05ee74028981a22de6acce904f2}\label{_ports_8h_ace36b05ee74028981a22de6acce904f2} 
+\+\#define {\bfseries Ports\+System\+Size}~1
+\item 
+\Hypertarget{_ports_8h_ad00a92975aa85152e17470cc5fa8e31e}\label{_ports_8h_ad00a92975aa85152e17470cc5fa8e31e} 
+\+\#define {\bfseries PC3\+\_\+\+Port\+In\+Out}~0x08
+\item 
+\Hypertarget{_ports_8h_a8ee7c5fe255d7ba284e1760004a7cc69}\label{_ports_8h_a8ee7c5fe255d7ba284e1760004a7cc69} 
+\+\#define {\bfseries PF6\+\_\+\+Port\+In\+Only}~0x40
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_ports_8h_acc4f553230df886a846ca4e8dfe65a66}\label{_ports_8h_acc4f553230df886a846ca4e8dfe65a66} 
+typedef struct Ports\+Configuration {\bfseries Ports\+Configuration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_ports_8h_a531a237e2fac02a870b2bb40547c52db}\label{_ports_8h_a531a237e2fac02a870b2bb40547c52db} 
+enum {\bfseries PORTRESISTORS} \{ {\bfseries PORTRESISTORS\+\_\+\+NONE}
+, {\bfseries PORTRESISTORS\+\_\+\+PULLUP}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_ports_8h_aba98021a3dab9257f13153755d2d5362}\label{_ports_8h_aba98021a3dab9257f13153755d2d5362} 
+void {\bfseries Ports\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_ports_8h_afa91c4f3b9ab6102ad8872982dc7021f}\label{_ports_8h_afa91c4f3b9ab6102ad8872982dc7021f} 
+void {\bfseries Ports\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_ports_8h_a9d138e570117526c634b5b6bd0384192}\label{_ports_8h_a9d138e570117526c634b5b6bd0384192} 
+void {\bfseries Ports\+\_\+\+Re\+Initialize} (void)
+\item 
+\Hypertarget{_ports_8h_a4c1b73acfc5732c22cd9e7924d20deec}\label{_ports_8h_a4c1b73acfc5732c22cd9e7924d20deec} 
+void {\bfseries Ports\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_ports_8h_afcd7d88d5db4d01c391d629d6cdabd01}\label{_ports_8h_afcd7d88d5db4d01c391d629d6cdabd01} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+Ports\+Data} (void)
+\item 
+\Hypertarget{_ports_8h_a97af0aac8eba2340818a4807589a1759}\label{_ports_8h_a97af0aac8eba2340818a4807589a1759} 
+void {\bfseries Ports\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_ports_8h_a1345491d70ad4c0ff34999cbd5aea3c4}\label{_ports_8h_a1345491d70ad4c0ff34999cbd5aea3c4} 
+void {\bfseries Ports\+\_\+\+Load\+\_\+\+Config} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPIO Port driver for AVR64\+DD32. 
+
+Implements GPIO port configuration and control. Supports digital input/\+output, pull-\/up resistors, interrupt-\/on-\/change, and pin inversion. Provides high-\/level interface for port manipulation.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Available Ports}
+
+\begin{DoxyItemize}
+\item PORT A (PA0-\/\+PA7):\+ I2C, SPI, USART
+\item PORT C (PC0-\/\+PC3):\+ USART, ZCD
+\item PORT D (PD0-\/\+PD7):\+ ADC, DAC, CCL outputs, Event outputs
+\item PORT F (PF0-\/\+PF6):\+ CCL inputs, Timer output, ZCD simulator
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Pin Features}
+
+\begin{DoxyItemize}
+\item Direction control (input/\+output)
+\item Pull-\/up resistor enable
+\item Input level configuration
+\item Pin inversion
+\item Interrupt sense control
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Demo Pins}
+
+\begin{DoxyItemize}
+\item PC3 (TP16):\+ General purpose I/\+O demo
+\item PD1-\/\+PD3:\+ PORT/\+\+CCL test outputs
+\item PF6 (H2-\/11):\+ Input-\/only test pin
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Some pins have input-\/only capability (PF6 on 32-\/pin package) 
+
+Pull-\/ups typically 20-\/50k? (varies with supply voltage) 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Avoid conflicting peripheral and GPIO usage on same pin 
+
+Check datasheet for maximum current source/\+sink per pin
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{port_8h}{port.\+h} for low-\/level port macros 
+
+\doxylink{_menu___p_o_r_t_s_8h_source}{Menu\+\_\+\+PORTS.\+h} for configuration interface 
+\end{DoxySeeAlso}

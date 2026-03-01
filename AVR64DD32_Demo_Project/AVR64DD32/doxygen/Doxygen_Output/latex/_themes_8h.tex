@@ -1,0 +1,78 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Menu\+\_\+\+Report\+\_\+\+Processor/\+\+Themes/\+\+Themes.h File Reference}
+\hypertarget{_themes_8h}{}\label{_themes_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Themes/Themes.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Themes/Themes.h}}
+
+
+Color theme definitions for terminal interface.  
+
+
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_themes_8h_af2de9acb57a2f5de74fdead46255a640}\label{_themes_8h_af2de9acb57a2f5de74fdead46255a640} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+White\+Black} \+[$\,$]\+
+\item 
+\Hypertarget{_themes_8h_a14e0a41adc05869707c8661757a7c6ce}\label{_themes_8h_a14e0a41adc05869707c8661757a7c6ce} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+Yellow\+Black} \+[$\,$]\+
+\item 
+\Hypertarget{_themes_8h_a43846b32ba2d2bce722e48bb2e329b41}\label{_themes_8h_a43846b32ba2d2bce722e48bb2e329b41} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+Black\+Yellow} \+[$\,$]\+
+\item 
+\Hypertarget{_themes_8h_a3c8b92f73ffe23a6272282f89ce8fd15}\label{_themes_8h_a3c8b92f73ffe23a6272282f89ce8fd15} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+Red\+Black} \+[$\,$]\+
+\item 
+\Hypertarget{_themes_8h_a7c74e47f9ac42563706efa782f74ad6c}\label{_themes_8h_a7c74e47f9ac42563706efa782f74ad6c} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+Red\+Yellow} \+[$\,$]\+
+\item 
+\Hypertarget{_themes_8h_a5f0ea2b53ac959b0b780eb9001970653}\label{_themes_8h_a5f0ea2b53ac959b0b780eb9001970653} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+Cyan\+Black} \+[$\,$]\+
+\item 
+\Hypertarget{_themes_8h_aab3336d737c7a9534f24d2a4534c3daa}\label{_themes_8h_aab3336d737c7a9534f24d2a4534c3daa} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+Blue\+White} \+[$\,$]\+
+\item 
+\Hypertarget{_themes_8h_a77c68da94e3f1271ea88782869019edb}\label{_themes_8h_a77c68da94e3f1271ea88782869019edb} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+Red\+White} \+[$\,$]\+
+\item 
+\Hypertarget{_themes_8h_a992125aba7967a3def00ecdd7f169fc5}\label{_themes_8h_a992125aba7967a3def00ecdd7f169fc5} 
+const \doxymbox{\hyperlink{struct_theme}{Theme}} {\bfseries theme\+Black\+Red} \+[$\,$]\+
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Color theme definitions for terminal interface. 
+
+Provides predefined color schemes for consistent visual appearance across menus and data displays. Themes specify foreground and background color combinations.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Predefined Themes}
+
+\begin{DoxyItemize}
+\item Header theme:\+ Menu titles and section headers
+\item Body theme:\+ Menu items and descriptions
+\item Data theme:\+ Real-\/time data display
+\item Prompt theme:\+ User input areas
+\item Error theme:\+ Error messages and warnings
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Theme Structure}
+Each theme contains:\+
+\begin{DoxyItemize}
+\item Foreground color (text)
+\item Background color (behind text)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Themes are const structures in PROGMEM 
+
+Color values map to VT102 color codes 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_terminal___commands_8h}{Terminal\+\_\+\+Commands.\+h} for color constants 
+\end{DoxySeeAlso}

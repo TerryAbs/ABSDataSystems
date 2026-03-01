@@ -1,0 +1,49 @@
+\doxysection{atomic.\+h}
+\hypertarget{atomic_8h_source}{}\label{atomic_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/atomic.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/atomic.h}}
+\doxymbox{\hyperlink{atomic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ ATOMIC\_H}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ ATOMIC\_H}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{/*\ clang-\/format\ off\ */}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)\ ||\ defined\ (\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ ENTER\_CRITICAL(UNUSED)\ \_\_asm\_\_\ \_\_volatile\_\_\ (\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ "{}in\ \_\_tmp\_reg\_\_,\ \_\_SREG\_\_"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)n\(\backslash\)t"{}\ \(\backslash\)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ \ "{}cli"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)n\(\backslash\)t"{}\ \(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ "{}push\ \_\_tmp\_reg\_\_"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)n\(\backslash\)t"{}\ \(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \ :::\ "{}memory"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\ \ \ )}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ EXIT\_CRITICAL(UNUSED)\ \ \_\_asm\_\_\ \_\_volatile\_\_\ (\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ "{}pop\ \_\_tmp\_reg\_\_"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)n\(\backslash\)t"{}\ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \ "{}out\ \_\_SREG\_\_,\ \_\_tmp\_reg\_\_"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)n\(\backslash\)t"{}\ \(\backslash\)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\ \ \ :::\ "{}memory"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ )}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ DISABLE\_INTERRUPTS()\ \ \ \ \ \ \ \ \_\_asm\_\_\ \_\_volatile\_\_\ (\ "{}cli"{}\ :::\ "{}memory"{})}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ ENABLE\_INTERRUPTS()\ \ \ \ \ \ \ \ \ \_\_asm\_\_\ \_\_volatile\_\_\ (\ "{}sei"{}\ :::\ "{}memory"{})}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#elif\ defined(\_\_ICCAVR\_\_)}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ ENTER\_CRITICAL(P)\ \ unsigned\ char\ P\ =\ \_\_save\_interrupt();\_\_disable\_interrupt();}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ EXIT\_CRITICAL(P)\ \ \_\_restore\_interrupt(P);}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ DISABLE\_INTERRUPTS()\ \ \ \_\_disable\_interrupt();}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ ENABLE\_INTERRUPTS()\ \ \ \ \_\_enable\_interrupt();}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#\ \ error\ Unsupported\ compiler.}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{comment}{/*\ clang-\/format\ on\ */}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ATOMIC\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,393 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+USART/\+\+USART.h File Reference}
+\hypertarget{_u_s_a_r_t_8h}{}\label{_u_s_a_r_t_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/USART/USART.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/USART/USART.h}}
+
+
+Universal Synchronous/\+\+Asynchronous Receiver/\+\+Transmitter driver.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_baud_rate_conversion}{Baud\+Rate\+Conversion}}
+\item 
+struct \doxymbox{\hyperlink{struct_u_s_a_r_t_configuration}{USARTConfiguration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a3f30bf7c0e36e9bdfb3f943dd06e96aa}\label{_u_s_a_r_t_8h_a3f30bf7c0e36e9bdfb3f943dd06e96aa} 
+\+\#define {\bfseries USARTSystem\+Size}~1
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a9855339298db70781aab6fcf2ab625a1}\label{_u_s_a_r_t_8h_a9855339298db70781aab6fcf2ab625a1} 
+\+\#define {\bfseries PA2\+\_\+\+USART0\+\_\+\+TX}~0x04
+\item 
+\Hypertarget{_u_s_a_r_t_8h_adb9c5f6ad200fbdaf3a32ca40ca465b0}\label{_u_s_a_r_t_8h_adb9c5f6ad200fbdaf3a32ca40ca465b0} 
+\+\#define {\bfseries PA3\+\_\+\+USART0\+\_\+\+RX}~0x08
+\item 
+\+\#define \doxymbox{\hyperlink{_u_s_a_r_t_8h_a8882b181cc8c9e98d7b230d3aa19b93a}{USART0\+\_\+\+BAUD\+\_\+\+RATE}}(BAUD\+\_\+\+RATE)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_ace7326486aecb434d6f7bcfdf38a79c4}\label{_u_s_a_r_t_8h_ace7326486aecb434d6f7bcfdf38a79c4} 
+\+\#define {\bfseries USART\+\_\+0\+\_\+\+Buffer\+Size}~100
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_u_s_a_r_t_8h_ae143898fdf47d894af98de4d7f7859fe}\label{_u_s_a_r_t_8h_ae143898fdf47d894af98de4d7f7859fe} 
+typedef struct Baud\+Rate\+Conversion {\bfseries Baud\+Rate\+Conversion}
+\item 
+\Hypertarget{_u_s_a_r_t_8h_aba472cc9baeec4e7d88de7528343f896}\label{_u_s_a_r_t_8h_aba472cc9baeec4e7d88de7528343f896} 
+typedef struct USARTConfiguration {\bfseries USARTConfiguration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a036a499ee607521fe06333c1e815c015}\label{_u_s_a_r_t_8h_a036a499ee607521fe06333c1e815c015} 
+enum {\bfseries BAUDRATES} \{ \newline
+{\bfseries BAUDRATES\+\_\+300}
+, {\bfseries BAUDRATES\+\_\+600}
+, {\bfseries BAUDRATES\+\_\+1200}
+, {\bfseries BAUDRATES\+\_\+2400}
+, \newline
+{\bfseries BAUDRATES\+\_\+4800}
+, {\bfseries BAUDRATES\+\_\+9600}
+, {\bfseries BAUDRATES\+\_\+14400}
+, {\bfseries BAUDRATES\+\_\+19200}
+, \newline
+{\bfseries BAUDRATES\+\_\+28800}
+, {\bfseries BAUDRATES\+\_\+38400}
+, {\bfseries BAUDRATES\+\_\+57600}
+, {\bfseries BAUDRATES\+\_\+115200}
+, \newline
+{\bfseries BAUDRATES\+\_\+230400}
+, {\bfseries BAUDRATES\+\_\+460800}
+, {\bfseries BAUDRATES\+\_\+921600}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a407a82f6a55d9d6535246cec7e5ff8cc}\label{_u_s_a_r_t_8h_a407a82f6a55d9d6535246cec7e5ff8cc} 
+void {\bfseries USART\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a196aab6ad8f8767c5249b085a48a0ea3}\label{_u_s_a_r_t_8h_a196aab6ad8f8767c5249b085a48a0ea3} 
+void {\bfseries USART\+\_\+\+Re\+Initialize} (void)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a4265fc56a8ffcb4c1abac2cac2ac05ea}\label{_u_s_a_r_t_8h_a4265fc56a8ffcb4c1abac2cac2ac05ea} 
+void {\bfseries USART\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a3cdca3b8d4baa4f325ad4bcde1c68922}\label{_u_s_a_r_t_8h_a3cdca3b8d4baa4f325ad4bcde1c68922} 
+void {\bfseries USART\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a56db08cba1597dd90d6dfee1444b1c56}\label{_u_s_a_r_t_8h_a56db08cba1597dd90d6dfee1444b1c56} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+USARTData} (void)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_acdb86e414a702047ede5d73cc90ddd19}\label{_u_s_a_r_t_8h_acdb86e414a702047ede5d73cc90ddd19} 
+void {\bfseries USART\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a2d47f6e72fcbdc8d96e8b20ba6776ffa}\label{_u_s_a_r_t_8h_a2d47f6e72fcbdc8d96e8b20ba6776ffa} 
+void {\bfseries USART\+\_\+\+Load\+\_\+\+Config} (void)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a270fca15ebd69bca3958690c970bfda6}\label{_u_s_a_r_t_8h_a270fca15ebd69bca3958690c970bfda6} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Decode\+Baud\+Rate} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a4693d0d5c39322d0217044bcc657c6a6}\label{_u_s_a_r_t_8h_a4693d0d5c39322d0217044bcc657c6a6} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Decode\+Parity} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_acc3e5f9d75b3818b7646ebcc4b39b912}\label{_u_s_a_r_t_8h_acc3e5f9d75b3818b7646ebcc4b39b912} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Decode\+Stopbits} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a8f534708b1bf0b5e6940f1fde8b64550}\label{_u_s_a_r_t_8h_a8f534708b1bf0b5e6940f1fde8b64550} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Decode\+Data\+Bits} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+void \doxymbox{\hyperlink{_u_s_a_r_t_8h_a1d9075101a5057660e79d0cff3525d81}{USART\+\_\+0\+\_\+enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable RX and TX in USART\+\_\+0. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_u_s_a_r_t_8h_a9c3529a15c93d78c50fd178578eb24af}{USART\+\_\+0\+\_\+enable\+\_\+rx}} (void)
+\begin{DoxyCompactList}\small\item\em Enable RX in USART\+\_\+0. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_u_s_a_r_t_8h_aac06a36c311042c92763bb21357dd8b9}{USART\+\_\+0\+\_\+enable\+\_\+tx}} (void)
+\begin{DoxyCompactList}\small\item\em Enable TX in USART\+\_\+0. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_u_s_a_r_t_8h_a824fee6f2e4270bdfad29e5db140ba89}{USART\+\_\+0\+\_\+disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable USART\+\_\+0. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{_u_s_a_r_t_8h_a8b03ea75412969ddf0cdcb97ac7505f5}{USART\+\_\+0\+\_\+get\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Get recieved data from USART\+\_\+0. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{_u_s_a_r_t_8h_a809c27763fe080caac2c78022e9c5437}{USART\+\_\+0\+\_\+is\+\_\+tx\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the usart can accept data to be transmitted. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{_u_s_a_r_t_8h_a8194a6de09849f72af72c892028e269e}{USART\+\_\+0\+\_\+is\+\_\+rx\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the USART has received data. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{_u_s_a_r_t_8h_a2aa64b125f72ca69729eba3c1f588378}{USART\+\_\+0\+\_\+is\+\_\+tx\+\_\+busy}} (void)
+\begin{DoxyCompactList}\small\item\em Check if USART\+\_\+0 data is transmitted. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{_u_s_a_r_t_8h_a41f355e96c497bf6a0d71ae080c7087f}{USART\+\_\+0\+\_\+read}} (void)
+\begin{DoxyCompactList}\small\item\em Read one character from USART\+\_\+0. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{_u_s_a_r_t_8h_ac62803942950806dd1663834efd2448d}{USART\+\_\+0\+\_\+write}} (const uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write one character to USART\+\_\+0. \end{DoxyCompactList}\item 
+\Hypertarget{_u_s_a_r_t_8h_ac7dbea4ffb0ff28bffeb3d4bf8e87c91}\label{_u_s_a_r_t_8h_ac7dbea4ffb0ff28bffeb3d4bf8e87c91} 
+void {\bfseries USART\+\_\+0\+\_\+\+Clear\+Buffer} (void)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a2d726eda30fe4a005f019ffdd38cbb42}\label{_u_s_a_r_t_8h_a2d726eda30fe4a005f019ffdd38cbb42} 
+bool {\bfseries USART\+\_\+0\+\_\+\+Print} (char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a7772e6cfab10320ce87604fa2650cc1a}\label{_u_s_a_r_t_8h_a7772e6cfab10320ce87604fa2650cc1a} 
+void {\bfseries USART\+\_\+0\+\_\+\+Print\+\_\+\+Immediate} (char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_u_s_a_r_t_8h_a5fb11595213c435db5986f550de6b459}\label{_u_s_a_r_t_8h_a5fb11595213c435db5986f550de6b459} 
+void {\bfseries USART\+\_\+0\+\_\+\+Append\+Char\+To\+Buffer} (char msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Universal Synchronous/\+\+Asynchronous Receiver/\+\+Transmitter driver. 
+
+Implements buffered serial communication on USART0 and USART1. USART1 is used for VT102 terminal interface (PC0/\+\+PC1), USART0 provides secondary serial port (PA2/\+\+PA3).
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Pin Configuration}
+USART1 (Primary -\/ Terminal):\+
+\begin{DoxyItemize}
+\item PC0:\+ TxD (Transmit)
+\item PC1:\+ RxD (Receive)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+USART0 (Secondary):\+
+\begin{DoxyItemize}
+\item PA2:\+ TxD
+\item PA3:\+ RxD
+\end{DoxyItemize}
+
+\begin{DoxyParagraph}{Features}
+
+\begin{DoxyItemize}
+\item Interrupt-\/driven TX/\+\+RX with circular buffers
+\item Configurable baud rate (9600 to 115200 typical)
+\item 8N1 format (8 data bits, no parity, 1 stop bit)
+\item printf/\+scanf integration via USART1
+\item Error detection (frame, parity, overrun)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+USART1 is configured in atmel\+\_\+start for terminal I/\+O 
+
+Buffer sizes can be adjusted in \doxylink{usart__basic_8h}{usart\+\_\+basic.\+h} 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+RX buffer overflow occurs if data not read promptly 
+
+Incorrect baud rate causes garbled communication
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{usart__basic_8h}{usart\+\_\+basic.\+h} for low-\/level USART operations 
+
+\doxylink{_serial_comm___receive_8h}{Serial\+Comm\+\_\+\+Receive.\+h} for command processing 
+\end{DoxySeeAlso}
+
+
+\label{doc-define-members}
+\Hypertarget{_u_s_a_r_t_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_u_s_a_r_t_8h_a8882b181cc8c9e98d7b230d3aa19b93a}\index{USART.h@{USART.h}!USART0\_BAUD\_RATE@{USART0\_BAUD\_RATE}}
+\index{USART0\_BAUD\_RATE@{USART0\_BAUD\_RATE}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART0\_BAUD\_RATE}{USART0\_BAUD\_RATE}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a8882b181cc8c9e98d7b230d3aa19b93a} 
+\+\#define USART0\+\_\+\+BAUD\+\_\+\+RATE(\begin{DoxyParamCaption}\item[{}]{BAUD\+\_\+\+RATE}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((float)(24000000\ *\ 64\ /\ (16\ *\ (float)BAUD\_RATE))\ +\ 0.5)}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{_u_s_a_r_t_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{_u_s_a_r_t_8h_a824fee6f2e4270bdfad29e5db140ba89}\index{USART.h@{USART.h}!USART\_0\_disable@{USART\_0\_disable}}
+\index{USART\_0\_disable@{USART\_0\_disable}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_disable()}{USART\_0\_disable()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a824fee6f2e4270bdfad29e5db140ba89} 
+void USART\+\_\+0\+\_\+disable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Disable USART\+\_\+0. 
+
+
+\begin{DoxyEnumerate}
+\item Disables the USART module by clearing the enable-\/bit(s) in the USART control register
+\item If supported by the clock system, disables the clock to the USART
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{_u_s_a_r_t_8h_a1d9075101a5057660e79d0cff3525d81}\index{USART.h@{USART.h}!USART\_0\_enable@{USART\_0\_enable}}
+\index{USART\_0\_enable@{USART\_0\_enable}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_enable()}{USART\_0\_enable()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a1d9075101a5057660e79d0cff3525d81} 
+void USART\+\_\+0\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable RX and TX in USART\+\_\+0. 
+
+
+\begin{DoxyEnumerate}
+\item If supported by the clock system, enables the clock to the USART
+\item Enables the USART module by setting the RX and TX enable-\/bits in the USART control register
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{_u_s_a_r_t_8h_a9c3529a15c93d78c50fd178578eb24af}\index{USART.h@{USART.h}!USART\_0\_enable\_rx@{USART\_0\_enable\_rx}}
+\index{USART\_0\_enable\_rx@{USART\_0\_enable\_rx}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_enable\_rx()}{USART\_0\_enable\_rx()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a9c3529a15c93d78c50fd178578eb24af} 
+void USART\+\_\+0\+\_\+enable\+\_\+rx (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable RX in USART\+\_\+0. 
+
+
+\begin{DoxyEnumerate}
+\item If supported by the clock system, enables the clock to the USART
+\item Enables the USART module by setting the RX enable-\/bit in the USART control register
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{_u_s_a_r_t_8h_aac06a36c311042c92763bb21357dd8b9}\index{USART.h@{USART.h}!USART\_0\_enable\_tx@{USART\_0\_enable\_tx}}
+\index{USART\_0\_enable\_tx@{USART\_0\_enable\_tx}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_enable\_tx()}{USART\_0\_enable\_tx()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_aac06a36c311042c92763bb21357dd8b9} 
+void USART\+\_\+0\+\_\+enable\+\_\+tx (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable TX in USART\+\_\+0. 
+
+
+\begin{DoxyEnumerate}
+\item If supported by the clock system, enables the clock to the USART
+\item Enables the USART module by setting the TX enable-\/bit in the USART control register
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{_u_s_a_r_t_8h_a8b03ea75412969ddf0cdcb97ac7505f5}\index{USART.h@{USART.h}!USART\_0\_get\_data@{USART\_0\_get\_data}}
+\index{USART\_0\_get\_data@{USART\_0\_get\_data}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_get\_data()}{USART\_0\_get\_data()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a8b03ea75412969ddf0cdcb97ac7505f5} 
+uint8\+\_\+t USART\+\_\+0\+\_\+get\+\_\+data (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get recieved data from USART\+\_\+0. 
+
+\begin{DoxyReturn}{Returns}
+Data register from USART\+\_\+0 module 
+\end{DoxyReturn}
+\Hypertarget{_u_s_a_r_t_8h_a8194a6de09849f72af72c892028e269e}\index{USART.h@{USART.h}!USART\_0\_is\_rx\_ready@{USART\_0\_is\_rx\_ready}}
+\index{USART\_0\_is\_rx\_ready@{USART\_0\_is\_rx\_ready}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_is\_rx\_ready()}{USART\_0\_is\_rx\_ready()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a8194a6de09849f72af72c892028e269e} 
+bool USART\+\_\+0\+\_\+is\+\_\+rx\+\_\+ready (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the USART has received data. 
+
+\begin{DoxyReturn}{Returns}
+The status of USART RX data ready check 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The USART has received data \\
+\hline
+{\em false} & The USART has not received data \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{_u_s_a_r_t_8h_a2aa64b125f72ca69729eba3c1f588378}\index{USART.h@{USART.h}!USART\_0\_is\_tx\_busy@{USART\_0\_is\_tx\_busy}}
+\index{USART\_0\_is\_tx\_busy@{USART\_0\_is\_tx\_busy}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_is\_tx\_busy()}{USART\_0\_is\_tx\_busy()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a2aa64b125f72ca69729eba3c1f588378} 
+bool USART\+\_\+0\+\_\+is\+\_\+tx\+\_\+busy (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if USART\+\_\+0 data is transmitted. 
+
+\begin{DoxyReturn}{Returns}
+Receiver ready status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & Data is not completely shifted out of the shift register \\
+\hline
+{\em false} & Data completely shifted out if the USART shift register \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{_u_s_a_r_t_8h_a809c27763fe080caac2c78022e9c5437}\index{USART.h@{USART.h}!USART\_0\_is\_tx\_ready@{USART\_0\_is\_tx\_ready}}
+\index{USART\_0\_is\_tx\_ready@{USART\_0\_is\_tx\_ready}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_is\_tx\_ready()}{USART\_0\_is\_tx\_ready()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a809c27763fe080caac2c78022e9c5437} 
+bool USART\+\_\+0\+\_\+is\+\_\+tx\+\_\+ready (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the usart can accept data to be transmitted. 
+
+\begin{DoxyReturn}{Returns}
+The status of USART TX data ready check 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em false} & The USART can not receive data to be transmitted \\
+\hline
+{\em true} & The USART can receive data to be transmitted \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{_u_s_a_r_t_8h_a41f355e96c497bf6a0d71ae080c7087f}\index{USART.h@{USART.h}!USART\_0\_read@{USART\_0\_read}}
+\index{USART\_0\_read@{USART\_0\_read}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_read()}{USART\_0\_read()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_a41f355e96c497bf6a0d71ae080c7087f} 
+uint8\+\_\+t USART\+\_\+0\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Read one character from USART\+\_\+0. 
+
+Function will block if a character is not available.
+
+\begin{DoxyReturn}{Returns}
+Data read from the USART\+\_\+0 module 
+\end{DoxyReturn}
+\Hypertarget{_u_s_a_r_t_8h_ac62803942950806dd1663834efd2448d}\index{USART.h@{USART.h}!USART\_0\_write@{USART\_0\_write}}
+\index{USART\_0\_write@{USART\_0\_write}!USART.h@{USART.h}}
+\doxysubsubsection{\texorpdfstring{USART\_0\_write()}{USART\_0\_write()}}
+{\footnotesize\ttfamily \label{_u_s_a_r_t_8h_ac62803942950806dd1663834efd2448d} 
+void USART\+\_\+0\+\_\+write (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Write one character to USART\+\_\+0. 
+
+Function will block until a character can be accepted.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em data} & The character to write to the USART\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}

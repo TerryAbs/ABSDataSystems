@@ -1,0 +1,149 @@
+\doxysection{Data\+Structures.\+h}
+\hypertarget{_data_structures_8h_source}{}\label{_data_structures_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Common/DataStructures.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Common/DataStructures.h}}
+\doxymbox{\hyperlink{_data_structures_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <avr/pgmspace.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ SIGNATURE\_BYTES\_ADC\ \ \ \ \ =\ 0x10,}
+\DoxyCodeLine{00040\ \ \ \ \ SIGNATURE\_BYTES\_CCL\ \ \ \ \ =\ 0x20,}
+\DoxyCodeLine{00041\ \ \ \ \ SIGNATURE\_BYTES\_DAC\ \ \ \ \ =\ 0x30,}
+\DoxyCodeLine{00042\ \ \ \ \ SIGNATURE\_BYTES\_EVENTS\ \ =\ 0x40,}
+\DoxyCodeLine{00043\ \ \ \ \ SIGNATURE\_BYTES\_PORTS\ \ \ =\ 0x50,}
+\DoxyCodeLine{00044\ \ \ \ \ SIGNATURE\_BYTES\_RTC\ \ \ \ \ =\ 0x60,}
+\DoxyCodeLine{00045\ \ \ \ \ SIGNATURE\_BYTES\_SPI\ \ \ \ \ =\ 0x70,}
+\DoxyCodeLine{00046\ \ \ \ \ SIGNATURE\_BYTES\_TIMERS\ \ =\ 0x80,}
+\DoxyCodeLine{00047\ \ \ \ \ SIGNATURE\_BYTES\_TWI\ \ \ \ \ =\ 0x90,}
+\DoxyCodeLine{00048\ \ \ \ \ SIGNATURE\_BYTES\_USART\ \ \ =\ 0xA0,}
+\DoxyCodeLine{00049\ \ \ \ \ SIGNATURE\_BYTES\_ZCD\ \ \ \ \ =\ 0xB0}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{enum}\ SYSTEMMENU\_PROCESSING\_STATES\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_IDLE,}
+\DoxyCodeLine{00054\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_START,}
+\DoxyCodeLine{00055\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_HEADER,}
+\DoxyCodeLine{00056\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_HEADER\_TEST,}
+\DoxyCodeLine{00057\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_BODY,}
+\DoxyCodeLine{00058\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_BODY\_TEST,}
+\DoxyCodeLine{00059\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_DATAENTRY,}
+\DoxyCodeLine{00060\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_DATAENTRY\_TEST,}
+\DoxyCodeLine{00061\ \ \ \ \ SYSTEMMENU\_PROCESSING\_STATE\_DISPLAYPROMPT}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{enum}\ FIELDTYPE\ \{}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ FIELDTYPE\_NONE,}}
+\DoxyCodeLine{00066\ \ \ \ \ FIELDTYPE\_BOOL,}
+\DoxyCodeLine{00067\ \ \ \ \ FIELDTYPE\_UINT8,}
+\DoxyCodeLine{00068\ \ \ \ \ FIELDTYPE\_UINT16,}
+\DoxyCodeLine{00069\ \ \ \ \ FIELDTYPE\_FLOAT}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ \ FIELDTYPE\_STRING,}}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{enum}\ DATAENTRYMODE\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ DATAENTRYMODE\_MENU,}
+\DoxyCodeLine{00075\ \ \ \ \ DATAENTRYMODE\_DISPLAYDATA,}
+\DoxyCodeLine{00076\ \ \ \ \ DATAENTRYMODE\_DROPDOWN,}
+\DoxyCodeLine{00077\ \ \ \ \ DATAENTRYMODE\_ENTERVALUE}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ Theme\ is\ used\ to\ create\ a\ color\ scheme.}}
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_theme}{Theme}}\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{char}\ foreColor;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{char}\ backGroundColor;}
+\DoxyCodeLine{00084\ \}\doxymbox{\hyperlink{struct_theme}{Theme}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ Menu\ Header\ Description}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_menu_header}{MenuHeader}}\{}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{char}\ row;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{char}\ col;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_theme}{Theme}}\ *theme;}
+\DoxyCodeLine{00091\ \ \ \ \ PGM\_P\ cmd\_Msg\_P;}
+\DoxyCodeLine{00092\ \ \ \ \ uint8\_t\ cmd\_MsgSize;}
+\DoxyCodeLine{00093\ \}\doxymbox{\hyperlink{struct_menu_header}{MenuHeader}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ Menu\ Body\ Description}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ This\ appears\ on\ the\ left\ side\ of\ the\ terminal}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_menu_body}{MenuBody}}\{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{char}\ row;}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{char}\ col;}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_theme}{Theme}}\ *theme;}
+\DoxyCodeLine{00101\ \ \ \ \ PGM\_P\ cmd\_Msg\_P;}
+\DoxyCodeLine{00102\ \ \ \ \ uint8\_t\ cmdSize;}
+\DoxyCodeLine{00103\ \ \ \ \ PGM\_P\ description\_P;}
+\DoxyCodeLine{00104\ \ \ \ \ void\ (*funcptr)(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *);\ \ \ \ \ \ \textcolor{comment}{//\ Pointer\ to\ the\ function\ call\ that\ will\ be\ called\ when\ the\ user\ enters\ the\ CMD\_Msg\ Text}}
+\DoxyCodeLine{00105\ \}\doxymbox{\hyperlink{struct_menu_body}{MenuBody}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ Data\ Entry\ Description}}
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ This\ tell\ how\ to\ decode\ the\ data\ that\ appears\ on\ the\ right\ side\ of\ the\ terminal}}
+\DoxyCodeLine{00109\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_data_entry}{DataEntry}}\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{char}\ row;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{char}\ col;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_theme}{Theme}}\ *theme;}
+\DoxyCodeLine{00113\ \ \ \ \ uint16\_t\ offset;\ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{enum}\ FIELDTYPE\ fieldType;}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{char}\ *(*Decodefuncptr)(\textcolor{keywordtype}{void}\ *);\ \textcolor{comment}{//\ Points\ to\ the\ decode\ function}}
+\DoxyCodeLine{00116\ \ \ \ \ void\ (*Editfuncptr)(\textcolor{keywordtype}{char}\ *);\ \ \ \ \textcolor{comment}{//\ Points\ to\ the\ Editor\ function}}
+\DoxyCodeLine{00117\ \}\doxymbox{\hyperlink{struct_data_entry}{DataEntry}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_data_entry_screen_area}{DataEntryScreenArea}}\ \{\ \ \ \ \textcolor{keywordtype}{char}\ sRow;}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{char}\ sCol;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{char}\ eRow;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{char}\ eCol;}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_theme}{Theme}}\ *theme;}
+\DoxyCodeLine{00124\ \}\doxymbox{\hyperlink{struct_data_entry_screen_area}{DataEntryScreenArea}};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_enter_value_by_hand}{EnterValueByHand}}}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{enum}\ FIELDTYPE\ fieldtype;}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{float}\ Min;}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{float}\ Max;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg;}
+\DoxyCodeLine{00132\ \ \ \ \ void\ (*ptrSaveFunction)(\textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00133\ \}\doxymbox{\hyperlink{struct_enter_value_by_hand}{EnterValueByHand}};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_save_config}{SaveConfig}}\{}
+\DoxyCodeLine{00136\ \ \ \ \ uint8\_t\ index;}
+\DoxyCodeLine{00137\ \ \ \ \ void\ (*Savefuncptr)(uint8\_t\ index);\ \textcolor{comment}{//\ Points\ to\ the\ Editor\ function}}
+\DoxyCodeLine{00138\ \}\doxymbox{\hyperlink{struct_save_config}{SaveConfig}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ This\ describes\ the\ overall\ menu}}
+\DoxyCodeLine{00141\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_menu_system}{MenuSystem}}\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_menu_header}{MenuHeader}}\ *menuHeader;}
+\DoxyCodeLine{00143\ \ \ \ \ uint8\_t\ menuHeaderSize;}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_menu_body}{MenuBody}}\ *menuBody;}
+\DoxyCodeLine{00145\ \ \ \ \ uint8\_t\ menuBodySize;}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_data_entry}{DataEntry}}\ *dataEntry;}
+\DoxyCodeLine{00147\ \ \ \ \ uint8\_t\ dataEntrySize;}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ *dataptr;}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{enum}\ DATAENTRYMODE\ dataEntryMode;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_data_entry_screen_area}{DataEntryScreenArea}}\ screenArea;\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_menu_system}{MenuSystem}}\ *callingMenu;}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_save_config}{SaveConfig}}\ saveConfig;}
+\DoxyCodeLine{00153\ \}\ \doxymbox{\hyperlink{struct_menu_system}{MenuSystem}};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ This\ is\ used\ by\ the\ menu\ state\ machine}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ to\ track\ progress.}}
+\DoxyCodeLine{00157\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_system_menu_processor}{SystemMenuProcessor}}\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{enum}\ SYSTEMMENU\_PROCESSING\_STATES\ StateMachine;}
+\DoxyCodeLine{00159\ \ \ \ \ uint8\_t\ currentRow;}
+\DoxyCodeLine{00160\ \}\ \doxymbox{\hyperlink{struct_system_menu_processor}{SystemMenuProcessor}};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ Display\ Processor}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_display_processor_map}{DisplayProcessorMap}}\ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ void\ (*funcptrPrint)(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ *ptrData;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg;}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00170\ \}\doxymbox{\hyperlink{struct_display_processor_map}{DisplayProcessorMap}};}
+\DoxyCodeLine{00171\ \ \ \ \ }
+
+\end{DoxyCode}

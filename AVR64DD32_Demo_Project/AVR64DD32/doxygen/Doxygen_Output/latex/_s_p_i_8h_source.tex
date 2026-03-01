@@ -1,0 +1,42 @@
+\doxysection{SPI.\+h}
+\hypertarget{_s_p_i_8h_source}{}\label{_s_p_i_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/SPI/SPI.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/SPI/SPI.h}}
+\doxymbox{\hyperlink{_s_p_i_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ AT45DB041D\ Commands}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ AT45DB\_CMD\_READ\_ID\ \ \ \ \ \ 0x9F\ \ \ \ }\textcolor{comment}{//\ Read\ Manufacturer\ and\ Device\ ID}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ AT45DB\_ManufacturerID\ \ \ 0x1f\ \ \ \ }\textcolor{comment}{//\ Data\ from\ the\ Specification\ Sheet}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ AT45DB\_DeviceID\ \ \ \ \ \ \ \ \ 0x12\ \ \ \ }\textcolor{comment}{//\ Data\ from\ the\ Specification\ Sheet}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ PA4\_SPI\_MOSI\_PIN\ \ \ \ 0x10\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ PA4\ -\/\ MOSI\ (must\ be\ output)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ PA5\_SPI\_MISO\_PIN\ \ \ \ 0x20\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ PA5\ -\/\ MISO\ (must\ be\ input)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ PA6\_SPI\_SCK\_PIN\ \ \ \ \ 0x40\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ PA6\ -\/\ SCK\ (must\ be\ output)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ PA7\_SPI\_CS\_PIN\ \ \ \ \ \ 0x80\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ PA7}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ SPISystemSize\ 1}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ SPIbuffersize\ 4}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{enum}\ SPI\_STATE\_MACHINE\{}
+\DoxyCodeLine{00057\ \ \ \ \ SPI\_STATE\_MACHINE\_SEND\_PACKET,}
+\DoxyCodeLine{00058\ \ \ \ \ SPI\_STATE\_MACHINE\_WAIT\_FOR\_COMPLETE,}
+\DoxyCodeLine{00059\ \ \ \ \ SPI\_STATE\_MACHINE\_SEND\_PACKET\_SAVE}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_s_p_i_configuration}{SPIConfiguration}}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00066\ \}\ \doxymbox{\hyperlink{struct_s_p_i_configuration}{SPIConfiguration}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ SPI\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ SPI\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ SPI\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ *GetPtrToSPIData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ SPI\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ SPI\_Load\_Config(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

@@ -1,0 +1,87 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+LED\+\_\+\+BAR/\+\+LED\+\_\+\+Bar.h File Reference}
+\hypertarget{_l_e_d___bar_8h}{}\label{_l_e_d___bar_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/LED\_BAR/LED\_Bar.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/LED\_BAR/LED\_Bar.h}}
+
+
+LED bar graph driver (legacy -\/ pins reassigned).  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_l_e_d___bar_8h_ae9d1b3fb36d590b30886327d544b0a77}\label{_l_e_d___bar_8h_ae9d1b3fb36d590b30886327d544b0a77} 
+\+\#define {\bfseries PORT\+\_\+\+A\+\_\+0}~0x01
+\item 
+\Hypertarget{_l_e_d___bar_8h_a22803bd0b277a5f263b58d7b8552aef6}\label{_l_e_d___bar_8h_a22803bd0b277a5f263b58d7b8552aef6} 
+\+\#define {\bfseries PORT\+\_\+\+A\+\_\+1}~0x02
+\item 
+\Hypertarget{_l_e_d___bar_8h_ab6df573cf85f4d688d48f798b690413e}\label{_l_e_d___bar_8h_ab6df573cf85f4d688d48f798b690413e} 
+\+\#define {\bfseries PORT\+\_\+\+A\+\_\+2}~0x04
+\item 
+\Hypertarget{_l_e_d___bar_8h_a5bd68b56654a823acc87112ff9b71e31}\label{_l_e_d___bar_8h_a5bd68b56654a823acc87112ff9b71e31} 
+\+\#define {\bfseries PORT\+\_\+\+A\+\_\+3}~0x08
+\item 
+\Hypertarget{_l_e_d___bar_8h_a435be84c34ad07b748909943be143cad}\label{_l_e_d___bar_8h_a435be84c34ad07b748909943be143cad} 
+\+\#define {\bfseries PORT\+\_\+\+A\+\_\+4}~0x10
+\item 
+\Hypertarget{_l_e_d___bar_8h_a59bc4c060dc1de946544313e92693d8f}\label{_l_e_d___bar_8h_a59bc4c060dc1de946544313e92693d8f} 
+\+\#define {\bfseries PORT\+\_\+\+A\+\_\+5}~0x20
+\item 
+\Hypertarget{_l_e_d___bar_8h_a2b6a2d075cc7845c1a24e37fbc88a455}\label{_l_e_d___bar_8h_a2b6a2d075cc7845c1a24e37fbc88a455} 
+\+\#define {\bfseries PORT\+\_\+\+A\+\_\+6}~0x40
+\item 
+\Hypertarget{_l_e_d___bar_8h_ab09cb8a90aeb8d236f4ce397d27c5ced}\label{_l_e_d___bar_8h_ab09cb8a90aeb8d236f4ce397d27c5ced} 
+\+\#define {\bfseries PORT\+\_\+\+A\+\_\+7}~0x80
+\item 
+\Hypertarget{_l_e_d___bar_8h_ad0d0bdd5242aaa7aa76f00d47799d0ae}\label{_l_e_d___bar_8h_ad0d0bdd5242aaa7aa76f00d47799d0ae} 
+\+\#define {\bfseries LED\+\_\+\+MASK}~(PORT\+\_\+\+A\+\_\+7 \texorpdfstring{$\vert$}{|} PORT\+\_\+\+A\+\_\+6 \texorpdfstring{$\vert$}{|} PORT\+\_\+\+A\+\_\+5 \texorpdfstring{$\vert$}{|} PORT\+\_\+\+A\+\_\+4 \texorpdfstring{$\vert$}{|} PORT\+\_\+\+A\+\_\+3 \texorpdfstring{$\vert$}{|} PORT\+\_\+\+A\+\_\+2 \texorpdfstring{$\vert$}{|} PORT\+\_\+\+A\+\_\+1 \texorpdfstring{$\vert$}{|} PORT\+\_\+\+A\+\_\+0)
+\item 
+\Hypertarget{_l_e_d___bar_8h_a7a7dbb590d5b43a0121d493775cfc9d7}\label{_l_e_d___bar_8h_a7a7dbb590d5b43a0121d493775cfc9d7} 
+\+\#define {\bfseries Max\+\_\+\+Bar\+Size}~8
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_l_e_d___bar_8h_a31586964834cc1d3830bcc9fd4d3a7f7}\label{_l_e_d___bar_8h_a31586964834cc1d3830bcc9fd4d3a7f7} 
+void {\bfseries LED\+\_\+\+Bar\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_l_e_d___bar_8h_ae10f69084d0b276fa830ff2d23003db4}\label{_l_e_d___bar_8h_ae10f69084d0b276fa830ff2d23003db4} 
+void {\bfseries LED\+\_\+\+Bar\+\_\+\+Display} (float value)
+\item 
+\Hypertarget{_l_e_d___bar_8h_a74701b0583088341ad5b476e2b25db85}\label{_l_e_d___bar_8h_a74701b0583088341ad5b476e2b25db85} 
+void {\bfseries LED\+\_\+\+Bar\+\_\+\+Set\+Range} (float value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+LED bar graph driver (legacy -\/ pins reassigned). 
+
+Originally controlled an LED bar graph for visual indication. Now deprecated as pins have been reassigned to other peripheral functions in the current hardware configuration.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\doxymbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Pins previously used for LED bar now used for:\+
+\begin{DoxyItemize}
+\item SPI signals
+\item Event system outputs
+\item CCL test points
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+\begin{DoxyNote}{Note}
+Code retained for reference but not compiled/\+initialized 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Do not enable -\/ will conflict with current pin assignments 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{main_8c}{main.\+c} line 90 for initialization comment 
+\end{DoxySeeAlso}

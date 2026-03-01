@@ -1,0 +1,76 @@
+\doxysection{EEPRom.\+h}
+\hypertarget{_e_e_p_rom_8h_source}{}\label{_e_e_p_rom_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/EEPRom/EEPRom.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/EEPRom/EEPRom.h}}
+\doxymbox{\hyperlink{_e_e_p_rom_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ Include\ headers\ for\ all\ structures\ you\ want\ to\ store}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_e_e_prom___map_8h}{EEPRom/EEProm\_Map.h}}"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <avr/interrupt.h>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ Generate\ enum\ for\ indices}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\ \ \ \ \#define\ EEPROM\_ITEM(name,\ type,\ count)\ EEPROM\_ADDR\_\#\#name,}}
+\DoxyCodeLine{00055\ \ \ \ \ EEPROM\_MEMORY\_MAP}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \#undef\ EEPROM\_ITEM}}
+\DoxyCodeLine{00057\ \ \ \ \ EEPROM\_NUM\_ITEMS}
+\DoxyCodeLine{00058\ \}\ eeprom\_item\_t;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Array/element\ access\ functions}}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ EEPROM\_Write\_Array(uint8\_t\ item\_index,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *data,\ uint16\_t\ size);}
+\DoxyCodeLine{00062\ uint8\_t\ EEPROM\_Read\_Array(uint8\_t\ item\_index,\ \textcolor{keywordtype}{void}\ *data,\ uint16\_t\ size);}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ EEPROM\_Write\_Element(uint8\_t\ item\_index,\ uint16\_t\ element\_index,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ EEPROM\_Read\_Element(uint8\_t\ item\_index,\ uint16\_t\ element\_index,\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ EEPROM\_Verify\_Signature\_And\_Load(uint8\_t\ item\_index,\ uint16\_t\ element\_index,\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ Size\ tables\ (defined\ in\ eeprom.c)}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ uint16\_t\ eeprom\_sizes[];}
+\DoxyCodeLine{00069\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ uint16\_t\ eeprom\_counts[];}
+\DoxyCodeLine{00070\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ uint16\_t\ eeprom\_element\_sizes[];}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ Helper\ functions}}
+\DoxyCodeLine{00073\ uint16\_t\ EEPROM\_GET\_TOTAL\_USED(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00074\ uint16\_t\ EEPROM\_Get\_Free\_Space(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ Easy-\/to-\/use\ macros}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ Write\ entire\ array}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ EEPROM\_WRITE\_ARRAY(name,\ data\_ptr)\ \(\backslash\)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{EEPROM\_Write\_Array(EEPROM\_ADDR\_\#\#name,\ data\_ptr,\ sizeof(*data\_ptr)\ *\ eeprom\_counts[EEPROM\_ADDR\_\#\#name])}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ Read\ entire\ array}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ EEPROM\_READ\_ARRAY(name,\ data\_ptr)\ \(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{EEPROM\_Read\_Array(EEPROM\_ADDR\_\#\#name,\ data\_ptr,\ sizeof(*data\_ptr)\ *\ eeprom\_counts[EEPROM\_ADDR\_\#\#name])}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ Write\ single\ element}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ EEPROM\_WRITE\_ELEMENT(name,\ index,\ data\_ptr)\ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{EEPROM\_Write\_Element(EEPROM\_ADDR\_\#\#name,\ index,\ data\_ptr)}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ Read\ single\ element}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ EEPROM\_VERIFY\_SIGNATURE\_AND\_LOAD(name,\ index,\ data\_ptr)\ \(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{EEPROM\_Verify\_Signature\_And\_Load(EEPROM\_ADDR\_\#\#name,\ index,\ data\_ptr)}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ uint16\_t\ EEPROM\_Get\_Address(uint8\_t\ item\_index);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \textcolor{comment}{//\ Initialize\ the\ NVM\ Controller}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ EEPROM\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{bool}\ EEProm\_Wait\_For\_Ready(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{bool}\ EEPROM\_Erase\_Byte(uint16\_t\ address);}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{bool}\ EEPROM\_Write\_Byte(uint16\_t\ address,\ uint8\_t\ data);}
+\DoxyCodeLine{00106\ uint8\_t\ EEPROM\_Read\_Byte(uint16\_t\ address);}
+
+\end{DoxyCode}

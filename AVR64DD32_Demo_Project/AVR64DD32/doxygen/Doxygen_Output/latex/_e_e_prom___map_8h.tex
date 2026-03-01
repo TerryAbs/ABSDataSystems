@@ -1,0 +1,97 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+EEPRom/\+\+EEProm\+\_\+\+Map.h File Reference}
+\hypertarget{_e_e_prom___map_8h}{}\label{_e_e_prom___map_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/EEPRom/EEProm\_Map.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/EEPRom/EEProm\_Map.h}}
+
+
+EEPROM memory map definitions for AVR64\+DD32 project.  
+
+
+{\ttfamily \+\#include "{}ADC.\+h"{}}\newline
+{\ttfamily \+\#include "{}DAC.\+h"{}}\newline
+{\ttfamily \+\#include "{}CCL.\+h"{}}\newline
+{\ttfamily \+\#include "{}Events.\+h"{}}\newline
+{\ttfamily \+\#include "{}Ports.\+h"{}}\newline
+{\ttfamily \+\#include "{}RTC.\+h"{}}\newline
+{\ttfamily \+\#include "{}Timers.\+h"{}}\newline
+{\ttfamily \+\#include "{}USART.\+h"{}}\newline
+{\ttfamily \+\#include "{}SPI.\+h"{}}\newline
+{\ttfamily \+\#include "{}TWI\+\_\+\+I2\+C.\+h"{}}\newline
+{\ttfamily \+\#include "{}ZCD.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{_e_e_prom___map_8h_a7e67a885dd633c7a51d2108d7b453297}{EEPROM\+\_\+\+MEMORY\+\_\+\+MAP}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+EEPROM memory map definitions for AVR64\+DD32 project. 
+
+Defines address allocations for peripheral configuration storage in internal EEPROM. Organizes memory by module with defined boundaries to prevent overlap.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Memory Organization}
+Total:\+ 512 bytes (0x0000 -\/ 0x01\+FF)
+\end{DoxyParagraph}
+
+\begin{DoxyTable}{3}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Address Range  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Module  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Size  \\
+0x0000-\/0x001F  &ADC Config  &32 bytes  \\
+0x0020-\/0x003F  &DAC Config  &32 bytes  \\
+0x0040-\/0x005F  &Timer Config  &32 bytes  \\
+0x0060-\/0x007F  &USART Config  &32 bytes  \\
+0x0080-\/0x009F  &SPI Config  &32 bytes  \\
+0x00\+A0-\/0x00\+BF  &TWI Config  &32 bytes  \\
+0x00\+C0-\/0x00\+DF  &Event Config  &32 bytes  \\
+0x00\+E0-\/0x00\+FF  &CCL Config  &32 bytes  \\
+0x0100-\/0x011F  &Port Config  &32 bytes  \\
+0x0120-\/0x013F  &RTC Config  &32 bytes  \\
+0x0140-\/0x015F  &ZCD Config  &32 bytes  \\
+0x0160-\/0x01\+FF  &Reserved  &160 bytes  \\
+\end{DoxyTable}
+
+
+\begin{DoxyNote}{Note}
+Each module allocation includes signature byte for validation 
+
+Reserved space available for future expansion 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Do not modify address definitions without updating all modules
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_e_e_p_rom_8h}{EEPRom.\+h} for access functions 
+\end{DoxySeeAlso}
+
+
+\label{doc-define-members}
+\Hypertarget{_e_e_prom___map_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_e_e_prom___map_8h_a7e67a885dd633c7a51d2108d7b453297}\index{EEProm\_Map.h@{EEProm\_Map.h}!EEPROM\_MEMORY\_MAP@{EEPROM\_MEMORY\_MAP}}
+\index{EEPROM\_MEMORY\_MAP@{EEPROM\_MEMORY\_MAP}!EEProm\_Map.h@{EEProm\_Map.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_MEMORY\_MAP}{EEPROM\_MEMORY\_MAP}}
+{\footnotesize\ttfamily \label{_e_e_prom___map_8h_a7e67a885dd633c7a51d2108d7b453297} 
+\+\#define EEPROM\+\_\+\+MEMORY\+\_\+\+MAP}
+
+{\bfseries Value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{EEPROM\_ITEM(adc\_system,\ \doxymbox{\hyperlink{struct_a_d_c_configuration}{ADCConfiguration}},\ ADCSystemSize)\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(dac\_system,\ \doxymbox{\hyperlink{struct_d_a_c_configuration}{DACConfiguration}},\ DACSystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(ccl\_system,\ \doxymbox{\hyperlink{struct_c_c_l_configuration}{CCLConfiguration}},\ CCLSystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(events\_system,\ \doxymbox{\hyperlink{struct_events_configuration}{EventsConfiguration}},\ EventsSystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(ports\_system,\ \doxymbox{\hyperlink{struct_ports_configuration}{PortsConfiguration}},\ PortsSystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(rtc\_system,\ \doxymbox{\hyperlink{struct_r_t_c_configuration}{RTCConfiguration}},\ RTCSystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(timers\_system,\ \doxymbox{\hyperlink{struct_timers_configuration}{TimersConfiguration}},\ TimersSystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(usart\_system,\ \doxymbox{\hyperlink{struct_u_s_a_r_t_configuration}{USARTConfiguration}},\ USARTSystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(spi\_system,\ \doxymbox{\hyperlink{struct_s_p_i_configuration}{SPIConfiguration}},\ SPISystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(twi\_i2c\_system,\ \doxymbox{\hyperlink{struct_t_w_i___i2_c_configuration}{TWI\_I2CConfiguration}},\ TWI\_I2CSystemSize\ )\ \(\backslash\)}
+\DoxyCodeLine{EEPROM\_ITEM(zcd\_system,\ \doxymbox{\hyperlink{struct_z_c_d_configuration}{ZCDConfiguration}},\ ZCDSystemSize\ )}
+
+\end{DoxyCode}

@@ -1,0 +1,73 @@
+\doxysection{TWI\+\_\+\+I2\+C.\+h}
+\hypertarget{_t_w_i___i2_c_8h_source}{}\label{_t_w_i___i2_c_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/TWI\_I2C/TWI\_I2C.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/TWI\_I2C/TWI\_I2C.h}}
+\doxymbox{\hyperlink{_t_w_i___i2_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ PA0\_TWI\_I2C\_SDA\ 0x01}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ PA1\_TWI\_I2C\_SCL\ 0x02}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MODE0\ \ \ 0x00\ \ }\textcolor{comment}{//Channel0\ =\ AIN0;}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ MODE1\ \ \ 0x10\ \ }\textcolor{comment}{//Channel0\ =\ AIN3-\/AIN0;}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ MODE2\ \ \ 0x20\ \ }\textcolor{comment}{//Channel0\ =\ AIN0;}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ MODE3\ \ \ 0x30\ \ }\textcolor{comment}{//Channel0\ =\ AIN1-\/AIN0;}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ CHNL0\ \ \ 0\ \ \ }\textcolor{comment}{//Using\ Channel0}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ CHNL1\ \ \ 1\ \ \ }\textcolor{comment}{//Using\ Channel1}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ CHNL2\ \ \ 2\ \ \ }\textcolor{comment}{//Using\ Channel2}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ CHNL3\ \ \ 3\ \ \ }\textcolor{comment}{//Using\ Channel3}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ENABLEBIT\ 0x40}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ ADO\_CHANNEL\ MODE0\ |\ CHNL0\ |ENABLEBIT\ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ PCF8591Add\ (0x90\ >>\ 1)}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ PCF8591B\_ADDR\ \ \ \ \ \ \ \ \ \ PCF8591Add\ }\textcolor{comment}{//\ Default\ address\ (A0=A1=A2=0)}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ TWI/I2C\ Baud\ Rate\ Settings\ for\ 24MHz\ CPU\ Clock}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Formula:\ BAUD\ =\ (F\_CPU\ /\ (2\ *\ F\_SCL))\ -\/\ 5}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ TWI\_BAUD\_100K\ \ \ \ \ \ \ \ \ \ \ 0x73\ \ }\textcolor{comment}{//\ 100kHz\ @\ 24MHz\ CPU\ clock\ (115\ dec)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ PCF8591B\_Range\ \ 255}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ PCF8591B\_Ref\_Voltage\ 3.3}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ PCF8591B\_VoltPerTick\ PCF8591B\_Ref\_Voltage\ /\ PCF8591B\_Range\ \ }}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ TWI\_I2CSystemSize\ 1}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_t_w_i___i2_c_configuration}{TWI\_I2CConfiguration}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00071\ \}\ \doxymbox{\hyperlink{struct_t_w_i___i2_c_configuration}{TWI\_I2CConfiguration}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{_t_w_i___i2_c_8h_ad36fd02ad8f71c779c813128d8181b95}{TWI\_Stop}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ TWI\_I2C\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ TWI\_I2C\_ReInitialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ TWI\_I2C\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ TWI\_I2C\_WriteMonitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ TWI\_I2C\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ *GetPtrToTWI\_I2CData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ TWI\_I2C\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ TWI\_I2C\_Load\_Config(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{enum}\ TWI\_I2C\_WRITESTATES}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ TWI\_I2C\_WRITESTATES\_WAITFORREADY,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ TWI\_I2C\_WRITESTATES\_SENDDATA,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ TWI\_I2C\_WRITESTATES\_WAITFORDATA}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{enum}\ TWI\_I2C\_MONITORSTATES}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ TWI\_I2C\_MONITORSTATES\_IDLE,}
+\DoxyCodeLine{00093\ \ \ \ \ TWI\_I2C\_MONITORSTATES\_SETADDRESS,}
+\DoxyCodeLine{00094\ \ \ \ \ TWI\_I2C\_MONITORSTATES\_WAITFORADDRESS,}
+\DoxyCodeLine{00095\ \ \ \ \ TWI\_I2C\_MONITORSTATES\_SENDCOMMAND,}
+\DoxyCodeLine{00096\ \ \ \ \ TWI\_I2C\_MONITORSTATES\_SENDREADBACKCOMMAND,}
+\DoxyCodeLine{00097\ \ \ \ \ TWI\_I2C\_MONITORSTATES\_WAITFORREADSTATUS,}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+
+\end{DoxyCode}

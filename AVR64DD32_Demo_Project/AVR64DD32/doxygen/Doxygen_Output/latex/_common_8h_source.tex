@@ -1,0 +1,54 @@
+\doxysection{Common.\+h}
+\hypertarget{_common_8h_source}{}\label{_common_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Common/Common.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Common/Common.h}}
+\doxymbox{\hyperlink{_common_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <atmel\_start.h>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <util/delay.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <avr/pgmspace.h>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_command_list_8h}{CommandList/CommandList.h}}"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{usart__basic_8h}{USART/usart\_basic.h}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_serial_comm___receive_8h}{SerialComm/SerialComm\_Receive.h}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_terminal___commands_8h}{Menu\_Report\_Processor/Terminal\_Commands/Terminal\_Commands.h}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_main___menu_8h}{Menus/Main\_Menu/Main\_Menu.h}}"{}}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{enum}\ REFVOLTAGE}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ Range\_1024,}
+\DoxyCodeLine{00046\ \ \ \ \ Range\_2048,}
+\DoxyCodeLine{00047\ \ \ \ \ Range\_2500,}
+\DoxyCodeLine{00048\ \ \ \ \ Range\_4096,}
+\DoxyCodeLine{00049\ \ \ \ \ Range\_VDD,}
+\DoxyCodeLine{00050\ \ \ \ \ Range\_VREF}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_ref_voltage___range}{RefVoltage\_Range}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ uint8\_t\ RegisterSetting;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{enum}\ REFVOLTAGE\ refVoltage;\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{float}\ MaxRange;}
+\DoxyCodeLine{00060\ \}\doxymbox{\hyperlink{struct_ref_voltage___range}{RefVoltage\_Range}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ Generic}}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{char}\ *EnableDisableDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{char}\ *PortDirectionDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{char}\ *PortInvertedDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{char}\ *PortResistorDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{char}\ *HighLowDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{char}\ *PortInputLevelDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{char}\ *RefDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_ref_voltage___range}{RefVoltage\_Range}}\ LoopUp\_RefVoltage(enum\ REFVOLTAGE\ value);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{float}\ LookUp\_RefVoltageBySetting(uint8\_t\ value);}
+
+\end{DoxyCode}

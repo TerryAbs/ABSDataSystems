@@ -1,0 +1,156 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+include/\+spi\+\_\+basic.h File Reference}
+\hypertarget{spi__basic_8h}{}\label{spi__basic_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/spi\_basic.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/spi\_basic.h}}
+
+
+SPI basic driver.  
+
+
+{\ttfamily \+\#include $<$compiler.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{spi__basic_8h_a9b16fe7ddd217be7d4ffa9996dd01b4c}{spi\+\_\+transfer\+\_\+done\+\_\+cb\+\_\+t}}) (void)
+\item 
+typedef enum \doxymbox{\hyperlink{spi__basic_8h_a210382b6fc9194b506e59496c8dc297d}{spi\+\_\+transfer\+\_\+type}} \doxymbox{\hyperlink{spi__basic_8h_aca7b89943338bcb0562d74b2c0b7ce12}{spi\+\_\+transfer\+\_\+type\+\_\+t}}
+\item 
+typedef enum \doxymbox{\hyperlink{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022}{spi\+\_\+transfer\+\_\+status}} \doxymbox{\hyperlink{spi__basic_8h_aeb4fd88d3fa799b2f804f06cb2b484e7}{spi\+\_\+transfer\+\_\+status\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{spi__basic_8h_a210382b6fc9194b506e59496c8dc297d}{spi\+\_\+transfer\+\_\+type}} \{ \doxymbox{\hyperlink{spi__basic_8h_a210382b6fc9194b506e59496c8dc297da7f414c7f04676338fa53961d119a4094}{SPI\+\_\+\+EXCHANGE}}
+, \doxymbox{\hyperlink{spi__basic_8h_a210382b6fc9194b506e59496c8dc297dafab55ad3785e8a2cb6c6c1fcddf5102f}{SPI\+\_\+\+READ}}
+, \doxymbox{\hyperlink{spi__basic_8h_a210382b6fc9194b506e59496c8dc297daffd3d8f582c4afe38f41537ef713291a}{SPI\+\_\+\+WRITE}}
+ \}
+\item 
+enum \doxymbox{\hyperlink{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022}{spi\+\_\+transfer\+\_\+status}} \{ \doxymbox{\hyperlink{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022aeed8101275906340dd9b1e08b229bfa0}{SPI\+\_\+\+FREE}}
+, \doxymbox{\hyperlink{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a3b368c531eb77a6e4baaacdeba1c733c}{SPI\+\_\+\+IDLE}}
+, \doxymbox{\hyperlink{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a77af10511cd7c60df95c66e904a13643}{SPI\+\_\+\+BUSY}}
+, \doxymbox{\hyperlink{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a19dc2224c4c4b2b199665dda1a2f1044}{SPI\+\_\+\+DONE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_gaa2692105ef57cebd078ac461e511757a}{SPI\+\_\+0\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize SPI interface If module is configured to disabled state, the clock to the SPI is disabled if this is supported by the device\textquotesingle{}s clock system. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga8fddaae9650a7cdae4c4a0a3cbf8e251}{SPI\+\_\+0\+\_\+enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable SPI\+\_\+0. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_gaee2ba54f73de0eb6b76100d315a85b38}{SPI\+\_\+0\+\_\+disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable SPI\+\_\+0. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bfseries SPI\+\_\+0\+\_\+exchange\+\_\+byte} (uint8\+\_\+t data)
+\item 
+void {\bfseries SPI\+\_\+0\+\_\+exchange\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\item 
+void {\bfseries SPI\+\_\+0\+\_\+write\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\item 
+void {\bfseries SPI\+\_\+0\+\_\+read\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\item 
+void {\bfseries SPI\+\_\+0\+\_\+register\+\_\+callback} (\doxymbox{\hyperlink{spi__basic_8h_a9b16fe7ddd217be7d4ffa9996dd01b4c}{spi\+\_\+transfer\+\_\+done\+\_\+cb\+\_\+t}} f)
+\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_gafbf3379c2d704d9157f8c9c711968d0a}{SPI\+\_\+0\+\_\+status\+\_\+free}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is FREE. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga392d25ea79b1a32979d1563dd5ee167b}{SPI\+\_\+0\+\_\+status\+\_\+idle}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is IDLE. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga234c71092fc58abfa18a2b3157331837}{SPI\+\_\+0\+\_\+status\+\_\+busy}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is BUSY. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga59f4f459d2829fb8e4d5259a42ed56fc}{SPI\+\_\+0\+\_\+status\+\_\+done}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is DONE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SPI basic driver. 
+
+(c) 2020 Microchip Technology Inc. and its subsidiaries.
+
+Subject to your compliance with these terms,you may use this software and any derivatives exclusively with Microchip products.\+It is your responsibility to comply with third party license terms applicable to your use of third party software (including open source software) that may accompany Microchip software.
+
+THIS SOFTWARE IS SUPPLIED BY MICROCHIP "{}\+AS IS"{}. NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-\/\+INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP\textquotesingle{}S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. 
+
+\label{doc-typedef-members}
+\Hypertarget{spi__basic_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{spi__basic_8h_a9b16fe7ddd217be7d4ffa9996dd01b4c}\index{spi\_basic.h@{spi\_basic.h}!spi\_transfer\_done\_cb\_t@{spi\_transfer\_done\_cb\_t}}
+\index{spi\_transfer\_done\_cb\_t@{spi\_transfer\_done\_cb\_t}!spi\_basic.h@{spi\_basic.h}}
+\doxysubsubsection{\texorpdfstring{spi\_transfer\_done\_cb\_t}{spi\_transfer\_done\_cb\_t}}
+{\footnotesize\ttfamily \label{spi__basic_8h_a9b16fe7ddd217be7d4ffa9996dd01b4c} 
+typedef void(\texorpdfstring{$\ast$}{*} spi\+\_\+transfer\+\_\+done\+\_\+cb\+\_\+t) (void)}
+
+Function pointer to callback function called by SPI IRQ. NULL=default value:\+ No callback function is to be used. \Hypertarget{spi__basic_8h_aeb4fd88d3fa799b2f804f06cb2b484e7}\index{spi\_basic.h@{spi\_basic.h}!spi\_transfer\_status\_t@{spi\_transfer\_status\_t}}
+\index{spi\_transfer\_status\_t@{spi\_transfer\_status\_t}!spi\_basic.h@{spi\_basic.h}}
+\doxysubsubsection{\texorpdfstring{spi\_transfer\_status\_t}{spi\_transfer\_status\_t}}
+{\footnotesize\ttfamily \label{spi__basic_8h_aeb4fd88d3fa799b2f804f06cb2b484e7} 
+typedef enum \doxymbox{\hyperlink{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022}{spi\+\_\+transfer\+\_\+status}} \doxymbox{\hyperlink{spi__basic_8h_aeb4fd88d3fa799b2f804f06cb2b484e7}{spi\+\_\+transfer\+\_\+status\+\_\+t}}}
+
+Status of the SPI hardware and SPI bus. \Hypertarget{spi__basic_8h_aca7b89943338bcb0562d74b2c0b7ce12}\index{spi\_basic.h@{spi\_basic.h}!spi\_transfer\_type\_t@{spi\_transfer\_type\_t}}
+\index{spi\_transfer\_type\_t@{spi\_transfer\_type\_t}!spi\_basic.h@{spi\_basic.h}}
+\doxysubsubsection{\texorpdfstring{spi\_transfer\_type\_t}{spi\_transfer\_type\_t}}
+{\footnotesize\ttfamily \label{spi__basic_8h_aca7b89943338bcb0562d74b2c0b7ce12} 
+typedef enum \doxymbox{\hyperlink{spi__basic_8h_a210382b6fc9194b506e59496c8dc297d}{spi\+\_\+transfer\+\_\+type}} \doxymbox{\hyperlink{spi__basic_8h_aca7b89943338bcb0562d74b2c0b7ce12}{spi\+\_\+transfer\+\_\+type\+\_\+t}}}
+
+Specify whether the SPI transfer is to be uni-\/ or bidirectional. A bidirectional transfer (=SPI\+\_\+\+EXCHANGE) causes the received data to overwrite the buffer with the data to transmit. 
+
+\label{doc-enum-members}
+\Hypertarget{spi__basic_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022}\index{spi\_basic.h@{spi\_basic.h}!spi\_transfer\_status@{spi\_transfer\_status}}
+\index{spi\_transfer\_status@{spi\_transfer\_status}!spi\_basic.h@{spi\_basic.h}}
+\doxysubsubsection{\texorpdfstring{spi\_transfer\_status}{spi\_transfer\_status}}
+{\footnotesize\ttfamily \label{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022} 
+enum \doxymbox{\hyperlink{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022}{spi\+\_\+transfer\+\_\+status}}}
+
+Status of the SPI hardware and SPI bus. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_FREE@{SPI\_FREE}!spi\_basic.h@{spi\_basic.h}}
+\index{spi\_basic.h@{spi\_basic.h}!SPI\_FREE@{SPI\_FREE}}
+}\Hypertarget{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022aeed8101275906340dd9b1e08b229bfa0}\label{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022aeed8101275906340dd9b1e08b229bfa0} 
+SPI\+\_\+\+FREE&SPI hardware is not open, bus is free. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_IDLE@{SPI\_IDLE}!spi\_basic.h@{spi\_basic.h}}
+\index{spi\_basic.h@{spi\_basic.h}!SPI\_IDLE@{SPI\_IDLE}}
+}\Hypertarget{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a3b368c531eb77a6e4baaacdeba1c733c}\label{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a3b368c531eb77a6e4baaacdeba1c733c} 
+SPI\+\_\+\+IDLE&SPI hardware has been opened, no transfer ongoing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_BUSY@{SPI\_BUSY}!spi\_basic.h@{spi\_basic.h}}
+\index{spi\_basic.h@{spi\_basic.h}!SPI\_BUSY@{SPI\_BUSY}}
+}\Hypertarget{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a77af10511cd7c60df95c66e904a13643}\label{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a77af10511cd7c60df95c66e904a13643} 
+SPI\+\_\+\+BUSY&SPI hardware has been opened, transfer ongoing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_DONE@{SPI\_DONE}!spi\_basic.h@{spi\_basic.h}}
+\index{spi\_basic.h@{spi\_basic.h}!SPI\_DONE@{SPI\_DONE}}
+}\Hypertarget{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a19dc2224c4c4b2b199665dda1a2f1044}\label{spi__basic_8h_a8b758b1da31d5ddefa1b106e88cc0022a19dc2224c4c4b2b199665dda1a2f1044} 
+SPI\+\_\+\+DONE&SPI hardware has been opened, transfer complete. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{spi__basic_8h_a210382b6fc9194b506e59496c8dc297d}\index{spi\_basic.h@{spi\_basic.h}!spi\_transfer\_type@{spi\_transfer\_type}}
+\index{spi\_transfer\_type@{spi\_transfer\_type}!spi\_basic.h@{spi\_basic.h}}
+\doxysubsubsection{\texorpdfstring{spi\_transfer\_type}{spi\_transfer\_type}}
+{\footnotesize\ttfamily \label{spi__basic_8h_a210382b6fc9194b506e59496c8dc297d} 
+enum \doxymbox{\hyperlink{spi__basic_8h_a210382b6fc9194b506e59496c8dc297d}{spi\+\_\+transfer\+\_\+type}}}
+
+Specify whether the SPI transfer is to be uni-\/ or bidirectional. A bidirectional transfer (=SPI\+\_\+\+EXCHANGE) causes the received data to overwrite the buffer with the data to transmit. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_EXCHANGE@{SPI\_EXCHANGE}!spi\_basic.h@{spi\_basic.h}}
+\index{spi\_basic.h@{spi\_basic.h}!SPI\_EXCHANGE@{SPI\_EXCHANGE}}
+}\Hypertarget{spi__basic_8h_a210382b6fc9194b506e59496c8dc297da7f414c7f04676338fa53961d119a4094}\label{spi__basic_8h_a210382b6fc9194b506e59496c8dc297da7f414c7f04676338fa53961d119a4094} 
+SPI\+\_\+\+EXCHANGE&SPI transfer is bidirectional. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_READ@{SPI\_READ}!spi\_basic.h@{spi\_basic.h}}
+\index{spi\_basic.h@{spi\_basic.h}!SPI\_READ@{SPI\_READ}}
+}\Hypertarget{spi__basic_8h_a210382b6fc9194b506e59496c8dc297dafab55ad3785e8a2cb6c6c1fcddf5102f}\label{spi__basic_8h_a210382b6fc9194b506e59496c8dc297dafab55ad3785e8a2cb6c6c1fcddf5102f} 
+SPI\+\_\+\+READ&SPI transfer reads, writes only 0s. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPI\_WRITE@{SPI\_WRITE}!spi\_basic.h@{spi\_basic.h}}
+\index{spi\_basic.h@{spi\_basic.h}!SPI\_WRITE@{SPI\_WRITE}}
+}\Hypertarget{spi__basic_8h_a210382b6fc9194b506e59496c8dc297daffd3d8f582c4afe38f41537ef713291a}\label{spi__basic_8h_a210382b6fc9194b506e59496c8dc297daffd3d8f582c4afe38f41537ef713291a} 
+SPI\+\_\+\+WRITE&SPI transfer writes, discards read data. \\
+\hline
+
+\end{DoxyEnumFields}

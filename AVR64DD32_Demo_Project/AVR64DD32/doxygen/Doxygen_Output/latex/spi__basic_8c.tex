@@ -1,0 +1,60 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+src/\+spi\+\_\+basic.c File Reference}
+\hypertarget{spi__basic_8c}{}\label{spi__basic_8c}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/src/spi\_basic.c@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/src/spi\_basic.c}}
+
+
+SPI basic driver.  
+
+
+{\ttfamily \+\#include $<$spi\+\_\+basic.\+h$>$}\newline
+{\ttfamily \+\#include $<$atmel\+\_\+start\+\_\+pins.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_s_p_i__0__descriptor__s}{SPI\+\_\+0\+\_\+descriptor\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \doxymbox{\hyperlink{struct_s_p_i__0__descriptor__s}{SPI\+\_\+0\+\_\+descriptor\+\_\+s}} {\bfseries SPI\+\_\+0\+\_\+descriptor\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_gaa2692105ef57cebd078ac461e511757a}{SPI\+\_\+0\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize SPI interface If module is configured to disabled state, the clock to the SPI is disabled if this is supported by the device\textquotesingle{}s clock system. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga8fddaae9650a7cdae4c4a0a3cbf8e251}{SPI\+\_\+0\+\_\+enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable SPI\+\_\+0. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_gaee2ba54f73de0eb6b76100d315a85b38}{SPI\+\_\+0\+\_\+disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable SPI\+\_\+0. \end{DoxyCompactList}\item 
+void {\bfseries SPI\+\_\+0\+\_\+register\+\_\+callback} (\doxymbox{\hyperlink{spi__basic_8h_a9b16fe7ddd217be7d4ffa9996dd01b4c}{spi\+\_\+transfer\+\_\+done\+\_\+cb\+\_\+t}} f)
+\item 
+{\bfseries ISR} (SPI0\+\_\+\+INT\+\_\+vect)
+\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_gafbf3379c2d704d9157f8c9c711968d0a}{SPI\+\_\+0\+\_\+status\+\_\+free}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is FREE. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga392d25ea79b1a32979d1563dd5ee167b}{SPI\+\_\+0\+\_\+status\+\_\+idle}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is IDLE. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga234c71092fc58abfa18a2b3157331837}{SPI\+\_\+0\+\_\+status\+\_\+busy}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is BUSY. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga59f4f459d2829fb8e4d5259a42ed56fc}{SPI\+\_\+0\+\_\+status\+\_\+done}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is DONE. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bfseries SPI\+\_\+0\+\_\+exchange\+\_\+byte} (uint8\+\_\+t data)
+\item 
+void {\bfseries SPI\+\_\+0\+\_\+exchange\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\item 
+void {\bfseries SPI\+\_\+0\+\_\+write\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\item 
+void {\bfseries SPI\+\_\+0\+\_\+read\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SPI basic driver. 
+
+(c) 2020 Microchip Technology Inc. and its subsidiaries.
+
+Subject to your compliance with these terms,you may use this software and any derivatives exclusively with Microchip products.\+It is your responsibility to comply with third party license terms applicable to your use of third party software (including open source software) that may accompany Microchip software.
+
+THIS SOFTWARE IS SUPPLIED BY MICROCHIP "{}\+AS IS"{}. NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-\/\+INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP\textquotesingle{}S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. 

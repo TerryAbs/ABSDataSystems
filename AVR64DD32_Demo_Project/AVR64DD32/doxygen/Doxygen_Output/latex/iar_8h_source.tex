@@ -1,0 +1,79 @@
+\doxysection{iar.\+h}
+\hypertarget{iar_8h_source}{}\label{iar_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/assembler/iar.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/assembler/iar.h}}
+\doxymbox{\hyperlink{iar_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ ASSEMBLER\_IAR\_H\_INCLUDED}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ ASSEMBLER\_IAR\_H\_INCLUDED}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/*\ clang-\/format\ off\ */}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ ld\_addr\ MACRO\ \ \ reg,\ sym}
+\DoxyCodeLine{00052\ \ \ \ \ mov\ \ \ \ \ reg,\ LWRD\ sym}
+\DoxyCodeLine{00053\ \ \ \ \ orh\ \ \ \ \ reg,\ HWRD\ sym}
+\DoxyCodeLine{00054\ \ \ \ \ ENDM}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ call\ \ \ \ MACRO\ \ \ sym}
+\DoxyCodeLine{00057\ \ \ \ \ rcall\ \ \ sym}
+\DoxyCodeLine{00058\ \ \ \ \ ENDM}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ iar\_begin\_func\ \ MACRO\ \ \ name,\ sect,\ is\_public,\ is\_weak}
+\DoxyCodeLine{00061\ \ \ \ \ MODULE\ \ name}
+\DoxyCodeLine{00062\ \ \ \ \ RSEG\ \ \ \ CODE:CODE:NOROOT(1)}
+\DoxyCodeLine{00063\ \ \ \ \ IF\ \ \ \ \ \ is\_weak\ ==\ 1}
+\DoxyCodeLine{00064\ \ \ \ \ PUBWEAK\ name}
+\DoxyCodeLine{00065\ \ \ \ \ ELSEIF\ \ is\_public}
+\DoxyCodeLine{00066\ \ \ \ \ PUBLIC\ \ name}
+\DoxyCodeLine{00067\ \ \ \ \ ENDIF}
+\DoxyCodeLine{00068\ name:}
+\DoxyCodeLine{00069\ \ \ \ \ ENDM}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ iar\_begin\_func\_segm\ \ MACRO\ \ \ name,\ sect,\ is\_public,\ is\_weak,\ segment}
+\DoxyCodeLine{00072\ \ \ \ \ MODULE\ \ name}
+\DoxyCodeLine{00073\ \ \ \ \ RSEG\ \ \ \ segment:CODE:NOROOT(1)}
+\DoxyCodeLine{00074\ \ \ \ \ IF\ \ \ \ \ \ is\_weak\ ==\ 1}
+\DoxyCodeLine{00075\ \ \ \ \ PUBWEAK\ name}
+\DoxyCodeLine{00076\ \ \ \ \ ELSEIF\ \ is\_public}
+\DoxyCodeLine{00077\ \ \ \ \ PUBLIC\ \ name}
+\DoxyCodeLine{00078\ \ \ \ \ ENDIF}
+\DoxyCodeLine{00079\ name:}
+\DoxyCodeLine{00080\ \ \ \ \ ENDM}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ iar\_weak\_alias\ \ MACRO\ \ \ name,\ strong\_name}
+\DoxyCodeLine{00083\ \ \ \ \ PUBWEAK\ name}
+\DoxyCodeLine{00084\ name:}
+\DoxyCodeLine{00085\ \ \ \ \ rjmp\ \ \ \ strong\_name}
+\DoxyCodeLine{00086\ \ \ \ \ ENDM}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ lo(x)\ \ \ LWRD\ x}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ hi(x)\ \ \ HWRD\ x}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ REPEAT(count)\ \ \ \ \ \ \ \ \ \ \ REPT\ \ \ \ count}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ END\_REPEAT()\ \ \ \ \ \ \ \ \ \ \ \ ENDR}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ SET\_LOC(offset)\ \ \ \ \ \ \ \ \ ORG\ \ \ \ \ offset}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ END\_FILE()\ \ \ \ \ \ \ \ \ \ \ \ \ \ END}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ FILL\_BYTES(count)\ \ \ \ \ \ \ DS8\ \ \ \ \ count}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ L(name)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ EXTERN\_SYMBOL(name)\ \ \ \ \ \ \ \ \ \ \ \ \ EXTERN\ \ name}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ FUNCTION(name)\ \ \ \ \ \ \ \ \ \ iar\_begin\_func\ name,\ text\_\#\#name,\ 0,\ 0}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ PUBLIC\_FUNCTION(name)\ \ \ iar\_begin\_func\ name,\ text\_\#\#name,\ 1,\ 0}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ PUBLIC\_FUNCTION\_SEGMENT(name,\ segment)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ iar\_begin\_func\_segm\ name,\ text\_\#\#name,\ 1,\ 0,\ segment}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ WEAK\_FUNCTION(name)\ \ \ \ \ iar\_begin\_func\ name,\ text\_\#\#name,\ 1,\ 1}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ WEAK\_FUNCTION\_ALIAS(name,\ strong\_name)\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ iar\_weak\_alias\ \ name,\ strong\_name}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ END\_FUNC(name)\ \ \ \ \ \ \ \ \ \ ENDMOD}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ TEXT\_SECTION(name)\ \ \ \ \ \ RSEG\ \ \ \ name:CODE:NOROOT}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ RODATA\_SECTION(name)\ \ \ \ RSEG\ \ \ \ name:CONST:NOROOT}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ DATA\_SECTION(name)\ \ \ \ \ \ RSEG\ \ \ \ name:DATA:NOROOT}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ BSS\_SECTION(name)\ \ \ \ \ \ \ RSEG\ \ \ \ name:DATA:NOROOT}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{/*\ clang-\/format\ on\ */}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASSEMBLER\_IAR\_H\_INCLUDED\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

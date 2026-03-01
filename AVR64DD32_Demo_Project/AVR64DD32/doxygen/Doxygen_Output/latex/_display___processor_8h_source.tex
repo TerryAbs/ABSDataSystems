@@ -1,0 +1,25 @@
+\doxysection{Display\+\_\+\+Processor.\+h}
+\hypertarget{_display___processor_8h_source}{}\label{_display___processor_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Display\_Processor/Display\_Processor.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Display\_Processor/Display\_Processor.h}}
+\doxymbox{\hyperlink{_display___processor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_data_structures_8h}{Common/DataStructures.h}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ For\ now\ this\ is\ just\ a\ place\ holder\ number.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ The\ future\ plan\ is\ to\ make\ this\ dynamic.}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ MAXNODISPLAYPROCESSORS\ 15}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ DISPLAYPROCESSOR\_DISPLAYCOL\ \ \ \ \ 85}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{enum}\ DISPLAYPROCESSORSTATES\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ DISPLAYPROCESSORSTATES\_PRINT,}
+\DoxyCodeLine{00048\ \ \ \ \ DISPLAYPROCESSORSTATES\_LOOP}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ DisplayProcessor\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ DisplayProcessor\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ DisplayProcessor\_Add(\textcolor{keyword}{struct}\ \doxymbox{\hyperlink{struct_display_processor_map}{DisplayProcessorMap}}\ item);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ DisplayProcessor\_SetEnabledFlag(\textcolor{keywordtype}{void}\ *functPtr,\ \textcolor{keywordtype}{bool}\ enabled);}
+
+\end{DoxyCode}

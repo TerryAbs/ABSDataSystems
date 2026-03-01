@@ -1,0 +1,43 @@
+\doxysection{Ports.\+h}
+\hypertarget{_ports_8h_source}{}\label{_ports_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Ports/Ports.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Ports/Ports.h}}
+\doxymbox{\hyperlink{_ports_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ PortsSystemSize\ 1}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ PC3\_PortInOut\ 0x08}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ PF6\_PortInOnly\ 0x40}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{enum}\ PORTRESISTORS\{}
+\DoxyCodeLine{00049\ \ \ \ \ PORTRESISTORS\_NONE,}
+\DoxyCodeLine{00050\ \ \ \ \ PORTRESISTORS\_PULLUP}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_ports_configuration}{PortsConfiguration}}}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ portAOutput;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ portAOutputValue;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ portAInputLevel;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ portAInverted;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ portAPullUp;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ portBInputLevel;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ portBInverted;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ portBPullUp;}
+\DoxyCodeLine{00065\ \}\ \doxymbox{\hyperlink{struct_ports_configuration}{PortsConfiguration}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ Ports\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ Ports\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ Ports\_ReInitialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ Ports\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ *GetPtrToPortsData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ Ports\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ Ports\_Load\_Config(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

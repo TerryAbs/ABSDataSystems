@@ -1,0 +1,35 @@
+\doxysection{Events.\+h}
+\hypertarget{_events_8h_source}{}\label{_events_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Events/Events.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Events/Events.h}}
+\doxymbox{\hyperlink{_events_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ EventsSystemSize\ 1}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ EVOUT\_Pin\ \ \ 0x80}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{enum}\ EVENTMODES}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ EVENTMODES\_ADC,}
+\DoxyCodeLine{00055\ \ \ \ \ EVENTMODES\_CCL,}
+\DoxyCodeLine{00056\ \ \ \ \ EVENTMODES\_RTC,}
+\DoxyCodeLine{00057\ \ \ \ \ EVENTMODES\_ZCD}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_events_configuration}{EventsConfiguration}}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{enum}\ EVENTMODES\ mode;}
+\DoxyCodeLine{00065\ \}\ \doxymbox{\hyperlink{struct_events_configuration}{EventsConfiguration}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ Events\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ Events\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ Events\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ *GetPtrToEventsData(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ Events\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ Events\_Load\_Config(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ Events\_ReInitialize(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

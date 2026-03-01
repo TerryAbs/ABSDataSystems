@@ -1,0 +1,95 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Menu\+\_\+\+Report\+\_\+\+Processor/\+\+Display\+\_\+\+Processor/\+\+Display\+\_\+\+Processor.h File Reference}
+\hypertarget{_display___processor_8h}{}\label{_display___processor_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Display\_Processor/Display\_Processor.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Display\_Processor/Display\_Processor.h}}
+
+
+Real-\/time data display processor for AVR64\+DD32 system.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Data\+Structures.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_display___processor_8h_adebfc379e07de3366fd9fab2d460c218}\label{_display___processor_8h_adebfc379e07de3366fd9fab2d460c218} 
+\+\#define {\bfseries MAXNODISPLAYPROCESSORS}~15
+\item 
+\Hypertarget{_display___processor_8h_a177bcd0c0e2580f00d806906a4159af5}\label{_display___processor_8h_a177bcd0c0e2580f00d806906a4159af5} 
+\+\#define {\bfseries DISPLAYPROCESSOR\+\_\+\+DISPLAYCOL}~85
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_display___processor_8h_ac2f7d6ff10e1e22f8859ea835fdb1a22}\label{_display___processor_8h_ac2f7d6ff10e1e22f8859ea835fdb1a22} 
+enum {\bfseries DISPLAYPROCESSORSTATES} \{ {\bfseries DISPLAYPROCESSORSTATES\+\_\+\+PRINT}
+, {\bfseries DISPLAYPROCESSORSTATES\+\_\+\+LOOP}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_display___processor_8h_afeeb0d3fae612bb6b1923c62fd36320d}\label{_display___processor_8h_afeeb0d3fae612bb6b1923c62fd36320d} 
+void {\bfseries Display\+Processor\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_display___processor_8h_afbf64082c645ee2118e9175ff211be2a}\label{_display___processor_8h_afbf64082c645ee2118e9175ff211be2a} 
+void {\bfseries Display\+Processor\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_display___processor_8h_a05d526aedaff7fdd2c46f37c9fe0af20}\label{_display___processor_8h_a05d526aedaff7fdd2c46f37c9fe0af20} 
+void {\bfseries Display\+Processor\+\_\+\+Add} (struct \doxymbox{\hyperlink{struct_display_processor_map}{Display\+Processor\+Map}} item)
+\item 
+\Hypertarget{_display___processor_8h_a50e6ec1ad0c7d593e7680e4dc3a3c9b8}\label{_display___processor_8h_a50e6ec1ad0c7d593e7680e4dc3a3c9b8} 
+void {\bfseries Display\+Processor\+\_\+\+Set\+Enabled\+Flag} (void \texorpdfstring{$\ast$}{*}funct\+Ptr, bool enabled)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Real-\/time data display processor for AVR64\+DD32 system. 
+
+Manages automatic display of peripheral data in the terminal\textquotesingle{}s right-\/side data area (columns 85-\/120). Supports registration of display items with custom formatting callbacks.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Display Architecture}
+Each peripheral registers display items containing:\+
+\begin{DoxyItemize}
+\item Pointer to data structure
+\item Custom formatting function
+\item Display message/\+label
+\item Enable/\+disable flag
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Display Area}
+
+\begin{DoxyItemize}
+\item Location:\+ Columns 85-\/120, rows 1-\/30
+\item Update:\+ Automatic on each main loop iteration
+\item Format:\+ Module-\/specific (ADC voltages, Timer frequencies, etc.)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Features}
+
+\begin{DoxyItemize}
+\item Dynamic display item registration
+\item Individual item enable/\+disable
+\item Custom formatting via function pointers
+\item Automatic screen area clearing
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Display updates do not block main loop 
+
+Maximum number of display items configurable 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Excessive display items may impact refresh rate
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{struct_display_processor_map}{Display\+Processor\+Map} structure 
+
+\doxylink{_terminal___commands_8h}{Terminal\+\_\+\+Commands.\+h} for positioning 
+\end{DoxySeeAlso}

@@ -1,0 +1,178 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+ADC/\+\+ADC.h File Reference}
+\hypertarget{_a_d_c_8h}{}\label{_a_d_c_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/ADC/ADC.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/ADC/ADC.h}}
+
+
+Analog-\/to-\/\+Digital Converter driver interface for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include $<$avr/\+io.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+{\ttfamily \+\#include "{}Common/\+\+Data\+Structures.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_a_d_c_configuration}{ADCConfiguration}}
+\begin{DoxyCompactList}\small\item\em Holds runtime configuration values for the ADC subsystem. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_a_d_c_8h_a410bfcc7766fc3c3b4c1ec98394211b2}\label{_a_d_c_8h_a410bfcc7766fc3c3b4c1ec98394211b2} 
+\+\#define {\bfseries ADCSystem\+Size}~3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_a_d_c_8h_a6a390dfe11334fb55cb062ff447c2093}\label{_a_d_c_8h_a6a390dfe11334fb55cb062ff447c2093} 
+typedef struct ADCConfiguration {\bfseries ADCConfiguration}
+\item 
+\Hypertarget{_a_d_c_8h_a0b8340efdfcac33a131ddd6eb6db37b9}\label{_a_d_c_8h_a0b8340efdfcac33a131ddd6eb6db37b9} 
+typedef struct ADCProcess\+Engine {\bfseries ADCProcess\+Engine}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_a_d_c_8h_a0ca456dc23ab663eb4cc3bb5159e1741}\label{_a_d_c_8h_a0ca456dc23ab663eb4cc3bb5159e1741} 
+enum {\bfseries ADC\+\_\+\+CHANNELNAME} \{ {\bfseries ADC\+\_\+\+CHANNELNAME\+\_\+\+INSTANT}
+, {\bfseries ADC\+\_\+\+CHANNELNAME\+\_\+\+AVERAGE}
+, {\bfseries ADC\+\_\+\+CHANNELNAME\+\_\+\+DIFFERENTIAL}
+ \}
+\item 
+\Hypertarget{_a_d_c_8h_a371e3084b710f016c9b01f31210f39c3}\label{_a_d_c_8h_a371e3084b710f016c9b01f31210f39c3} 
+enum {\bfseries ADC\+\_\+\+STATE} \{ \newline
+{\bfseries ADC\+\_\+\+STATE\+\_\+\+IDLE}
+, {\bfseries ADC\+\_\+\+STATE\+\_\+\+ACTIVE}
+, {\bfseries ADC\+\_\+\+STATE\+\_\+\+INITIALIZE}
+, {\bfseries ADC\+\_\+\+STATE\+\_\+\+READ}
+, \newline
+{\bfseries ADC\+\_\+\+STATE\+\_\+\+DISPLAY}
+, {\bfseries ADC\+\_\+\+STATE\+\_\+\+COMPLETE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_a_d_c_8h_a399b5f29fa53368d7befcade0a977f5b}\label{_a_d_c_8h_a399b5f29fa53368d7befcade0a977f5b} 
+void {\bfseries ADC\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_a_d_c_8h_ad344ed54c0eeb245500899faf1c2982f}\label{_a_d_c_8h_ad344ed54c0eeb245500899faf1c2982f} 
+void {\bfseries ADC\+\_\+\+Initialize\+\_\+\+Average} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_ab3e9d1180433d215acfbfa4d3f1574d6}\label{_a_d_c_8h_ab3e9d1180433d215acfbfa4d3f1574d6} 
+bool {\bfseries ADC\+\_\+\+Read\+\_\+\+Average} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_a02d2c3760fcc18f51cbbf07343046704}\label{_a_d_c_8h_a02d2c3760fcc18f51cbbf07343046704} 
+void {\bfseries ADC\+\_\+\+Display\+\_\+\+Average} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_ad9200b237e0b5a206514c1509b7db810}\label{_a_d_c_8h_ad9200b237e0b5a206514c1509b7db810} 
+void {\bfseries ADC\+\_\+\+Initialize\+\_\+\+Instant} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_a3c427c628b504ad575615313c9273ff4}\label{_a_d_c_8h_a3c427c628b504ad575615313c9273ff4} 
+bool {\bfseries ADC\+\_\+\+Read\+\_\+\+Instant} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_a65b993c98c417b886614892a90119515}\label{_a_d_c_8h_a65b993c98c417b886614892a90119515} 
+void {\bfseries ADC\+\_\+\+Display\+\_\+\+Instant} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_a60a0dba4f961e807ed536faa524622f5}\label{_a_d_c_8h_a60a0dba4f961e807ed536faa524622f5} 
+void {\bfseries ADC\+\_\+\+Initialize\+\_\+\+Differential} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_a9b3ac1c9c1dff54e3fb1c5569442e7e5}\label{_a_d_c_8h_a9b3ac1c9c1dff54e3fb1c5569442e7e5} 
+bool {\bfseries ADC\+\_\+\+Read\+\_\+\+Differential} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_adb2849bbaab24ed2fbe6415cafc672a2}\label{_a_d_c_8h_adb2849bbaab24ed2fbe6415cafc672a2} 
+void {\bfseries ADC\+\_\+\+Display\+\_\+\+Differential} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_ab0e0ea1662a8e789547210a2d33127e1}\label{_a_d_c_8h_ab0e0ea1662a8e789547210a2d33127e1} 
+void {\bfseries ADC\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_a_d_c_8h_a7cf8211cd63ad351d06c7939712166b0}\label{_a_d_c_8h_a7cf8211cd63ad351d06c7939712166b0} 
+void {\bfseries ADC\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_a_d_c_8h_a6db40362047e310f2b7e37f2790e4eea}\label{_a_d_c_8h_a6db40362047e310f2b7e37f2790e4eea} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+ADCData} (uint8\+\_\+t index)
+\item 
+\Hypertarget{_a_d_c_8h_a327739e8aa47b170f653e3c0be69c950}\label{_a_d_c_8h_a327739e8aa47b170f653e3c0be69c950} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADCPres\+Scale\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_ac62354439f886d647dc464abaa3df2e1}\label{_a_d_c_8h_ac62354439f886d647dc464abaa3df2e1} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADCSample\+Delay\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_a2ead54f81d703c84dc3c1d3b62296da5}\label{_a_d_c_8h_a2ead54f81d703c84dc3c1d3b62296da5} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADC\+\_\+\+Bits\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_ad71431b9e4d99f186f63bf3076929f3b}\label{_a_d_c_8h_ad71431b9e4d99f186f63bf3076929f3b} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADCSample\+Number\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_af2ac54c07e80c252965d9b869a5c43ea}\label{_a_d_c_8h_af2ac54c07e80c252965d9b869a5c43ea} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADCRef\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_a8410f13b43ea668ce69369191d1ac7cf}\label{_a_d_c_8h_a8410f13b43ea668ce69369191d1ac7cf} 
+void {\bfseries ADC\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_a_d_c_8h_aa442134b7d607d2c654efc2af5a87506}\label{_a_d_c_8h_aa442134b7d607d2c654efc2af5a87506} 
+void {\bfseries ADC\+\_\+\+Load\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_a_d_c_8h_ad2b473cee47f7a4de708e1431063aee7}\label{_a_d_c_8h_ad2b473cee47f7a4de708e1431063aee7} 
+float {\bfseries Volts\+Per\+Tick} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8h_a39e58ebec9d00ff1f9c2013c0a26380d}\label{_a_d_c_8h_a39e58ebec9d00ff1f9c2013c0a26380d} 
+bool {\bfseries Get\+ADCEnabled\+State} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Analog-\/to-\/\+Digital Converter driver interface for AVR64\+DD32. 
+
+Provides multi-\/channel ADC functionality with support for instant, averaged, and differential measurements. Includes configuration persistence via EEPROM and integration with display processor.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created:\+ 11/\+25/\+2025 2:\+01:\+20 PM 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Hardware Configuration}
+Test Circuit (Resistor Network):\+ \begin{DoxyVerb}*      VDD --- 27k? --- [PD5] --- 12k? --- [PD4] --- 10k? --- GND
+*      
+*      Expected Voltages:
+*        PD5 (Instant):      ~2.25V to GND
+*        PD4 (Average):      ~1.02V to GND
+*        PD5-PD4 (Diff):     ~1.23V
+*      \end{DoxyVerb}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Features}
+
+\begin{DoxyItemize}
+\item Three independent ADC channels (Instant, Average, Differential)
+\item 12-\/bit resolution (4096 counts)
+\item Selectable reference voltage (1.\+024V to VDD)
+\item Hardware averaging (up to 16 samples)
+\item Configurable prescaler for ADC clock
+\item EEPROM configuration persistence
+\item Display processor integration
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Channels use fixed pins:\+ PD4 (Average), PD5 (Instant) 
+
+VREF must be initialized before ADC usage 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Digital input buffers are disabled on ADC pins for accuracy 
+
+Blocking reads -\/ conversion time depends on prescaler setting
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_menu___a_d_c_8h_source}{Menu\+\_\+\+ADC.\+h} for user interface 
+
+\doxylink{_e_e_p_rom_8h}{EEPRom.\+h} for configuration storage 
+
+\doxylink{_display___processor_8h}{Display\+\_\+\+Processor.\+h} for data display 
+\end{DoxySeeAlso}

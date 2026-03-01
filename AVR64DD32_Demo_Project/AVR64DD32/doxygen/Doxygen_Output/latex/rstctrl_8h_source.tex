@@ -1,0 +1,40 @@
+\doxysection{rstctrl.\+h}
+\hypertarget{rstctrl_8h_source}{}\label{rstctrl_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/rstctrl.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/rstctrl.h}}
+\doxymbox{\hyperlink{rstctrl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifndef\ RSTCTRL\_INCLUDED}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ RSTCTRL\_INCLUDED}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{ccp_8h}{ccp.h}}>}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ RSTCTRL\_reset(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{/*\ SWRR\ is\ protected\ with\ CCP\ */}}
+\DoxyCodeLine{00050\ \ \ \ \ ccp\_write\_io((\textcolor{keywordtype}{void}\ *)\&RSTCTRL.SWRR,\ 0x1);}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ RSTCTRL\_get\_reset\_cause(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ RSTCTRL.RSTFR;}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ RSTCTRL\_clear\_reset\_cause(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ RSTCTRL.RSTFR}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ =\ RSTCTRL\_UPDIRF\_bm\ |\ RSTCTRL\_SWRF\_bm\ |\ RSTCTRL\_WDRF\_bm\ |\ RSTCTRL\_EXTRF\_bm\ |\ RSTCTRL\_BORF\_bm\ |\ RSTCTRL\_PORF\_bm;}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RSTCTRL\_INCLUDED\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

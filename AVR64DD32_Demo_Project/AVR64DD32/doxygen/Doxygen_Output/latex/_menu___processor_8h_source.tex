@@ -1,0 +1,41 @@
+\doxysection{Menu\+\_\+\+Processor.\+h}
+\hypertarget{_menu___processor_8h_source}{}\label{_menu___processor_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Menu\_Processor/Menu\_Processor.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Menu\_Processor/Menu\_Processor.h}}
+\doxymbox{\hyperlink{_menu___processor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_terminal___commands_8h}{Menu\_Report\_Processor/Terminal\_Commands/Terminal\_Commands.h}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_data_structures_8h}{Common/DataStructures.h}}"{}}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ MenuBody\_Read(\doxymbox{\hyperlink{struct_menu_body}{MenuBody}}\ *dst,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_menu_body}{MenuBody}}\ *tableP,\ uint8\_t\ idx)}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ memcpy\_P(dst,\ \&tableP[idx],\ \textcolor{keyword}{sizeof}(*dst));}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ MenuHeader\_Read(\doxymbox{\hyperlink{struct_menu_header}{MenuHeader}}\ *dst,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_menu_header}{MenuHeader}}\ *tableP,\ uint8\_t\ idx)}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ memcpy\_P(dst,\ \&tableP[idx],\ \textcolor{keyword}{sizeof}(*dst));}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ MenuDataEntry\_Read(\doxymbox{\hyperlink{struct_data_entry}{DataEntry}}*dst,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_data_entry}{DataEntry}}\ *tableP,\ uint8\_t\ idx)}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ memcpy\_P(dst,\ \&tableP[idx],\ \textcolor{keyword}{sizeof}(*dst));}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ Menu\ Processing\ Functions}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ Menu\_Processor\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ MenuSystem\_Processor\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{bool}\ Menu\_Processor\_Status(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ Menu\_DisplayMenu(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ SetActiveMenu(\doxymbox{\hyperlink{struct_menu_system}{MenuSystem}}\ *menu);}
+\DoxyCodeLine{00066\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_menu_system}{MenuSystem}}\ *GetActiveMenu(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ *\ GetDataPtrForMenuItem(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+
+\end{DoxyCode}

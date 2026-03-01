@@ -1,0 +1,216 @@
+\doxysection{SPI Basic }
+\hypertarget{group__doc__driver__spi__basic}{}\label{group__doc__driver__spi__basic}\index{SPI Basic@{SPI Basic}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_s_p_i__0__descriptor__s}{SPI\+\_\+0\+\_\+descriptor\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__doc__driver__spi__basic_ga75b3a69aa2a37bae45cd6baa73941470}\label{group__doc__driver__spi__basic_ga75b3a69aa2a37bae45cd6baa73941470} 
+typedef struct \doxymbox{\hyperlink{struct_s_p_i__0__descriptor__s}{SPI\+\_\+0\+\_\+descriptor\+\_\+s}} {\bfseries SPI\+\_\+0\+\_\+descriptor\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_gaa2692105ef57cebd078ac461e511757a}{SPI\+\_\+0\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize SPI interface If module is configured to disabled state, the clock to the SPI is disabled if this is supported by the device\textquotesingle{}s clock system. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga8fddaae9650a7cdae4c4a0a3cbf8e251}{SPI\+\_\+0\+\_\+enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable SPI\+\_\+0. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__spi__basic_gaee2ba54f73de0eb6b76100d315a85b38}{SPI\+\_\+0\+\_\+disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable SPI\+\_\+0. \end{DoxyCompactList}\item 
+\Hypertarget{group__doc__driver__spi__basic_ga5622dc4fcb78ea4f6e34e70eb3bcfea4}\label{group__doc__driver__spi__basic_ga5622dc4fcb78ea4f6e34e70eb3bcfea4} 
+void {\bfseries SPI\+\_\+0\+\_\+register\+\_\+callback} (\doxymbox{\hyperlink{spi__basic_8h_a9b16fe7ddd217be7d4ffa9996dd01b4c}{spi\+\_\+transfer\+\_\+done\+\_\+cb\+\_\+t}} f)
+\item 
+\Hypertarget{group__doc__driver__spi__basic_gacf5eb4da24c39053e23a8aaf47d5340d}\label{group__doc__driver__spi__basic_gacf5eb4da24c39053e23a8aaf47d5340d} 
+{\bfseries ISR} (SPI0\+\_\+\+INT\+\_\+vect)
+\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_gafbf3379c2d704d9157f8c9c711968d0a}{SPI\+\_\+0\+\_\+status\+\_\+free}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is FREE. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga392d25ea79b1a32979d1563dd5ee167b}{SPI\+\_\+0\+\_\+status\+\_\+idle}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is IDLE. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga234c71092fc58abfa18a2b3157331837}{SPI\+\_\+0\+\_\+status\+\_\+busy}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is BUSY. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__spi__basic_ga59f4f459d2829fb8e4d5259a42ed56fc}{SPI\+\_\+0\+\_\+status\+\_\+done}} (void)
+\begin{DoxyCompactList}\small\item\em Check if SPI bus is DONE. \end{DoxyCompactList}\item 
+\Hypertarget{group__doc__driver__spi__basic_ga6b91bb830418096047776e4b35e26b49}\label{group__doc__driver__spi__basic_ga6b91bb830418096047776e4b35e26b49} 
+uint8\+\_\+t {\bfseries SPI\+\_\+0\+\_\+exchange\+\_\+byte} (uint8\+\_\+t data)
+\item 
+\Hypertarget{group__doc__driver__spi__basic_ga414420ab01f76c35e266ad1ad9ddba89}\label{group__doc__driver__spi__basic_ga414420ab01f76c35e266ad1ad9ddba89} 
+void {\bfseries SPI\+\_\+0\+\_\+exchange\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\item 
+\Hypertarget{group__doc__driver__spi__basic_ga42c67dcff6e3760169665c071c77e38d}\label{group__doc__driver__spi__basic_ga42c67dcff6e3760169665c071c77e38d} 
+void {\bfseries SPI\+\_\+0\+\_\+write\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\item 
+\Hypertarget{group__doc__driver__spi__basic_ga608c9237b014b0f021d0f5ff48d76e73}\label{group__doc__driver__spi__basic_ga608c9237b014b0f021d0f5ff48d76e73} 
+void {\bfseries SPI\+\_\+0\+\_\+read\+\_\+block} (void \texorpdfstring{$\ast$}{*}block, uint8\+\_\+t size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__doc__driver__spi__basic_gaf378630ad471bbe6c9d62be1ef5d6356}\label{group__doc__driver__spi__basic_gaf378630ad471bbe6c9d62be1ef5d6356} 
+\doxymbox{\hyperlink{spi__basic_8h_aeb4fd88d3fa799b2f804f06cb2b484e7}{spi\+\_\+transfer\+\_\+status\+\_\+t}} {\bfseries status}
+\item 
+\Hypertarget{group__doc__driver__spi__basic_gabe222f6d3581e7920dcad5306cc906a8}\label{group__doc__driver__spi__basic_gabe222f6d3581e7920dcad5306cc906a8} 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} {\bfseries data}
+\item 
+\Hypertarget{group__doc__driver__spi__basic_gae5dc6ffcd9b7605c7787791e40cc6bb0}\label{group__doc__driver__spi__basic_gae5dc6ffcd9b7605c7787791e40cc6bb0} 
+uint8\+\_\+t {\bfseries size}
+\item 
+\Hypertarget{group__doc__driver__spi__basic_ga7251afc1dbd6299c5c3245be86b6885c}\label{group__doc__driver__spi__basic_ga7251afc1dbd6299c5c3245be86b6885c} 
+\doxymbox{\hyperlink{spi__basic_8h_aca7b89943338bcb0562d74b2c0b7ce12}{spi\+\_\+transfer\+\_\+type\+\_\+t}} {\bfseries type}
+\item 
+\Hypertarget{group__doc__driver__spi__basic_ga3a04f48df477ab49408801652a4a6d3c}\label{group__doc__driver__spi__basic_ga3a04f48df477ab49408801652a4a6d3c} 
+\doxymbox{\hyperlink{spi__basic_8h_a9b16fe7ddd217be7d4ffa9996dd01b4c}{spi\+\_\+transfer\+\_\+done\+\_\+cb\+\_\+t}} {\bfseries cb}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{group__doc__driver__spi__basic_doc_driver_spi_basic_rev}{}\doxysubsection{\texorpdfstring{Revision History}{Revision History}}\label{group__doc__driver__spi__basic_doc_driver_spi_basic_rev}
+
+\begin{DoxyItemize}
+\item v0.\+0.\+0.\+1 Initial Commit 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{group__doc__driver__spi__basic_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{group__doc__driver__spi__basic_gaee2ba54f73de0eb6b76100d315a85b38}\index{SPI Basic@{SPI Basic}!SPI\_0\_disable@{SPI\_0\_disable}}
+\index{SPI\_0\_disable@{SPI\_0\_disable}!SPI Basic@{SPI Basic}}
+\doxysubsubsection{\texorpdfstring{SPI\_0\_disable()}{SPI\_0\_disable()}}
+{\footnotesize\ttfamily \label{group__doc__driver__spi__basic_gaee2ba54f73de0eb6b76100d315a85b38} 
+void SPI\+\_\+0\+\_\+disable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Disable SPI\+\_\+0. 
+
+
+\begin{DoxyEnumerate}
+\item Disables the SPI module by clearing the enable-\/bit in the SPI control register
+\item If supported by the clock system, disables the clock to the SPI
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{group__doc__driver__spi__basic_ga8fddaae9650a7cdae4c4a0a3cbf8e251}\index{SPI Basic@{SPI Basic}!SPI\_0\_enable@{SPI\_0\_enable}}
+\index{SPI\_0\_enable@{SPI\_0\_enable}!SPI Basic@{SPI Basic}}
+\doxysubsubsection{\texorpdfstring{SPI\_0\_enable()}{SPI\_0\_enable()}}
+{\footnotesize\ttfamily \label{group__doc__driver__spi__basic_ga8fddaae9650a7cdae4c4a0a3cbf8e251} 
+void SPI\+\_\+0\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable SPI\+\_\+0. 
+
+
+\begin{DoxyEnumerate}
+\item If supported by the clock system, enables the clock to the SPI
+\item Enables the SPI module by setting the enable-\/bit in the SPI control register
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{group__doc__driver__spi__basic_gaa2692105ef57cebd078ac461e511757a}\index{SPI Basic@{SPI Basic}!SPI\_0\_init@{SPI\_0\_init}}
+\index{SPI\_0\_init@{SPI\_0\_init}!SPI Basic@{SPI Basic}}
+\doxysubsubsection{\texorpdfstring{SPI\_0\_init()}{SPI\_0\_init()}}
+{\footnotesize\ttfamily \label{group__doc__driver__spi__basic_gaa2692105ef57cebd078ac461e511757a} 
+void SPI\+\_\+0\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize SPI interface If module is configured to disabled state, the clock to the SPI is disabled if this is supported by the device\textquotesingle{}s clock system. 
+
+\begin{DoxyReturn}{Returns}
+Initialization status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & the SPI init was successful \\
+\hline
+{\em 1} & the SPI init was not successful \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__doc__driver__spi__basic_ga234c71092fc58abfa18a2b3157331837}\index{SPI Basic@{SPI Basic}!SPI\_0\_status\_busy@{SPI\_0\_status\_busy}}
+\index{SPI\_0\_status\_busy@{SPI\_0\_status\_busy}!SPI Basic@{SPI Basic}}
+\doxysubsubsection{\texorpdfstring{SPI\_0\_status\_busy()}{SPI\_0\_status\_busy()}}
+{\footnotesize\ttfamily \label{group__doc__driver__spi__basic_ga234c71092fc58abfa18a2b3157331837} 
+bool SPI\+\_\+0\+\_\+status\+\_\+busy (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if SPI bus is BUSY. 
+
+\begin{DoxyReturn}{Returns}
+SPI BUSY status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & SPI bus is BUSY \\
+\hline
+{\em false} & SPI bus is not BUSY \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__doc__driver__spi__basic_ga59f4f459d2829fb8e4d5259a42ed56fc}\index{SPI Basic@{SPI Basic}!SPI\_0\_status\_done@{SPI\_0\_status\_done}}
+\index{SPI\_0\_status\_done@{SPI\_0\_status\_done}!SPI Basic@{SPI Basic}}
+\doxysubsubsection{\texorpdfstring{SPI\_0\_status\_done()}{SPI\_0\_status\_done()}}
+{\footnotesize\ttfamily \label{group__doc__driver__spi__basic_ga59f4f459d2829fb8e4d5259a42ed56fc} 
+bool SPI\+\_\+0\+\_\+status\+\_\+done (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if SPI bus is DONE. 
+
+\begin{DoxyReturn}{Returns}
+SPI DONE status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & SPI bus is DONE \\
+\hline
+{\em false} & SPI bus is not DONE \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__doc__driver__spi__basic_gafbf3379c2d704d9157f8c9c711968d0a}\index{SPI Basic@{SPI Basic}!SPI\_0\_status\_free@{SPI\_0\_status\_free}}
+\index{SPI\_0\_status\_free@{SPI\_0\_status\_free}!SPI Basic@{SPI Basic}}
+\doxysubsubsection{\texorpdfstring{SPI\_0\_status\_free()}{SPI\_0\_status\_free()}}
+{\footnotesize\ttfamily \label{group__doc__driver__spi__basic_gafbf3379c2d704d9157f8c9c711968d0a} 
+bool SPI\+\_\+0\+\_\+status\+\_\+free (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if SPI bus is FREE. 
+
+\begin{DoxyReturn}{Returns}
+SPI free status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & SPI bus is FREE \\
+\hline
+{\em false} & SPI bus is not FREE \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__doc__driver__spi__basic_ga392d25ea79b1a32979d1563dd5ee167b}\index{SPI Basic@{SPI Basic}!SPI\_0\_status\_idle@{SPI\_0\_status\_idle}}
+\index{SPI\_0\_status\_idle@{SPI\_0\_status\_idle}!SPI Basic@{SPI Basic}}
+\doxysubsubsection{\texorpdfstring{SPI\_0\_status\_idle()}{SPI\_0\_status\_idle()}}
+{\footnotesize\ttfamily \label{group__doc__driver__spi__basic_ga392d25ea79b1a32979d1563dd5ee167b} 
+bool SPI\+\_\+0\+\_\+status\+\_\+idle (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if SPI bus is IDLE. 
+
+\begin{DoxyReturn}{Returns}
+SPI IDLE status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & SPI bus is IDLE \\
+\hline
+{\em false} & SPI bus is not IDLE \\
+\hline
+\end{DoxyRetVals}

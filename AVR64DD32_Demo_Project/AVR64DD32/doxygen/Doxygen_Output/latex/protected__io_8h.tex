@@ -1,0 +1,50 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+include/\+protected\+\_\+io.h File Reference}
+\hypertarget{protected__io_8h}{}\label{protected__io_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/protected\_io.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/protected\_io.h}}
+
+
+Configuration Change Protection write functions.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{protected__io_8h_abbd8d17d1abfd50adb4ca86f881b8741}{protected\+\_\+write\+\_\+io}} (void \texorpdfstring{$\ast$}{*}addr, uint8\+\_\+t magic, uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Write to am 8-\/bit I/\+O register protected by CCP or a protection bit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration Change Protection write functions. 
+
+(c) 2020 Microchip Technology Inc. and its subsidiaries.
+
+Subject to your compliance with these terms,you may use this software and any derivatives exclusively with Microchip products.\+It is your responsibility to comply with third party license terms applicable to your use of third party software (including open source software) that may accompany Microchip software.
+
+THIS SOFTWARE IS SUPPLIED BY MICROCHIP "{}\+AS IS"{}. NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-\/\+INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT ALLOWED BY LAW, MICROCHIP\textquotesingle{}S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE. 
+
+\label{doc-func-members}
+\Hypertarget{protected__io_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{protected__io_8h_abbd8d17d1abfd50adb4ca86f881b8741}\index{protected\_io.h@{protected\_io.h}!protected\_write\_io@{protected\_write\_io}}
+\index{protected\_write\_io@{protected\_write\_io}!protected\_io.h@{protected\_io.h}}
+\doxysubsubsection{\texorpdfstring{protected\_write\_io()}{protected\_write\_io()}}
+{\footnotesize\ttfamily \label{protected__io_8h_abbd8d17d1abfd50adb4ca86f881b8741} 
+void protected\+\_\+write\+\_\+io (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{addr}{, }\item[{uint8\+\_\+t}]{magic}{, }\item[{uint8\+\_\+t}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Write to am 8-\/bit I/\+O register protected by CCP or a protection bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address of the I/\+O register \\
+\hline
+{\em magic} & CCP magic value or Mask for protection bit \\
+\hline
+{\em value} & Value to be written\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Using IAR Embedded workbench, the choice of memory model has an impact on calling convention. The memory model is not visible to the preprocessor, so it must be defined in the Assembler preprocessor directives. 
+\end{DoxyNote}

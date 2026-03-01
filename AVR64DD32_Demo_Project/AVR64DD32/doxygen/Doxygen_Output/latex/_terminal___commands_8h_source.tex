@@ -1,0 +1,39 @@
+\doxysection{Terminal\+\_\+\+Commands.\+h}
+\hypertarget{_terminal___commands_8h_source}{}\label{_terminal___commands_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Terminal\_Commands/Terminal\_Commands.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Menu\_Report\_Processor/Terminal\_Commands/Terminal\_Commands.h}}
+\doxymbox{\hyperlink{_terminal___commands_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ TerminalMaxCols\ 80}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ TerminalMaxRows\ 24}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ TerminalColCenter\ TerminalMaxCols\ /\ 2}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ TerminalErrorLog\ TerminalMaxRows\ -\/\ 3}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ TerminalValueLine\ TerminalMaxRows\ -\/\ 2}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ TerminalPrompt\ TerminalMaxRows\ -\/1}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ Color\_Black\ \ \ \ \ '0'}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ Color\_Red\ \ \ \ \ \ \ '1'}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ Color\_Green\ \ \ \ \ '2'}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ Color\_Yellow\ \ \ \ '3'}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ Color\_Blue\ \ \ \ \ \ '4'}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ Color\_Magenta\ \ \ '5'}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ Color\_Cyan\ \ \ \ \ \ '6'}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ Color\_White\ \ \ \ \ '7'}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ VT200\ terminal\ emulation\ function}}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ ClearTerminal(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ ClearToEndOfLine(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ CursorHome(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ CursorOff(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ CursorOn(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ HomeCursor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ PrintAt(uint8\_t\ row,\ uint8\_t\ col);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ SetColor(uint8\_t\ foreground,\ uint8\_t\ background);}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ ClearArea(uint8\_t\ sRow,\ uint8\_t\ eRow,\ uint8\_t\ sCol,\ uint8\_t\ eCol);}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ PrintNormal(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ CommandPrompt(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ LogErrorToScreen(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+
+\end{DoxyCode}

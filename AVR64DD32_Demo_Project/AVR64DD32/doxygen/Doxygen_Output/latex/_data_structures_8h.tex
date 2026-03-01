@@ -1,0 +1,161 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Common/\+\+Data\+Structures.h File Reference}
+\hypertarget{_data_structures_8h}{}\label{_data_structures_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Common/DataStructures.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Common/DataStructures.h}}
+
+
+Core data structure definitions for AVR64\+DD32 project.  
+
+
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdio.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include $<$avr/\+pgmspace.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_theme}{Theme}}
+\item 
+struct \doxymbox{\hyperlink{struct_menu_header}{Menu\+Header}}
+\item 
+struct \doxymbox{\hyperlink{struct_menu_body}{Menu\+Body}}
+\item 
+struct \doxymbox{\hyperlink{struct_data_entry}{Data\+Entry}}
+\item 
+struct \doxymbox{\hyperlink{struct_data_entry_screen_area}{Data\+Entry\+Screen\+Area}}
+\item 
+struct \doxymbox{\hyperlink{struct_enter_value_by_hand}{Enter\+Value\+By\+Hand}}
+\item 
+struct \doxymbox{\hyperlink{struct_save_config}{Save\+Config}}
+\item 
+struct \doxymbox{\hyperlink{struct_menu_system}{Menu\+System}}
+\item 
+struct \doxymbox{\hyperlink{struct_system_menu_processor}{System\+Menu\+Processor}}
+\item 
+struct \doxymbox{\hyperlink{struct_display_processor_map}{Display\+Processor\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_data_structures_8h_a09957f211bfc2fd71a93e47b99657513}\label{_data_structures_8h_a09957f211bfc2fd71a93e47b99657513} 
+typedef struct Theme {\bfseries Theme}
+\item 
+\Hypertarget{_data_structures_8h_a701d0c9658b9b2821b5d70c34fa0164f}\label{_data_structures_8h_a701d0c9658b9b2821b5d70c34fa0164f} 
+typedef struct Menu\+Header {\bfseries Menu\+Header}
+\item 
+\Hypertarget{_data_structures_8h_a3f2efd315d2e663ac0c982bec4a37c19}\label{_data_structures_8h_a3f2efd315d2e663ac0c982bec4a37c19} 
+typedef struct Menu\+Body {\bfseries Menu\+Body}
+\item 
+\Hypertarget{_data_structures_8h_a58efe2792f8e8d5e734aa4aab13597f5}\label{_data_structures_8h_a58efe2792f8e8d5e734aa4aab13597f5} 
+typedef struct Data\+Entry {\bfseries Data\+Entry}
+\item 
+\Hypertarget{_data_structures_8h_a504e212a905fc271c3fedf39f1ded111}\label{_data_structures_8h_a504e212a905fc271c3fedf39f1ded111} 
+typedef struct Data\+Entry\+Screen\+Area {\bfseries Data\+Entry\+Screen\+Area}
+\item 
+\Hypertarget{_data_structures_8h_a5688d25745455f208c88761f7f035a85}\label{_data_structures_8h_a5688d25745455f208c88761f7f035a85} 
+typedef struct Enter\+Value\+By\+Hand {\bfseries Enter\+Value\+By\+Hand}
+\item 
+\Hypertarget{_data_structures_8h_ae37c39320e038e218d8f712d4e216ee0}\label{_data_structures_8h_ae37c39320e038e218d8f712d4e216ee0} 
+typedef struct Save\+Config {\bfseries Save\+Config}
+\item 
+\Hypertarget{_data_structures_8h_a84e55976cf77768b2c7f4bde5cc994a3}\label{_data_structures_8h_a84e55976cf77768b2c7f4bde5cc994a3} 
+typedef struct Menu\+System {\bfseries Menu\+System}
+\item 
+\Hypertarget{_data_structures_8h_a70642b187a155db696c4009ed9c5fc56}\label{_data_structures_8h_a70642b187a155db696c4009ed9c5fc56} 
+typedef struct System\+Menu\+Processor {\bfseries System\+Menu\+Processor}
+\item 
+\Hypertarget{_data_structures_8h_a5fbe0ed7d215abb81328eb6680930b24}\label{_data_structures_8h_a5fbe0ed7d215abb81328eb6680930b24} 
+typedef struct Display\+Processor\+Map {\bfseries Display\+Processor\+Map}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_data_structures_8h_acf1194a4574911906e3633f01209640b}\label{_data_structures_8h_acf1194a4574911906e3633f01209640b} 
+enum {\bfseries SIGNATURE\+\_\+\+BYTES} \{ \newline
+{\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+ADC} = 0x10
+, {\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+CCL} = 0x20
+, {\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+DAC} = 0x30
+, {\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+EVENTS} = 0x40
+, \newline
+{\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+PORTS} = 0x50
+, {\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+RTC} = 0x60
+, {\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+SPI} = 0x70
+, {\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+TIMERS} = 0x80
+, \newline
+{\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+TWI} = 0x90
+, {\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+USART} = 0x\+A0
+, {\bfseries SIGNATURE\+\_\+\+BYTES\+\_\+\+ZCD} = 0x\+B0
+ \}
+\item 
+\Hypertarget{_data_structures_8h_ab564f22254dc14b5d848960ce8d31380}\label{_data_structures_8h_ab564f22254dc14b5d848960ce8d31380} 
+enum {\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATES} \{ \newline
+{\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+IDLE}
+, {\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+START}
+, {\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+HEADER}
+, {\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+HEADER\+\_\+\+TEST}
+, \newline
+{\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+BODY}
+, {\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+BODY\+\_\+\+TEST}
+, {\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+DATAENTRY}
+, {\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+DATAENTRY\+\_\+\+TEST}
+, \newline
+{\bfseries SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATE\+\_\+\+DISPLAYPROMPT}
+ \}
+\item 
+\Hypertarget{_data_structures_8h_a52552181731959a4e9ae73510aa978ea}\label{_data_structures_8h_a52552181731959a4e9ae73510aa978ea} 
+enum {\bfseries FIELDTYPE} \{ {\bfseries FIELDTYPE\+\_\+\+BOOL}
+, {\bfseries FIELDTYPE\+\_\+\+UINT8}
+, {\bfseries FIELDTYPE\+\_\+\+UINT16}
+, {\bfseries FIELDTYPE\+\_\+\+FLOAT}
+ \}
+\item 
+\Hypertarget{_data_structures_8h_a4e183282ab25896d7acc49c63cae9e23}\label{_data_structures_8h_a4e183282ab25896d7acc49c63cae9e23} 
+enum {\bfseries DATAENTRYMODE} \{ {\bfseries DATAENTRYMODE\+\_\+\+MENU}
+, {\bfseries DATAENTRYMODE\+\_\+\+DISPLAYDATA}
+, {\bfseries DATAENTRYMODE\+\_\+\+DROPDOWN}
+, {\bfseries DATAENTRYMODE\+\_\+\+ENTERVALUE}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core data structure definitions for AVR64\+DD32 project. 
+
+Defines fundamental data structures used throughout the project including menu system types, display processor types, and common enumerations. Central location for type definitions.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created:\+ 12/\+15/\+2025 3:\+59:\+05 PM 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Key Structures}
+
+\begin{DoxyItemize}
+\item \doxylink{struct_menu_system}{Menu\+System}:\+ Complete menu definition
+\item Menu\+Header/\+\+Menu\+Body:\+ Menu component definitions
+\item \doxylink{struct_data_entry}{Data\+Entry}:\+ Data field configuration
+\item \doxylink{struct_display_processor_map}{Display\+Processor\+Map}:\+ Display item registration
+\item \doxylink{struct_theme}{Theme}:\+ Color scheme definition
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Enumerations}
+
+\begin{DoxyItemize}
+\item SIGNATURE\+\_\+\+BYTES:\+ Module identification
+\item FIELDTYPE:\+ Data field types (bool, uint8, uint16, float)
+\item DATAENTRYMODE:\+ Menu interaction modes
+\item SYSTEMMENU\+\_\+\+PROCESSING\+\_\+\+STATES:\+ Menu state machine
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+All structures designed for PROGMEM storage 
+
+Function pointers enable polymorphic behavior 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_menu___processor_8h}{Menu\+\_\+\+Processor.\+h} for menu engine 
+
+\doxylink{_display___processor_8h}{Display\+\_\+\+Processor.\+h} for display system 
+\end{DoxySeeAlso}

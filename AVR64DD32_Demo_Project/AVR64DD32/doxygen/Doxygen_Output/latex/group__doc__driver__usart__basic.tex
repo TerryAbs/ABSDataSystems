@@ -1,0 +1,252 @@
+\doxysection{USART Basic }
+\hypertarget{group__doc__driver__usart__basic}{}\label{group__doc__driver__usart__basic}\index{USART Basic@{USART Basic}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__doc__driver__usart__basic_gaac8588eaf70e5ea0dbc76d589b61430d}\label{group__doc__driver__usart__basic_gaac8588eaf70e5ea0dbc76d589b61430d} 
+\+\#define {\bfseries PORTMUX\+\_\+\+USART1\+\_\+0\+\_\+bm}~(1$<$$<$3)  /\+\texorpdfstring{$\ast$}{*} USART1 Signals bit 0 mask. \texorpdfstring{$\ast$}{*}/\+
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__doc__driver__usart__basic_ga3ab208d6c516d1753fdbe25225a6e67b}\label{group__doc__driver__usart__basic_ga3ab208d6c516d1753fdbe25225a6e67b} 
+void {\bfseries USART\+\_\+1\+\_\+\+Initialize} (void)
+\item 
+uint8\+\_\+t \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga37dda4ef981fe9d271f288e0e57a9ee4}{USART\+\_\+1\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize USART interface If module is configured to disabled state, the clock to the USART is disabled if this is supported by the device\textquotesingle{}s clock system. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga4f0f7fa7e8d1a4f5f60a1f52ad720d9f}{USART\+\_\+1\+\_\+enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enable RX and TX in USART\+\_\+1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga9d4c89df83de34d79a79d64e3eff1853}{USART\+\_\+1\+\_\+enable\+\_\+rx}} (void)
+\begin{DoxyCompactList}\small\item\em Enable RX in USART\+\_\+1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_gad15f32c9a29bf309c653eb39a1044a7c}{USART\+\_\+1\+\_\+enable\+\_\+tx}} (void)
+\begin{DoxyCompactList}\small\item\em Enable TX in USART\+\_\+1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_gac5679a28e17874930bfa49ae3bb78a17}{USART\+\_\+1\+\_\+disable}} (void)
+\begin{DoxyCompactList}\small\item\em Disable USART\+\_\+1. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga2bc29ee3e28969e730280c7859f33d3b}{USART\+\_\+1\+\_\+get\+\_\+data}} (void)
+\begin{DoxyCompactList}\small\item\em Get received data from USART\+\_\+1. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga0ff2a70b6f0fdb1e4f53bafd9277c7c8}{USART\+\_\+1\+\_\+is\+\_\+tx\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the usart can accept data to be transmitted. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__usart__basic_gacbacf1856d59bc37b7c7588486cb0516}{USART\+\_\+1\+\_\+is\+\_\+rx\+\_\+ready}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the USART has received data. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__doc__driver__usart__basic_gad9268be5ab142c4e915657637fb49b96}{USART\+\_\+1\+\_\+is\+\_\+tx\+\_\+busy}} (void)
+\begin{DoxyCompactList}\small\item\em Check if USART\+\_\+1 data is transmitted. \end{DoxyCompactList}\item 
+uint8\+\_\+t \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga33f6becc7985999a041c00f341dd79e4}{USART\+\_\+1\+\_\+read}} (void)
+\begin{DoxyCompactList}\small\item\em Read one character from USART\+\_\+1. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga63276e027c62bcc785c9abf002efca1a}{USART\+\_\+1\+\_\+write}} (const uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write one character to USART\+\_\+1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{group__doc__driver__usart__basic_doc_driver_usart_basic_rev}{}\doxysubsection{\texorpdfstring{Revision History}{Revision History}}\label{group__doc__driver__usart__basic_doc_driver_usart_basic_rev}
+
+\begin{DoxyItemize}
+\item v0.\+0.\+0.\+1 Initial Commit 
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{group__doc__driver__usart__basic_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{group__doc__driver__usart__basic_gac5679a28e17874930bfa49ae3bb78a17}\index{USART Basic@{USART Basic}!USART\_1\_disable@{USART\_1\_disable}}
+\index{USART\_1\_disable@{USART\_1\_disable}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_disable()}{USART\_1\_disable()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_gac5679a28e17874930bfa49ae3bb78a17} 
+void USART\+\_\+1\+\_\+disable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Disable USART\+\_\+1. 
+
+
+\begin{DoxyEnumerate}
+\item Disables the USART module by clearing the enable-\/bit(s) in the USART control register
+\item If supported by the clock system, disables the clock to the USART
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{group__doc__driver__usart__basic_ga4f0f7fa7e8d1a4f5f60a1f52ad720d9f}\index{USART Basic@{USART Basic}!USART\_1\_enable@{USART\_1\_enable}}
+\index{USART\_1\_enable@{USART\_1\_enable}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_enable()}{USART\_1\_enable()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_ga4f0f7fa7e8d1a4f5f60a1f52ad720d9f} 
+void USART\+\_\+1\+\_\+enable (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable RX and TX in USART\+\_\+1. 
+
+
+\begin{DoxyEnumerate}
+\item If supported by the clock system, enables the clock to the USART
+\item Enables the USART module by setting the RX and TX enable-\/bits in the USART control register
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{group__doc__driver__usart__basic_ga9d4c89df83de34d79a79d64e3eff1853}\index{USART Basic@{USART Basic}!USART\_1\_enable\_rx@{USART\_1\_enable\_rx}}
+\index{USART\_1\_enable\_rx@{USART\_1\_enable\_rx}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_enable\_rx()}{USART\_1\_enable\_rx()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_ga9d4c89df83de34d79a79d64e3eff1853} 
+void USART\+\_\+1\+\_\+enable\+\_\+rx (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable RX in USART\+\_\+1. 
+
+
+\begin{DoxyEnumerate}
+\item If supported by the clock system, enables the clock to the USART
+\item Enables the USART module by setting the RX enable-\/bit in the USART control register
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{group__doc__driver__usart__basic_gad15f32c9a29bf309c653eb39a1044a7c}\index{USART Basic@{USART Basic}!USART\_1\_enable\_tx@{USART\_1\_enable\_tx}}
+\index{USART\_1\_enable\_tx@{USART\_1\_enable\_tx}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_enable\_tx()}{USART\_1\_enable\_tx()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_gad15f32c9a29bf309c653eb39a1044a7c} 
+void USART\+\_\+1\+\_\+enable\+\_\+tx (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable TX in USART\+\_\+1. 
+
+
+\begin{DoxyEnumerate}
+\item If supported by the clock system, enables the clock to the USART
+\item Enables the USART module by setting the TX enable-\/bit in the USART control register
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+\Hypertarget{group__doc__driver__usart__basic_ga2bc29ee3e28969e730280c7859f33d3b}\index{USART Basic@{USART Basic}!USART\_1\_get\_data@{USART\_1\_get\_data}}
+\index{USART\_1\_get\_data@{USART\_1\_get\_data}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_get\_data()}{USART\_1\_get\_data()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_ga2bc29ee3e28969e730280c7859f33d3b} 
+uint8\+\_\+t USART\+\_\+1\+\_\+get\+\_\+data (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get received data from USART\+\_\+1. 
+
+\begin{DoxyReturn}{Returns}
+Data register from USART\+\_\+1 module 
+\end{DoxyReturn}
+\Hypertarget{group__doc__driver__usart__basic_ga37dda4ef981fe9d271f288e0e57a9ee4}\index{USART Basic@{USART Basic}!USART\_1\_init@{USART\_1\_init}}
+\index{USART\_1\_init@{USART\_1\_init}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_init()}{USART\_1\_init()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_ga37dda4ef981fe9d271f288e0e57a9ee4} 
+uint8\+\_\+t USART\+\_\+1\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize USART interface If module is configured to disabled state, the clock to the USART is disabled if this is supported by the device\textquotesingle{}s clock system. 
+
+\begin{DoxyReturn}{Returns}
+Initialization status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & the USART init was successful \\
+\hline
+{\em 1} & the USART init was not successful \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__doc__driver__usart__basic_gacbacf1856d59bc37b7c7588486cb0516}\index{USART Basic@{USART Basic}!USART\_1\_is\_rx\_ready@{USART\_1\_is\_rx\_ready}}
+\index{USART\_1\_is\_rx\_ready@{USART\_1\_is\_rx\_ready}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_is\_rx\_ready()}{USART\_1\_is\_rx\_ready()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_gacbacf1856d59bc37b7c7588486cb0516} 
+bool USART\+\_\+1\+\_\+is\+\_\+rx\+\_\+ready (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the USART has received data. 
+
+\begin{DoxyReturn}{Returns}
+The status of USART RX data ready check 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The USART has received data \\
+\hline
+{\em false} & The USART has not received data \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__doc__driver__usart__basic_gad9268be5ab142c4e915657637fb49b96}\index{USART Basic@{USART Basic}!USART\_1\_is\_tx\_busy@{USART\_1\_is\_tx\_busy}}
+\index{USART\_1\_is\_tx\_busy@{USART\_1\_is\_tx\_busy}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_is\_tx\_busy()}{USART\_1\_is\_tx\_busy()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_gad9268be5ab142c4e915657637fb49b96} 
+bool USART\+\_\+1\+\_\+is\+\_\+tx\+\_\+busy (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if USART\+\_\+1 data is transmitted. 
+
+\begin{DoxyReturn}{Returns}
+Receiver ready status 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & Data is not completely shifted out of the shift register \\
+\hline
+{\em false} & Data completely shifted out if the USART shift register \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__doc__driver__usart__basic_ga0ff2a70b6f0fdb1e4f53bafd9277c7c8}\index{USART Basic@{USART Basic}!USART\_1\_is\_tx\_ready@{USART\_1\_is\_tx\_ready}}
+\index{USART\_1\_is\_tx\_ready@{USART\_1\_is\_tx\_ready}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_is\_tx\_ready()}{USART\_1\_is\_tx\_ready()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_ga0ff2a70b6f0fdb1e4f53bafd9277c7c8} 
+bool USART\+\_\+1\+\_\+is\+\_\+tx\+\_\+ready (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the usart can accept data to be transmitted. 
+
+\begin{DoxyReturn}{Returns}
+The status of USART TX data ready check 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em false} & The USART can not receive data to be transmitted \\
+\hline
+{\em true} & The USART can receive data to be transmitted \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__doc__driver__usart__basic_ga33f6becc7985999a041c00f341dd79e4}\index{USART Basic@{USART Basic}!USART\_1\_read@{USART\_1\_read}}
+\index{USART\_1\_read@{USART\_1\_read}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_read()}{USART\_1\_read()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_ga33f6becc7985999a041c00f341dd79e4} 
+uint8\+\_\+t USART\+\_\+1\+\_\+read (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Read one character from USART\+\_\+1. 
+
+Function will block if a character is not available.
+
+\begin{DoxyReturn}{Returns}
+Data read from the USART\+\_\+1 module 
+\end{DoxyReturn}
+\Hypertarget{group__doc__driver__usart__basic_ga63276e027c62bcc785c9abf002efca1a}\index{USART Basic@{USART Basic}!USART\_1\_write@{USART\_1\_write}}
+\index{USART\_1\_write@{USART\_1\_write}!USART Basic@{USART Basic}}
+\doxysubsubsection{\texorpdfstring{USART\_1\_write()}{USART\_1\_write()}}
+{\footnotesize\ttfamily \label{group__doc__driver__usart__basic_ga63276e027c62bcc785c9abf002efca1a} 
+void USART\+\_\+1\+\_\+write (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Write one character to USART\+\_\+1. 
+
+Function will block until a character can be accepted.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\doxymbox{\texttt{in}}  & {\em data} & The character to write to the USART\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}

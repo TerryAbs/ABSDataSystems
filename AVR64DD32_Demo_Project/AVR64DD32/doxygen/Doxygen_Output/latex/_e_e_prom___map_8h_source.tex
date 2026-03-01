@@ -1,0 +1,37 @@
+\doxysection{EEProm\+\_\+\+Map.\+h}
+\hypertarget{_e_e_prom___map_8h_source}{}\label{_e_e_prom___map_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/EEPRom/EEProm\_Map.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/EEPRom/EEProm\_Map.h}}
+\doxymbox{\hyperlink{_e_e_prom___map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_a_d_c_8h}{ADC.h}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_dac_8h}{DAC.h}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_c_c_l_8h}{CCL.h}}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_events_8h}{Events.h}}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_ports_8h}{Ports.h}}"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_r_t_c_8h}{RTC.h}}"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_timers_8h}{Timers.h}}"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_u_s_a_r_t_8h}{USART.h}}"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_s_p_i_8h}{SPI.h}}"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_t_w_i___i2_c_8h}{TWI\_I2C.h}}"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_z_c_d_8h}{ZCD.h}}"{}}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ EEPROM\ MEMORY\ MAP\ -\/\ Use\ your\ existing\ size\ macros!}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ Format:\ EEPROM\_ITEM(name,\ type,\ count)}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ EEPROM\_MEMORY\_MAP\ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{EEPROM\_ITEM(adc\_system,\ ADCConfiguration,\ ADCSystemSize)\ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{EEPROM\_ITEM(dac\_system,\ DACConfiguration,\ DACSystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{EEPROM\_ITEM(ccl\_system,\ CCLConfiguration,\ CCLSystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{EEPROM\_ITEM(events\_system,\ EventsConfiguration,\ EventsSystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{EEPROM\_ITEM(ports\_system,\ PortsConfiguration,\ PortsSystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{EEPROM\_ITEM(rtc\_system,\ RTCConfiguration,\ RTCSystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{EEPROM\_ITEM(timers\_system,\ TimersConfiguration,\ TimersSystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{EEPROM\_ITEM(usart\_system,\ USARTConfiguration,\ USARTSystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{EEPROM\_ITEM(spi\_system,\ SPIConfiguration,\ SPISystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{EEPROM\_ITEM(twi\_i2c\_system,\ TWI\_I2CConfiguration,\ TWI\_I2CSystemSize\ )\ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{EEPROM\_ITEM(zcd\_system,\ ZCDConfiguration,\ ZCDSystemSize\ )}}
+
+\end{DoxyCode}

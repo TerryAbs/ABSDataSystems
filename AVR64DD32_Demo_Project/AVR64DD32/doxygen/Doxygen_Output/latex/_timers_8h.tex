@@ -1,0 +1,135 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Timers/\+\+Timers.h File Reference}
+\hypertarget{_timers_8h}{}\label{_timers_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Timers/Timers.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/Timers/Timers.h}}
+
+
+Timer/\+\+Counter driver interface for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_timers_configuration}{Timers\+Configuration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_timers_8h_a895d18bfc656d1e3334352161882988d}\label{_timers_8h_a895d18bfc656d1e3334352161882988d} 
+\+\#define {\bfseries Timers\+System\+Size}~1
+\item 
+\Hypertarget{_timers_8h_af7c84ea4128989587f51e64abaae14fd}\label{_timers_8h_af7c84ea4128989587f51e64abaae14fd} 
+\+\#define {\bfseries PF4\+\_\+\+Timer\+Output\+Pin}~0x10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_timers_8h_a93d6f2a263077ba6f573e9ed30337028}\label{_timers_8h_a93d6f2a263077ba6f573e9ed30337028} 
+typedef struct Timers\+Configuration {\bfseries Timers\+Configuration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_timers_8h_a6c26043b922025f9344c398d047fd035}\label{_timers_8h_a6c26043b922025f9344c398d047fd035} 
+enum {\bfseries DUTYCYCLELIST} \{ \newline
+{\bfseries DUTYCYCLELIST\+\_\+10} = 10
+, {\bfseries DUTYCYCLELIST\+\_\+20} = 20
+, {\bfseries DUTYCYCLELIST\+\_\+30} = 30
+, {\bfseries DUTYCYCLELIST\+\_\+40} = 40
+, \newline
+{\bfseries DUTYCYCLELIST\+\_\+50} = 50
+, {\bfseries DUTYCYCLELIST\+\_\+60} = 60
+, {\bfseries DUTYCYCLELIST\+\_\+70} = 70
+, {\bfseries DUTYCYCLELIST\+\_\+80} = 80
+, \newline
+{\bfseries DUTYCYCLELIST\+\_\+90} = 90
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_timers_8h_a0b46c2e0f0fd4c1f1d357fdabddd5118}\label{_timers_8h_a0b46c2e0f0fd4c1f1d357fdabddd5118} 
+void {\bfseries Timers\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_timers_8h_afa362ea897b5daf8b33327190b0a1edc}\label{_timers_8h_afa362ea897b5daf8b33327190b0a1edc} 
+void {\bfseries Timers\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_timers_8h_acec85779e2d655ea64bc02be32f6a46d}\label{_timers_8h_acec85779e2d655ea64bc02be32f6a46d} 
+void {\bfseries Timers\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_timers_8h_a7567c18aa30dfd54cc989c7fbac46aab}\label{_timers_8h_a7567c18aa30dfd54cc989c7fbac46aab} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+Timers\+Data} (void)
+\item 
+\Hypertarget{_timers_8h_afca0d8e073c7bd1605104566a2bcf80e}\label{_timers_8h_afca0d8e073c7bd1605104566a2bcf80e} 
+void {\bfseries Timers\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_timers_8h_a2c0f4cd51dae5a91960a1f3e1282984b}\label{_timers_8h_a2c0f4cd51dae5a91960a1f3e1282984b} 
+void {\bfseries Timers\+\_\+\+Load\+\_\+\+Config} (void)
+\item 
+\Hypertarget{_timers_8h_a59dfbc16a02c48abfb5ea35da78cc76c}\label{_timers_8h_a59dfbc16a02c48abfb5ea35da78cc76c} 
+void {\bfseries Timers\+\_\+\+Re\+Initialize} (void)
+\item 
+\Hypertarget{_timers_8h_ab134fba84a68e97d14c02ee518c40c24}\label{_timers_8h_ab134fba84a68e97d14c02ee518c40c24} 
+void {\bfseries Program\+\_\+\+Timer} (void)
+\item 
+\Hypertarget{_timers_8h_afe7812daa079e988a57767f0bd6e5b94}\label{_timers_8h_afe7812daa079e988a57767f0bd6e5b94} 
+void {\bfseries Get\+Timers\+Period} (const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_timers_8h_a10ac7d4dc3c707ce71a21c4f85108224}\label{_timers_8h_a10ac7d4dc3c707ce71a21c4f85108224} 
+void {\bfseries Get\+Timers\+Compare} (const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_timers_8h_a5680e10775e66a9c746d2e0c5e7ab47e}\label{_timers_8h_a5680e10775e66a9c746d2e0c5e7ab47e} 
+uint16\+\_\+t {\bfseries Compute\+Duty\+Cycle} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Timer/\+\+Counter driver interface for AVR64\+DD32. 
+
+Implements TCB (Timer/\+\+Counter B) modules for PWM generation, frequency measurement, and periodic interrupts. Supports multiple timer modes including periodic interrupt and pulse width modulation.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Timer Channels}
+
+\begin{DoxyItemize}
+\item TCB0:\+ General purpose timer
+\item TCB1:\+ PWM output on PF4 (TP6)
+\item TCB2:\+ Available for user configuration
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{PWM Configuration}
+
+\begin{DoxyItemize}
+\item Resolution:\+ 8-\/bit or 16-\/bit
+\item Frequency:\+ 61Hz to 4MHz (depending on prescaler)
+\item Duty cycle:\+ 0\% to 100\%
+\item Output pin:\+ PF4
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Features}
+
+\begin{DoxyItemize}
+\item Multiple timer modes (periodic, PWM, frequency measurement)
+\item Configurable prescaler (DIV1, DIV2, DIV4, DIV8, DIV16)
+\item Interrupt support for overflow and compare match
+\item Synchronized timer start/\+stop
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Timer frequency = F\+\_\+\+CPU /\+ (prescaler \texorpdfstring{$\ast$}{*} (CCMP + 1)) 
+
+PWM duty cycle = CMP /\+ CCMP \texorpdfstring{$\ast$}{*} 100\% 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Ensure prescaler setting doesn\textquotesingle{}t exceed timer count capabilities
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_menu___timers_8h_source}{Menu\+\_\+\+Timers.\+h} for configuration interface 
+\end{DoxySeeAlso}

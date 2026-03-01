@@ -1,0 +1,42 @@
+\doxysection{interrupt\+\_\+avr8.\+h}
+\hypertarget{interrupt__avr8_8h_source}{}\label{interrupt__avr8_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/interrupt\_avr8.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/interrupt\_avr8.h}}
+\doxymbox{\hyperlink{interrupt__avr8_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ UTILS\_INTERRUPT\_AVR8\_H}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ UTILS\_INTERRUPT\_AVR8\_H}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#ifdef\ ISR\_CUSTOM\_H}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ ISR\_CUSTOM\_H}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#if\ defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ ISR(vect)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#include\ <avr/interrupt.h>}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#elif\ defined(\_\_ICCAVR\_\_)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ \_\_ISR(x)\ \_Pragma(\#x)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ ISR(vect)\ \_\_ISR(vector\ =\ vect)\ \_\_interrupt\ void\ handler\_\#\#vect(void)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ISR\_CUSTOM\_H}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ cpu\_irq\_enable()\ sei()}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ cpu\_irq\_disable()\ cli()}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ cpu\_irq\_enable()\ \_\_enable\_interrupt()}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ cpu\_irq\_disable()\ \_\_disable\_interrupt()}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ Deprecated\ definitions.}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ Enable\_global\_interrupt()\ cpu\_irq\_enable()}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ Disable\_global\_interrupt()\ cpu\_irq\_disable()}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ Is\_global\_interrupt\_enabled()\ cpu\_irq\_is\_enabled()}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ UTILS\_INTERRUPT\_AVR8\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,139 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+SPI/\+\+SPI.h File Reference}
+\hypertarget{_s_p_i_8h}{}\label{_s_p_i_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/SPI/SPI.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/SPI/SPI.h}}
+
+
+Serial Peripheral Interface driver for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_s_p_i_configuration}{SPIConfiguration}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_p_i_8h_a7922b06987d319f190ae90113f632c6f}\label{_s_p_i_8h_a7922b06987d319f190ae90113f632c6f} 
+\+\#define {\bfseries AT45\+DB\+\_\+\+CMD\+\_\+\+READ\+\_\+\+ID}~0x9F
+\item 
+\Hypertarget{_s_p_i_8h_a961db9e99f159020f44f55f4e0edffb6}\label{_s_p_i_8h_a961db9e99f159020f44f55f4e0edffb6} 
+\+\#define {\bfseries AT45\+DB\+\_\+\+Manufacturer\+ID}~0x1f
+\item 
+\Hypertarget{_s_p_i_8h_a450f27328ee02a9441f0ca88806e5032}\label{_s_p_i_8h_a450f27328ee02a9441f0ca88806e5032} 
+\+\#define {\bfseries AT45\+DB\+\_\+\+Device\+ID}~0x12
+\item 
+\Hypertarget{_s_p_i_8h_ad680d22945f45fdc5a887d57845a2012}\label{_s_p_i_8h_ad680d22945f45fdc5a887d57845a2012} 
+\+\#define {\bfseries PA4\+\_\+\+SPI\+\_\+\+MOSI\+\_\+\+PIN}~0x10
+\item 
+\Hypertarget{_s_p_i_8h_af4d22e52921ae626ccf8e2ba1a0123f7}\label{_s_p_i_8h_af4d22e52921ae626ccf8e2ba1a0123f7} 
+\+\#define {\bfseries PA5\+\_\+\+SPI\+\_\+\+MISO\+\_\+\+PIN}~0x20
+\item 
+\Hypertarget{_s_p_i_8h_a323030b1add04091c3a04d9961a41c5c}\label{_s_p_i_8h_a323030b1add04091c3a04d9961a41c5c} 
+\+\#define {\bfseries PA6\+\_\+\+SPI\+\_\+\+SCK\+\_\+\+PIN}~0x40
+\item 
+\Hypertarget{_s_p_i_8h_a2f91b1ede7c130059bfa8765904a61f3}\label{_s_p_i_8h_a2f91b1ede7c130059bfa8765904a61f3} 
+\+\#define {\bfseries PA7\+\_\+\+SPI\+\_\+\+CS\+\_\+\+PIN}~0x80
+\item 
+\Hypertarget{_s_p_i_8h_a928529a50996af2de429d7668181d51f}\label{_s_p_i_8h_a928529a50996af2de429d7668181d51f} 
+\+\#define {\bfseries SPISystem\+Size}~1
+\item 
+\Hypertarget{_s_p_i_8h_a9ca635e7362430870029ce6d0a08bd3b}\label{_s_p_i_8h_a9ca635e7362430870029ce6d0a08bd3b} 
+\+\#define {\bfseries SPIbuffersize}~4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_p_i_8h_ab461e88470cc82a9ccf5365b492d734e}\label{_s_p_i_8h_ab461e88470cc82a9ccf5365b492d734e} 
+typedef struct SPIConfiguration {\bfseries SPIConfiguration}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_p_i_8h_a76121e9a7927936d475d2d190eaa5444}\label{_s_p_i_8h_a76121e9a7927936d475d2d190eaa5444} 
+enum {\bfseries SPI\+\_\+\+STATE\+\_\+\+MACHINE} \{ {\bfseries SPI\+\_\+\+STATE\+\_\+\+MACHINE\+\_\+\+SEND\+\_\+\+PACKET}
+, {\bfseries SPI\+\_\+\+STATE\+\_\+\+MACHINE\+\_\+\+WAIT\+\_\+\+FOR\+\_\+\+COMPLETE}
+, {\bfseries SPI\+\_\+\+STATE\+\_\+\+MACHINE\+\_\+\+SEND\+\_\+\+PACKET\+\_\+\+SAVE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_s_p_i_8h_a5b9b6d7aa5a5bd7553b4acd75932f016}\label{_s_p_i_8h_a5b9b6d7aa5a5bd7553b4acd75932f016} 
+void {\bfseries SPI\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_s_p_i_8h_afe52fd1b883a29133b7a8974837e0c4b}\label{_s_p_i_8h_afe52fd1b883a29133b7a8974837e0c4b} 
+void {\bfseries SPI\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_s_p_i_8h_a0ad29df9fa19aec07b0e0a394fb5fa38}\label{_s_p_i_8h_a0ad29df9fa19aec07b0e0a394fb5fa38} 
+void {\bfseries SPI\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_s_p_i_8h_adc1e78b857edbc91273b059587f13077}\label{_s_p_i_8h_adc1e78b857edbc91273b059587f13077} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+SPIData} (void)
+\item 
+\Hypertarget{_s_p_i_8h_a128542df2ed518c087e969a8f4ce6616}\label{_s_p_i_8h_a128542df2ed518c087e969a8f4ce6616} 
+void {\bfseries SPI\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_s_p_i_8h_aac02f4cde4c9b6d0d0484994df863286}\label{_s_p_i_8h_aac02f4cde4c9b6d0d0484994df863286} 
+void {\bfseries SPI\+\_\+\+Load\+\_\+\+Config} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serial Peripheral Interface driver for AVR64\+DD32. 
+
+Implements SPI master mode with support for multiple flash memory devices including W25\+Q128, AT25\+SF641, and SST26\+VF016B. Provides read, write, and erase operations with device-\/specific commands.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Pin Configuration}
+
+\begin{DoxyItemize}
+\item PA4:\+ MOSI (Master Out Slave In)
+\item PA5:\+ MISO (Master In Slave Out)
+\item PA6:\+ SCK (Serial Clock)
+\item PA7:\+ SS (Slave Select)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Supported Flash Devices}
+
+\begin{DoxyItemize}
+\item Winbond W25\+Q128 (128Mbit)
+\item Adesto AT25\+SF641 (64Mbit)
+\item Microchip SST26\+VF016B (16Mbit)
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Operations}
+
+\begin{DoxyItemize}
+\item Device ID read and verification
+\item Page write (up to 256 bytes)
+\item Sector/\+block erase
+\item Sequential read
+\item Status register access
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Uses interrupt-\/driven transfers for efficiency 
+
+Automatic busy polling during erase/\+write operations 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Ensure proper SPI mode (MODE 0 or MODE 3) for your device 
+
+SS must remain low during entire transfer 
+
+Flash write operations require prior erase
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{spi__basic_8h}{spi\+\_\+basic.\+h} for low-\/level SPI primitives 
+
+\doxylink{_menu___s_p_i_8h_source}{Menu\+\_\+\+SPI.\+h} for user interface 
+\end{DoxySeeAlso}

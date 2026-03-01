@@ -1,0 +1,24 @@
+\doxysection{assembler.\+h}
+\hypertarget{assembler_8h_source}{}\label{assembler_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/assembler.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/assembler.h}}
+\doxymbox{\hyperlink{assembler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ ASSEMBLER\_H\_INCLUDED}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ ASSEMBLER\_H\_INCLUDED}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#if\ !defined(\_\_ASSEMBLER\_\_)\ \&\&\ !defined(\_\_IAR\_SYSTEMS\_ASM\_\_)\ \&\&\ !defined(\_\_DOXYGEN\_\_)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#error\ This\ file\ may\ only\ be\ included\ from\ assembly\ files}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#if\ defined(\_\_ASSEMBLER\_\_)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{gas_8h}{assembler/gas.h}}"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#elif\ defined(\_\_IAR\_SYSTEMS\_ASM\_\_)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{iar_8h}{assembler/iar.h}}"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <ioavr.h>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ASSEMBLER\_H\_INCLUDED\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

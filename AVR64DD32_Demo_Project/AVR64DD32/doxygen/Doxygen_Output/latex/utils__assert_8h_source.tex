@@ -1,0 +1,32 @@
+\doxysection{utils\+\_\+assert.\+h}
+\hypertarget{utils__assert_8h_source}{}\label{utils__assert_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/utils\_assert.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/utils/utils\_assert.h}}
+\doxymbox{\hyperlink{utils__assert_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ \_ASSERT\_H\_INCLUDED}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ \_ASSERT\_H\_INCLUDED}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#ifdef\ DEBUG}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ ASSERT(condition)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\ \ \ \ if\ (!(condition))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ while\ (true)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ ;}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ ASSERT(condition)\ ((void)0)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_ASSERT\_H\_INCLUDED\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

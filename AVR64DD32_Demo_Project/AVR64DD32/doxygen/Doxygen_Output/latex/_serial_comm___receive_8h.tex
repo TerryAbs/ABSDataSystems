@@ -1,0 +1,107 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+Serial\+Comm/\+\+Serial\+Comm\+\_\+\+Receive.h File Reference}
+\hypertarget{_serial_comm___receive_8h}{}\label{_serial_comm___receive_8h}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/SerialComm/SerialComm\_Receive.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/SerialComm/SerialComm\_Receive.h}}
+
+
+Serial command reception and parsing for AVR64\+DD32 system.  
+
+
+{\ttfamily \+\#include "{}Common/\+\+Common.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_serial_comm___receive_8h_a4e67e9429d48a2ba8f833ee3b1dceb5d}\label{_serial_comm___receive_8h_a4e67e9429d48a2ba8f833ee3b1dceb5d} 
+\+\#define {\bfseries EOL}~0x0D
+\item 
+\Hypertarget{_serial_comm___receive_8h_af16dfef165b32eb4cb3fb764345b6c4d}\label{_serial_comm___receive_8h_af16dfef165b32eb4cb3fb764345b6c4d} 
+\+\#define {\bfseries FALSE\+\_\+\+EOL}~0x0A
+\item 
+\Hypertarget{_serial_comm___receive_8h_aa49ab378520c95fea987f93a7f3c9abf}\label{_serial_comm___receive_8h_aa49ab378520c95fea987f93a7f3c9abf} 
+\+\#define {\bfseries RECEIVE\+\_\+\+BUFFER\+\_\+\+SIZE}~255
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_serial_comm___receive_8h_afa58d85a6f1cbd134079e70963c566d7}\label{_serial_comm___receive_8h_afa58d85a6f1cbd134079e70963c566d7} 
+enum {\bfseries SERIALCOMM\+\_\+\+RECEIVESTATES} \{ {\bfseries SERIALCOMM\+\_\+\+RECEIVESTATES\+\_\+\+WAITFORDATA}
+, {\bfseries SERIALCOMM\+\_\+\+RECEIVESTATES\+\_\+\+PROCESSDATA}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_serial_comm___receive_8h_a496fddd3db9f68915a6e39b3b6107695}\label{_serial_comm___receive_8h_a496fddd3db9f68915a6e39b3b6107695} 
+void {\bfseries Serial\+Comm\+\_\+\+Receive\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_serial_comm___receive_8h_aca9c5d6b80dc4c4ddefac48416a32b1d}\label{_serial_comm___receive_8h_aca9c5d6b80dc4c4ddefac48416a32b1d} 
+void {\bfseries Flush\+\_\+\+Receive\+Buffer} (void)
+\item 
+\Hypertarget{_serial_comm___receive_8h_a31aa5208efd3c948c8cb48ddaa815869}\label{_serial_comm___receive_8h_a31aa5208efd3c948c8cb48ddaa815869} 
+bool {\bfseries Get\+Cmd\+Ready\+\_\+\+Status} (void)
+\item 
+\Hypertarget{_serial_comm___receive_8h_a7ea793217592da05c3c09436492749e3}\label{_serial_comm___receive_8h_a7ea793217592da05c3c09436492749e3} 
+char \texorpdfstring{$\ast$}{*} {\bfseries Get\+Receive\+Buffer} (void)
+\item 
+\Hypertarget{_serial_comm___receive_8h_ab74ad74f45f02fc7517cb84391d9e1b0}\label{_serial_comm___receive_8h_ab74ad74f45f02fc7517cb84391d9e1b0} 
+bool {\bfseries Store\+\_\+\+Recevied\+Data} (uint8\+\_\+t data)
+\item 
+\Hypertarget{_serial_comm___receive_8h_aac1734027db09ad76abc354b21e268e5}\label{_serial_comm___receive_8h_aac1734027db09ad76abc354b21e268e5} 
+void {\bfseries Serial\+Comm\+\_\+\+Receive\+\_\+\+Monitor} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serial command reception and parsing for AVR64\+DD32 system. 
+
+Implements buffered reception of serial commands from USART1. Handles line editing (backspace), echo, and command termination (Enter key). Integrates with menu processor for command execution.
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 25, 2025 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Command Processing}
+
+\begin{DoxyEnumerate}
+\item Buffer received characters
+\item Echo characters to terminal
+\item Handle backspace/\+delete
+\item Detect Enter (newline)
+\item Pass command to Menu Processor
+\item Clear buffer for next command
+\end{DoxyEnumerate}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Features}
+
+\begin{DoxyItemize}
+\item Line editing with backspace support
+\item Command echo to terminal
+\item Case-\/insensitive command matching
+\item Command prompt display
+\item Buffer overflow protection
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Buffer Management}
+
+\begin{DoxyItemize}
+\item Circular buffer for received characters
+\item Automatic overflow handling
+\item Configurable buffer size
+\end{DoxyItemize}
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Integrates with USART interrupt handler 
+
+Commands are whitespace-\/terminated 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Buffer size limits maximum command length
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_menu___processor_8h}{Menu\+\_\+\+Processor.\+h} for command execution 
+
+\doxylink{_u_s_a_r_t_8h}{USART.\+h} for serial communication 
+\end{DoxySeeAlso}

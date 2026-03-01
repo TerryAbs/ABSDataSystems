@@ -1,0 +1,86 @@
+\doxysection{ADC.\+h}
+\hypertarget{_a_d_c_8h_source}{}\label{_a_d_c_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/ADC/ADC.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/ADC/ADC.h}}
+\doxymbox{\hyperlink{_a_d_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <avr/io.h>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_data_structures_8h}{Common/DataStructures.h}}"{}}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ ADCSystemSize\ 3\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Total\ number\ of\ ADC\ systems}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{enum}\ ADC\_CHANNELNAME\{}
+\DoxyCodeLine{00053\ \ \ \ \ ADC\_CHANNELNAME\_INSTANT,}
+\DoxyCodeLine{00054\ \ \ \ \ ADC\_CHANNELNAME\_AVERAGE,}
+\DoxyCodeLine{00055\ \ \ \ \ ADC\_CHANNELNAME\_DIFFERENTIAL}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{enum}\ ADC\_STATE\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ ADC\_STATE\_IDLE,}
+\DoxyCodeLine{00060\ \ \ \ \ ADC\_STATE\_ACTIVE,}
+\DoxyCodeLine{00061\ \ \ \ \ ADC\_STATE\_INITIALIZE,}
+\DoxyCodeLine{00062\ \ \ \ \ ADC\_STATE\_READ,}
+\DoxyCodeLine{00063\ \ \ \ \ ADC\_STATE\_DISPLAY,}
+\DoxyCodeLine{00064\ \ \ \ \ ADC\_STATE\_COMPLETE,}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_a_d_c_configuration}{ADCConfiguration}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{enum}\ SIGNATURE\_BYTES\ signature;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{enum}\ ADC\_CHANNELNAME\ channel;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled;}
+\DoxyCodeLine{00078\ \ \ \ \ uint8\_t\ refRange;}
+\DoxyCodeLine{00079\ \ \ \ \ uint8\_t\ sampNum;}
+\DoxyCodeLine{00080\ \ \ \ \ uint8\_t\ sampleDly;}
+\DoxyCodeLine{00081\ \ \ \ \ uint8\_t\ noDataBits;}
+\DoxyCodeLine{00082\ \ \ \ \ uint8\_t\ prescale;}
+\DoxyCodeLine{00083\ \}\ \doxymbox{\hyperlink{struct_a_d_c_configuration}{ADCConfiguration}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \doxymbox{\hyperlink{struct_a_d_c_configuration}{ADCConfiguration}}\ config;}
+\DoxyCodeLine{00089\ \ \ \ \ uint16\_t\ ADC\_Results;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{float}\ displayValue;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *displayMsg;}
+\DoxyCodeLine{00092\ \ \ \ \ void\ (*funcptr\_Initialize)(\textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ config);}
+\DoxyCodeLine{00093\ \ \ \ \ bool\ (*funcptr\_Read)(\textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ config);}
+\DoxyCodeLine{00094\ \ \ \ \ void\ (*funcptr\_Display)(\textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ config);}
+\DoxyCodeLine{00095\ \}\ \doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ ADC\_Display(\textcolor{keywordtype}{void}\ *ptrData,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ ADC\_Initialize\_Average(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{bool}\ ADC\_Read\_Average(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ ADC\_Display\_Average(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ ADC\_Initialize\_Instant(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{bool}\ ADC\_Read\_Instant(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ ADC\_Display\_Instant(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ ADC\_Initialize\_Differential(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{bool}\ ADC\_Read\_Differential(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ ADC\_Display\_Differential(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}*\ ptr);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{void}\ ADC\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ ADC\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ *GetPtrToADCData(uint8\_t\ index);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{char}\ *ADCPresScaleDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{char}\ *ADCSampleDelayDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{char}\ *ADC\_BitsDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{char}\ *ADCSampleNumberDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{char}\ *ADCRefDecode(\textcolor{keywordtype}{void}\ *ptr);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{void}\ ADC\_Save\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{void}\ ADC\_Load\_Config(uint8\_t\ channel);}
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{float}\ VoltsPerTick(\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcessEngine}}\ *ptr);}
+\DoxyCodeLine{00125\ \textcolor{keywordtype}{bool}\ GetADCEnabledState(\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

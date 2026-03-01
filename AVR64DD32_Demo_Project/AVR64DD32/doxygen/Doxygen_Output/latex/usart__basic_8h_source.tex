@@ -1,0 +1,56 @@
+\doxysection{usart\+\_\+basic.\+h}
+\hypertarget{usart__basic_8h_source}{}\label{usart__basic_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/USART/usart\_basic.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/USART/usart\_basic.h}}
+\doxymbox{\hyperlink{usart__basic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ USART\_BASIC\_H\_INCLUDED}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ USART\_BASIC\_H\_INCLUDED}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <atmel\_start.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ PC0\ 0x01}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ PC1\ 0x02}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{/*\ Normal\ Mode,\ Baud\ register\ value\ */}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ USART1\_BAUD\_RATE(BAUD\_RATE)\ ((float)(24000000\ *\ 64\ /\ (16\ *\ (float)BAUD\_RATE))\ +\ 0.5)}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ USART\_1\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ uint8\_t\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga37dda4ef981fe9d271f288e0e57a9ee4}{USART\_1\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga4f0f7fa7e8d1a4f5f60a1f52ad720d9f}{USART\_1\_enable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga9d4c89df83de34d79a79d64e3eff1853}{USART\_1\_enable\_rx}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_gad15f32c9a29bf309c653eb39a1044a7c}{USART\_1\_enable\_tx}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_gac5679a28e17874930bfa49ae3bb78a17}{USART\_1\_disable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ uint8\_t\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga2bc29ee3e28969e730280c7859f33d3b}{USART\_1\_get\_data}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga0ff2a70b6f0fdb1e4f53bafd9277c7c8}{USART\_1\_is\_tx\_ready}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_gacbacf1856d59bc37b7c7588486cb0516}{USART\_1\_is\_rx\_ready}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_gad9268be5ab142c4e915657637fb49b96}{USART\_1\_is\_tx\_busy}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ uint8\_t\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga33f6becc7985999a041c00f341dd79e4}{USART\_1\_read}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__doc__driver__usart__basic_ga63276e027c62bcc785c9abf002efca1a}{USART\_1\_write}}(\textcolor{keyword}{const}\ uint8\_t\ data);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00072\ \}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USART\_BASIC\_H\_INCLUDED\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

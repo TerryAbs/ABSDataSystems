@@ -1,0 +1,19 @@
+\doxysection{Common\+Strings.\+h}
+\hypertarget{_common_strings_8h_source}{}\label{_common_strings_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CommonStrings/CommonStrings.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/CommonStrings/CommonStrings.h}}
+\doxymbox{\hyperlink{_common_strings_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <avr/pgmspace.h>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ makeStringsWithSize(name,\ text)\ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{extern\ const\ char\ name[]\ PROGMEM;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{enum\ \{\ name\#\#\_LEN\ =\ (uint8\_t)(sizeof(text)\ -\/\ 1)\ \};}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_msgs__list_8h}{CommonMsgs\_list.h}}"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#undef\ makeStringsWithSize}}
+\DoxyCodeLine{00046\ }
+
+\end{DoxyCode}

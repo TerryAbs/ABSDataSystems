@@ -1,0 +1,160 @@
+\doxysection{C:\+/\+\+ABS\+\_\+\+Mutiple\+Processor\+Computer/\+\+Firmware/\+\+AVR64\+DD32/\+\+AVR64\+DD32/\+\+ADC/\+\+ADC.c File Reference}
+\hypertarget{_a_d_c_8c}{}\label{_a_d_c_8c}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/ADC/ADC.c@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/ADC/ADC.c}}
+
+
+Implementation of ADC driver for AVR64\+DD32.  
+
+
+{\ttfamily \+\#include "{}ADC.\+h"{}}\newline
+{\ttfamily \+\#include "{}EEPRom/\+\+EEPRom.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menus/\+\+ADC/\+\+Menu\+\_\+\+ADC.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menu\+\_\+\+Report\+\_\+\+Processor/\+\+Menu\+\_\+\+Processor/\+\+Menu\+\_\+\+Processor.\+h"{}}\newline
+{\ttfamily \+\#include "{}Display\+\_\+\+Processor/\+\+Display\+\_\+\+Processor.\+h"{}}\newline
+{\ttfamily \+\#include "{}Delay/\+\+Delay.\+h"{}}\newline
+{\ttfamily \+\#include "{}Common/\+\+Data\+Structures.\+h"{}}\newline
+{\ttfamily \+\#include "{}Common\+Strings/\+\+Common\+Strings.\+h"{}}\newline
+{\ttfamily \+\#include "{}Menu\+\_\+\+Report\+\_\+\+Processor/\+\+Themes/\+\+Themes.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_a_d_c_8c_aee0dbccbab004de01e0bdd6e8a591e51}\label{_a_d_c_8c_aee0dbccbab004de01e0bdd6e8a591e51} 
+\+\#define {\bfseries ADC\+\_\+\+DIFF\+\_\+\+COUNTS}~(2048.\+0f)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_a_d_c_8c_ab0e0ea1662a8e789547210a2d33127e1}\label{_a_d_c_8c_ab0e0ea1662a8e789547210a2d33127e1} 
+void {\bfseries ADC\+\_\+\+Initialize} (void)
+\item 
+\Hypertarget{_a_d_c_8c_a399b5f29fa53368d7befcade0a977f5b}\label{_a_d_c_8c_a399b5f29fa53368d7befcade0a977f5b} 
+void {\bfseries ADC\+\_\+\+Display} (void \texorpdfstring{$\ast$}{*}ptr\+Data, const char \texorpdfstring{$\ast$}{*}msg)
+\item 
+\Hypertarget{_a_d_c_8c_a6db40362047e310f2b7e37f2790e4eea}\label{_a_d_c_8c_a6db40362047e310f2b7e37f2790e4eea} 
+void \texorpdfstring{$\ast$}{*} {\bfseries Get\+Ptr\+To\+ADCData} (uint8\+\_\+t index)
+\item 
+\Hypertarget{_a_d_c_8c_a39e58ebec9d00ff1f9c2013c0a26380d}\label{_a_d_c_8c_a39e58ebec9d00ff1f9c2013c0a26380d} 
+bool {\bfseries Get\+ADCEnabled\+State} (void)
+\item 
+\Hypertarget{_a_d_c_8c_ad9200b237e0b5a206514c1509b7db810}\label{_a_d_c_8c_ad9200b237e0b5a206514c1509b7db810} 
+void {\bfseries ADC\+\_\+\+Initialize\+\_\+\+Instant} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_a3c427c628b504ad575615313c9273ff4}\label{_a_d_c_8c_a3c427c628b504ad575615313c9273ff4} 
+bool {\bfseries ADC\+\_\+\+Read\+\_\+\+Instant} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_a65b993c98c417b886614892a90119515}\label{_a_d_c_8c_a65b993c98c417b886614892a90119515} 
+void {\bfseries ADC\+\_\+\+Display\+\_\+\+Instant} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_ad344ed54c0eeb245500899faf1c2982f}\label{_a_d_c_8c_ad344ed54c0eeb245500899faf1c2982f} 
+void {\bfseries ADC\+\_\+\+Initialize\+\_\+\+Average} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_ab3e9d1180433d215acfbfa4d3f1574d6}\label{_a_d_c_8c_ab3e9d1180433d215acfbfa4d3f1574d6} 
+bool {\bfseries ADC\+\_\+\+Read\+\_\+\+Average} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_a02d2c3760fcc18f51cbbf07343046704}\label{_a_d_c_8c_a02d2c3760fcc18f51cbbf07343046704} 
+void {\bfseries ADC\+\_\+\+Display\+\_\+\+Average} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_a60a0dba4f961e807ed536faa524622f5}\label{_a_d_c_8c_a60a0dba4f961e807ed536faa524622f5} 
+void {\bfseries ADC\+\_\+\+Initialize\+\_\+\+Differential} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_a9b3ac1c9c1dff54e3fb1c5569442e7e5}\label{_a_d_c_8c_a9b3ac1c9c1dff54e3fb1c5569442e7e5} 
+bool {\bfseries ADC\+\_\+\+Read\+\_\+\+Differential} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_adb2849bbaab24ed2fbe6415cafc672a2}\label{_a_d_c_8c_adb2849bbaab24ed2fbe6415cafc672a2} 
+void {\bfseries ADC\+\_\+\+Display\+\_\+\+Differential} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_a7cf8211cd63ad351d06c7939712166b0}\label{_a_d_c_8c_a7cf8211cd63ad351d06c7939712166b0} 
+void {\bfseries ADC\+\_\+\+Monitor} (void)
+\item 
+\Hypertarget{_a_d_c_8c_a327739e8aa47b170f653e3c0be69c950}\label{_a_d_c_8c_a327739e8aa47b170f653e3c0be69c950} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADCPres\+Scale\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_ac62354439f886d647dc464abaa3df2e1}\label{_a_d_c_8c_ac62354439f886d647dc464abaa3df2e1} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADCSample\+Delay\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_a2ead54f81d703c84dc3c1d3b62296da5}\label{_a_d_c_8c_a2ead54f81d703c84dc3c1d3b62296da5} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADC\+\_\+\+Bits\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_ad71431b9e4d99f186f63bf3076929f3b}\label{_a_d_c_8c_ad71431b9e4d99f186f63bf3076929f3b} 
+char \texorpdfstring{$\ast$}{*} {\bfseries ADCSample\+Number\+Decode} (void \texorpdfstring{$\ast$}{*}ptr)
+\item 
+\Hypertarget{_a_d_c_8c_a8410f13b43ea668ce69369191d1ac7cf}\label{_a_d_c_8c_a8410f13b43ea668ce69369191d1ac7cf} 
+void {\bfseries ADC\+\_\+\+Save\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_a_d_c_8c_aa442134b7d607d2c654efc2af5a87506}\label{_a_d_c_8c_aa442134b7d607d2c654efc2af5a87506} 
+void {\bfseries ADC\+\_\+\+Load\+\_\+\+Config} (uint8\+\_\+t channel)
+\item 
+\Hypertarget{_a_d_c_8c_ad2b473cee47f7a4de708e1431063aee7}\label{_a_d_c_8c_ad2b473cee47f7a4de708e1431063aee7} 
+float {\bfseries Volts\+Per\+Tick} (\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \texorpdfstring{$\ast$}{*}ptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} \doxymbox{\hyperlink{_a_d_c_8c_ae3e162900db0ef5ce6e54b68a0c7e215}{ADCSystem}} \+[ADCSystem\+Size]\+
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of ADC driver for AVR64\+DD32. 
+
+Implements three ADC channels with distinct characteristics:\+
+\begin{DoxyItemize}
+\item Instant:\+ Single-\/shot reading, fast response
+\item Average:\+ Hardware-\/averaged (16 samples), noise reduction
+\item Differential:\+ Measures voltage difference between PD5 and PD4
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Terry (ABS Data Systems) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Created:\+ 11/\+25/\+2025 2:\+01:\+07 PM 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Algorithm}
+
+\begin{DoxyEnumerate}
+\item Initialize:\+ Configure VREF, prescaler, sample count
+\item Read:\+ Trigger conversion and wait for RESRDY flag
+\item Convert:\+ Apply scaling based on reference and resolution
+\item Display:\+ Format and output via display processor
+\end{DoxyEnumerate}
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{State Machine}
+IDLE ? INITIALIZE ? READ ? DISPLAY ? COMPLETE ? IDLE
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Uses function pointers for polymorphic channel behavior 
+
+Results are automatically displayed when channels are enabled 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Ensure global interrupts are enabled for proper operation 
+
+Sample delay and prescaler affect conversion time and accuracy
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxylink{_a_d_c_8h}{ADC.\+h} for interface definitions 
+\end{DoxySeeAlso}
+
+
+\label{doc-var-members}
+\Hypertarget{_a_d_c_8c_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{_a_d_c_8c_ae3e162900db0ef5ce6e54b68a0c7e215}\index{ADC.c@{ADC.c}!ADCSystem@{ADCSystem}}
+\index{ADCSystem@{ADCSystem}!ADC.c@{ADC.c}}
+\doxysubsubsection{\texorpdfstring{ADCSystem}{ADCSystem}}
+{\footnotesize\ttfamily \label{_a_d_c_8c_ae3e162900db0ef5ce6e54b68a0c7e215} 
+\doxymbox{\hyperlink{struct_a_d_c_process_engine}{ADCProcess\+Engine}} ADCSystem\+[ADCSystem\+Size]\+}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ }
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \{\ \{SIGNATURE\_BYTES\_ADC,\ ADC\_CHANNELNAME\_INSTANT,\ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ VREF\_REFSEL\_4V096\_gc,\ ADC\_SAMPNUM\_NONE\_gc,\ \ \ \ ADC\_SAMPDLY\_DLY0\_gc,\ ADC\_RESSEL\_12BIT\_gc,\ \ \ ADC\_PRESC\_DIV16\_gc\},\ \ \ \ 0,\ 0.0,\ msg\_INSTANT,\ ADC\_Initialize\_Instant,\ ADC\_Read\_Instant,\ ADC\_Display\_Instant\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ \{SIGNATURE\_BYTES\_ADC,\ ADC\_CHANNELNAME\_AVERAGE,\ \ \ \ \ \ \ \ \textcolor{keyword}{true},\ VREF\_REFSEL\_4V096\_gc,\ ADC\_SAMPNUM\_ACC16\_gc,\ \ \ ADC\_SAMPDLY\_DLY0\_gc,\ ADC\_RESSEL\_12BIT\_gc,\ \ \ ADC\_PRESC\_DIV16\_gc\},\ \ \ \ 0,\ 0.0,\ msg\_AVERAGE,\ ADC\_Initialize\_Average,\ ADC\_Read\_Average,\ ADC\_Display\_Average\ \},\ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \{\ \{SIGNATURE\_BYTES\_ADC,\ ADC\_CHANNELNAME\_DIFFERENTIAL,\ \ \ \textcolor{keyword}{true},\ VREF\_REFSEL\_4V096\_gc,\ ADC\_SAMPNUM\_NONE\_gc,\ \ \ \ ADC\_SAMPDLY\_DLY0\_gc,\ ADC\_RESSEL\_12BIT\_gc,\ \ \ ADC\_PRESC\_DIV4\_gc\},\ \ \ \ \ 0,\ 0.0,\ msg\_DIFFERENTIAL,\ ADC\_Initialize\_Differential,\ ADC\_Read\_Differential,\ ADC\_Display\_Differential\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

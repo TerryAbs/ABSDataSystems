@@ -1,0 +1,489 @@
+\doxysection{port.\+h}
+\hypertarget{port_8h_source}{}\label{port_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/port.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/include/port.h}}
+\doxymbox{\hyperlink{port_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ PORT\_INCLUDED}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PORT\_INCLUDED}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <\doxymbox{\hyperlink{compiler_8h}{compiler.h}}>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{enum}\ port\_pull\_mode\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ PORT\_PULL\_OFF,}
+\DoxyCodeLine{00039\ \ \ \ \ PORT\_PULL\_UP,}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{enum}\ port\_dir\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ PORT\_DIR\_IN,}
+\DoxyCodeLine{00044\ \ \ \ \ PORT\_DIR\_OUT,}
+\DoxyCodeLine{00045\ \ \ \ \ PORT\_DIR\_OFF,}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_set\_pin\_pull\_mode(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_pull\_mode\ pull\_mode)}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTA\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (pull\_mode\ ==\ PORT\_PULL\_UP)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ |=\ PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{00062\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pull\_mode\ ==\ PORT\_PULL\_OFF)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ \&=\ \string~PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_pin\_set\_inverted(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ inverted)}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTA\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (inverted)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ |=\ PORT\_INVEN\_bm;}
+\DoxyCodeLine{00081\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ \&=\ \string~PORT\_INVEN\_bm;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_pin\_set\_isc(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ PORT\_ISC\_t\ isc)}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTA\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ *port\_pin\_ctrl\ =\ (*port\_pin\_ctrl\ \&\ \string~PORT\_ISC\_gm)\ |\ isc;}
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_set\_port\_dir(\textcolor{keyword}{const}\ uint8\_t\ mask,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_dir\ dir)}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_IN:}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ VPORTA.DIR\ \&=\ \string~mask;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OUT:}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ VPORTA.DIR\ |=\ mask;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OFF:}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*/\ should\ activate\ the\ pullup\ for\ power\ saving}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ but\ a\ bit\ costly\ to\ do\ it\ here\ */}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mask\ \&\ 1\ <<\ i)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTA\ +\ 0x10\ +\ i)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_set\_pin\_dir(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_dir\ dir)}
+\DoxyCodeLine{00159\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_IN:}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ VPORTA.DIR\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OUT:}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ VPORTA.DIR\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OFF:}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTA\ +\ 0x10\ +\ pin)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_set\_port\_level(\textcolor{keyword}{const}\ uint8\_t\ mask,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ level)}
+\DoxyCodeLine{00186\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ VPORTA.OUT\ |=\ mask;}
+\DoxyCodeLine{00189\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ VPORTA.OUT\ \&=\ \string~mask;}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00203\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_set\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ level)}
+\DoxyCodeLine{00204\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ VPORTA.OUT\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00207\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ VPORTA.OUT\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00209\ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00220\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_toggle\_port\_level(\textcolor{keyword}{const}\ uint8\_t\ mask)}
+\DoxyCodeLine{00221\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ PORTA.OUTTGL\ =\ mask;}
+\DoxyCodeLine{00223\ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_toggle\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin)}
+\DoxyCodeLine{00233\ \{}
+\DoxyCodeLine{00234\ \ \ \ \ VPORTA.IN\ |=\ 1\ <<\ pin;}
+\DoxyCodeLine{00235\ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00243\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ PORTA\_get\_port\_level()}
+\DoxyCodeLine{00244\ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{return}\ VPORTA.IN;}
+\DoxyCodeLine{00246\ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00253\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ PORTA\_get\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin)}
+\DoxyCodeLine{00254\ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordflow}{return}\ VPORTA.IN\ \&\ (1\ <<\ pin);}
+\DoxyCodeLine{00256\ \}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00265\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTA\_write\_port(\textcolor{keyword}{const}\ uint8\_t\ value)}
+\DoxyCodeLine{00266\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ VPORTA.OUT\ =\ value;}
+\DoxyCodeLine{00268\ \}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00278\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_set\_pin\_pull\_mode(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_pull\_mode\ pull\_mode)}
+\DoxyCodeLine{00279\ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTC\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{if}\ (pull\_mode\ ==\ PORT\_PULL\_UP)\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ |=\ PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{00284\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pull\_mode\ ==\ PORT\_PULL\_OFF)\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ \&=\ \string~PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{00286\ \ \ \ \ \}}
+\DoxyCodeLine{00287\ \}}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00297\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_pin\_set\_inverted(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ inverted)}
+\DoxyCodeLine{00298\ \{}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTC\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{if}\ (inverted)\ \{}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ |=\ PORT\_INVEN\_bm;}
+\DoxyCodeLine{00303\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ \&=\ \string~PORT\_INVEN\_bm;}
+\DoxyCodeLine{00305\ \ \ \ \ \}}
+\DoxyCodeLine{00306\ \}}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00323\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_pin\_set\_isc(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ PORT\_ISC\_t\ isc)}
+\DoxyCodeLine{00324\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTC\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ *port\_pin\_ctrl\ =\ (*port\_pin\_ctrl\ \&\ \string~PORT\_ISC\_gm)\ |\ isc;}
+\DoxyCodeLine{00328\ \}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00343\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_set\_port\_dir(\textcolor{keyword}{const}\ uint8\_t\ mask,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_dir\ dir)}
+\DoxyCodeLine{00344\ \{}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)\ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_IN:}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ VPORTC.DIR\ \&=\ \string~mask;}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OUT:}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ VPORTC.DIR\ |=\ mask;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OFF:}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*/\ should\ activate\ the\ pullup\ for\ power\ saving}}
+\DoxyCodeLine{00354\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ but\ a\ bit\ costly\ to\ do\ it\ here\ */}}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mask\ \&\ 1\ <<\ i)\ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTC\ +\ 0x10\ +\ i)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00365\ \ \ \ \ \}}
+\DoxyCodeLine{00366\ \}}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00380\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_set\_pin\_dir(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_dir\ dir)}
+\DoxyCodeLine{00381\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)\ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_IN:}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ VPORTC.DIR\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OUT:}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ VPORTC.DIR\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OFF:}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTC\ +\ 0x10\ +\ pin)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00394\ \ \ \ \ \}}
+\DoxyCodeLine{00395\ \}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00407\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_set\_port\_level(\textcolor{keyword}{const}\ uint8\_t\ mask,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ level)}
+\DoxyCodeLine{00408\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ VPORTC.OUT\ |=\ mask;}
+\DoxyCodeLine{00411\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ VPORTC.OUT\ \&=\ \string~mask;}
+\DoxyCodeLine{00413\ \ \ \ \ \}}
+\DoxyCodeLine{00414\ \}}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00425\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_set\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ level)}
+\DoxyCodeLine{00426\ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ VPORTC.OUT\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00429\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ VPORTC.OUT\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00431\ \ \ \ \ \}}
+\DoxyCodeLine{00432\ \}}
+\DoxyCodeLine{00433\ }
+\DoxyCodeLine{00442\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_toggle\_port\_level(\textcolor{keyword}{const}\ uint8\_t\ mask)}
+\DoxyCodeLine{00443\ \{}
+\DoxyCodeLine{00444\ \ \ \ \ PORTC.OUTTGL\ =\ mask;}
+\DoxyCodeLine{00445\ \}}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00454\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_toggle\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin)}
+\DoxyCodeLine{00455\ \{}
+\DoxyCodeLine{00456\ \ \ \ \ VPORTC.IN\ |=\ 1\ <<\ pin;}
+\DoxyCodeLine{00457\ \}}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00465\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ PORTC\_get\_port\_level()}
+\DoxyCodeLine{00466\ \{}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordflow}{return}\ VPORTC.IN;}
+\DoxyCodeLine{00468\ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00475\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ PORTC\_get\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin)}
+\DoxyCodeLine{00476\ \{}
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordflow}{return}\ VPORTC.IN\ \&\ (1\ <<\ pin);}
+\DoxyCodeLine{00478\ \}}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00487\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTC\_write\_port(\textcolor{keyword}{const}\ uint8\_t\ value)}
+\DoxyCodeLine{00488\ \{}
+\DoxyCodeLine{00489\ \ \ \ \ VPORTC.OUT\ =\ value;}
+\DoxyCodeLine{00490\ \}}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00500\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_set\_pin\_pull\_mode(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_pull\_mode\ pull\_mode)}
+\DoxyCodeLine{00501\ \{}
+\DoxyCodeLine{00502\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTD\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \ \ \ \ \textcolor{keywordflow}{if}\ (pull\_mode\ ==\ PORT\_PULL\_UP)\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ |=\ PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{00506\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pull\_mode\ ==\ PORT\_PULL\_OFF)\ \{}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ \&=\ \string~PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{00508\ \ \ \ \ \}}
+\DoxyCodeLine{00509\ \}}
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00519\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_pin\_set\_inverted(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ inverted)}
+\DoxyCodeLine{00520\ \{}
+\DoxyCodeLine{00521\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTD\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \textcolor{keywordflow}{if}\ (inverted)\ \{}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ |=\ PORT\_INVEN\_bm;}
+\DoxyCodeLine{00525\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ \&=\ \string~PORT\_INVEN\_bm;}
+\DoxyCodeLine{00527\ \ \ \ \ \}}
+\DoxyCodeLine{00528\ \}}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00545\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_pin\_set\_isc(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ PORT\_ISC\_t\ isc)}
+\DoxyCodeLine{00546\ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTD\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00549\ \ \ \ \ *port\_pin\_ctrl\ =\ (*port\_pin\_ctrl\ \&\ \string~PORT\_ISC\_gm)\ |\ isc;}
+\DoxyCodeLine{00550\ \}}
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00565\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_set\_port\_dir(\textcolor{keyword}{const}\ uint8\_t\ mask,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_dir\ dir)}
+\DoxyCodeLine{00566\ \{}
+\DoxyCodeLine{00567\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)\ \{}
+\DoxyCodeLine{00568\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_IN:}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ VPORTD.DIR\ \&=\ \string~mask;}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OUT:}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ VPORTD.DIR\ |=\ mask;}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OFF:}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*/\ should\ activate\ the\ pullup\ for\ power\ saving}}
+\DoxyCodeLine{00576\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ but\ a\ bit\ costly\ to\ do\ it\ here\ */}}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mask\ \&\ 1\ <<\ i)\ \{}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTD\ +\ 0x10\ +\ i)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00587\ \ \ \ \ \}}
+\DoxyCodeLine{00588\ \}}
+\DoxyCodeLine{00589\ }
+\DoxyCodeLine{00602\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_set\_pin\_dir(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_dir\ dir)}
+\DoxyCodeLine{00603\ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)\ \{}
+\DoxyCodeLine{00605\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_IN:}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ VPORTD.DIR\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00608\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OUT:}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ VPORTD.DIR\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00611\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OFF:}
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTD\ +\ 0x10\ +\ pin)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00614\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00615\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00616\ \ \ \ \ \}}
+\DoxyCodeLine{00617\ \}}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00629\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_set\_port\_level(\textcolor{keyword}{const}\ uint8\_t\ mask,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ level)}
+\DoxyCodeLine{00630\ \{}
+\DoxyCodeLine{00631\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ VPORTD.OUT\ |=\ mask;}
+\DoxyCodeLine{00633\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ VPORTD.OUT\ \&=\ \string~mask;}
+\DoxyCodeLine{00635\ \ \ \ \ \}}
+\DoxyCodeLine{00636\ \}}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00647\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_set\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ level)}
+\DoxyCodeLine{00648\ \{}
+\DoxyCodeLine{00649\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ VPORTD.OUT\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00651\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ VPORTD.OUT\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00653\ \ \ \ \ \}}
+\DoxyCodeLine{00654\ \}}
+\DoxyCodeLine{00655\ }
+\DoxyCodeLine{00664\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_toggle\_port\_level(\textcolor{keyword}{const}\ uint8\_t\ mask)}
+\DoxyCodeLine{00665\ \{}
+\DoxyCodeLine{00666\ \ \ \ \ PORTD.OUTTGL\ =\ mask;}
+\DoxyCodeLine{00667\ \}}
+\DoxyCodeLine{00668\ }
+\DoxyCodeLine{00676\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_toggle\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin)}
+\DoxyCodeLine{00677\ \{}
+\DoxyCodeLine{00678\ \ \ \ \ VPORTD.IN\ |=\ 1\ <<\ pin;}
+\DoxyCodeLine{00679\ \}}
+\DoxyCodeLine{00680\ }
+\DoxyCodeLine{00687\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ PORTD\_get\_port\_level()}
+\DoxyCodeLine{00688\ \{}
+\DoxyCodeLine{00689\ \ \ \ \ \textcolor{keywordflow}{return}\ VPORTD.IN;}
+\DoxyCodeLine{00690\ \}}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00697\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ PORTD\_get\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin)}
+\DoxyCodeLine{00698\ \{}
+\DoxyCodeLine{00699\ \ \ \ \ \textcolor{keywordflow}{return}\ VPORTD.IN\ \&\ (1\ <<\ pin);}
+\DoxyCodeLine{00700\ \}}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00709\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTD\_write\_port(\textcolor{keyword}{const}\ uint8\_t\ value)}
+\DoxyCodeLine{00710\ \{}
+\DoxyCodeLine{00711\ \ \ \ \ VPORTD.OUT\ =\ value;}
+\DoxyCodeLine{00712\ \}}
+\DoxyCodeLine{00713\ }
+\DoxyCodeLine{00722\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_set\_pin\_pull\_mode(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_pull\_mode\ pull\_mode)}
+\DoxyCodeLine{00723\ \{}
+\DoxyCodeLine{00724\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTF\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00725\ }
+\DoxyCodeLine{00726\ \ \ \ \ \textcolor{keywordflow}{if}\ (pull\_mode\ ==\ PORT\_PULL\_UP)\ \{}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ |=\ PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{00728\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pull\_mode\ ==\ PORT\_PULL\_OFF)\ \{}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ \&=\ \string~PORT\_PULLUPEN\_bm;}
+\DoxyCodeLine{00730\ \ \ \ \ \}}
+\DoxyCodeLine{00731\ \}}
+\DoxyCodeLine{00732\ }
+\DoxyCodeLine{00741\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_pin\_set\_inverted(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ inverted)}
+\DoxyCodeLine{00742\ \{}
+\DoxyCodeLine{00743\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTF\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00744\ }
+\DoxyCodeLine{00745\ \ \ \ \ \textcolor{keywordflow}{if}\ (inverted)\ \{}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ |=\ PORT\_INVEN\_bm;}
+\DoxyCodeLine{00747\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ *port\_pin\_ctrl\ \&=\ \string~PORT\_INVEN\_bm;}
+\DoxyCodeLine{00749\ \ \ \ \ \}}
+\DoxyCodeLine{00750\ \}}
+\DoxyCodeLine{00751\ }
+\DoxyCodeLine{00767\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_pin\_set\_isc(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ PORT\_ISC\_t\ isc)}
+\DoxyCodeLine{00768\ \{}
+\DoxyCodeLine{00769\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ *port\_pin\_ctrl\ =\ ((uint8\_t\ *)\&PORTF\ +\ 0x10\ +\ pin);}
+\DoxyCodeLine{00770\ }
+\DoxyCodeLine{00771\ \ \ \ \ *port\_pin\_ctrl\ =\ (*port\_pin\_ctrl\ \&\ \string~PORT\_ISC\_gm)\ |\ isc;}
+\DoxyCodeLine{00772\ \}}
+\DoxyCodeLine{00773\ }
+\DoxyCodeLine{00787\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_set\_port\_dir(\textcolor{keyword}{const}\ uint8\_t\ mask,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_dir\ dir)}
+\DoxyCodeLine{00788\ \{}
+\DoxyCodeLine{00789\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)\ \{}
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_IN:}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ VPORTF.DIR\ \&=\ \string~mask;}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00793\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OUT:}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ VPORTF.DIR\ |=\ mask;}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00796\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OFF:}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*/\ should\ activate\ the\ pullup\ for\ power\ saving}}
+\DoxyCodeLine{00798\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ but\ a\ bit\ costly\ to\ do\ it\ here\ */}}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 8;\ i++)\ \{}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mask\ \&\ 1\ <<\ i)\ \{}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTF\ +\ 0x10\ +\ i)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00806\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00807\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00809\ \ \ \ \ \}}
+\DoxyCodeLine{00810\ \}}
+\DoxyCodeLine{00811\ }
+\DoxyCodeLine{00824\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_set\_pin\_dir(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keyword}{enum}\ port\_dir\ dir)}
+\DoxyCodeLine{00825\ \{}
+\DoxyCodeLine{00826\ \ \ \ \ \textcolor{keywordflow}{switch}\ (dir)\ \{}
+\DoxyCodeLine{00827\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_IN:}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ VPORTF.DIR\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00830\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OUT:}
+\DoxyCodeLine{00831\ \ \ \ \ \ \ \ \ VPORTF.DIR\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00833\ \ \ \ \ \textcolor{keywordflow}{case}\ PORT\_DIR\_OFF:}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ *((uint8\_t\ *)\&PORTF\ +\ 0x10\ +\ pin)\ |=\ 1\ <<\ PORT\_PULLUPEN\_bp;}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00836\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00838\ \ \ \ \ \}}
+\DoxyCodeLine{00839\ \}}
+\DoxyCodeLine{00840\ }
+\DoxyCodeLine{00851\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_set\_port\_level(\textcolor{keyword}{const}\ uint8\_t\ mask,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ level)}
+\DoxyCodeLine{00852\ \{}
+\DoxyCodeLine{00853\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00854\ \ \ \ \ \ \ \ \ VPORTF.OUT\ |=\ mask;}
+\DoxyCodeLine{00855\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ VPORTF.OUT\ \&=\ \string~mask;}
+\DoxyCodeLine{00857\ \ \ \ \ \}}
+\DoxyCodeLine{00858\ \}}
+\DoxyCodeLine{00859\ }
+\DoxyCodeLine{00869\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_set\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ level)}
+\DoxyCodeLine{00870\ \{}
+\DoxyCodeLine{00871\ \ \ \ \ \textcolor{keywordflow}{if}\ (level\ ==\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00872\ \ \ \ \ \ \ \ \ VPORTF.OUT\ |=\ (1\ <<\ pin);}
+\DoxyCodeLine{00873\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00874\ \ \ \ \ \ \ \ \ VPORTF.OUT\ \&=\ \string~(1\ <<\ pin);}
+\DoxyCodeLine{00875\ \ \ \ \ \}}
+\DoxyCodeLine{00876\ \}}
+\DoxyCodeLine{00877\ }
+\DoxyCodeLine{00886\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_toggle\_port\_level(\textcolor{keyword}{const}\ uint8\_t\ mask)}
+\DoxyCodeLine{00887\ \{}
+\DoxyCodeLine{00888\ \ \ \ \ PORTF.OUTTGL\ =\ mask;}
+\DoxyCodeLine{00889\ \}}
+\DoxyCodeLine{00890\ }
+\DoxyCodeLine{00898\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_toggle\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin)}
+\DoxyCodeLine{00899\ \{}
+\DoxyCodeLine{00900\ \ \ \ \ VPORTF.IN\ |=\ 1\ <<\ pin;}
+\DoxyCodeLine{00901\ \}}
+\DoxyCodeLine{00902\ }
+\DoxyCodeLine{00909\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ uint8\_t\ PORTF\_get\_port\_level()}
+\DoxyCodeLine{00910\ \{}
+\DoxyCodeLine{00911\ \ \ \ \ \textcolor{keywordflow}{return}\ VPORTF.IN;}
+\DoxyCodeLine{00912\ \}}
+\DoxyCodeLine{00913\ }
+\DoxyCodeLine{00919\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ PORTF\_get\_pin\_level(\textcolor{keyword}{const}\ uint8\_t\ pin)}
+\DoxyCodeLine{00920\ \{}
+\DoxyCodeLine{00921\ \ \ \ \ \textcolor{keywordflow}{return}\ VPORTF.IN\ \&\ (1\ <<\ pin);}
+\DoxyCodeLine{00922\ \}}
+\DoxyCodeLine{00923\ }
+\DoxyCodeLine{00931\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PORTF\_write\_port(\textcolor{keyword}{const}\ uint8\_t\ value)}
+\DoxyCodeLine{00932\ \{}
+\DoxyCodeLine{00933\ \ \ \ \ VPORTF.OUT\ =\ value;}
+\DoxyCodeLine{00934\ \}}
+\DoxyCodeLine{00935\ }
+\DoxyCodeLine{00936\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00937\ \}}
+\DoxyCodeLine{00938\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00939\ }
+\DoxyCodeLine{00940\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PORT\_INCLUDED\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

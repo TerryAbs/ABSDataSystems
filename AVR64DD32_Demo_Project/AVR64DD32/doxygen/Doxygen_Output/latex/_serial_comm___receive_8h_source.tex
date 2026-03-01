@@ -1,0 +1,29 @@
+\doxysection{Serial\+Comm\+\_\+\+Receive.\+h}
+\hypertarget{_serial_comm___receive_8h_source}{}\label{_serial_comm___receive_8h_source}\index{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/SerialComm/SerialComm\_Receive.h@{C:/ABS\_MutipleProcessorComputer/Firmware/AVR64DD32/AVR64DD32/SerialComm/SerialComm\_Receive.h}}
+\doxymbox{\hyperlink{_serial_comm___receive_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_common_8h}{Common/Common.h}}"{}}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ EOL\ \ \ \ \ \ \ \ \ 0x0D}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ FALSE\_EOL\ \ \ 0x0A}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ RECEIVE\_BUFFER\_SIZE\ 255}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ ProtoTypes\ for\ Receive}}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ SerialComm\_Receive\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ Flush\_ReceiveBuffer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{bool}\ GetCmdReady\_Status(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{char}\ *GetReceiveBuffer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{bool}\ Store\_ReceviedData(uint8\_t\ data);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ SerialComm\_Receive\_Monitor(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{enum}\ SERIALCOMM\_RECEIVESTATES\{}
+\DoxyCodeLine{00058\ \ \ \ \ SERIALCOMM\_RECEIVESTATES\_WAITFORDATA,}
+\DoxyCodeLine{00059\ \ \ \ \ SERIALCOMM\_RECEIVESTATES\_PROCESSDATA}
+\DoxyCodeLine{00060\ \};}
+
+\end{DoxyCode}
